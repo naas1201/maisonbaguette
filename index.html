@@ -1,142 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baguette Maison - Authentic Parisian Sandwiches</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      margin: 10px 0 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero .cta-button {
-      display: inline-block;
-      background: #e74c3c;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      border-radius: 5px;
-      position: relative;
-      z-index: 1;
-      transition: background 0.3s ease;
-    }
-
-    .hero .cta-button:hover {
-      background: #c0392b;
-    }
-
-    /* Key Selling Points */
-    .selling-points {
-      display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .selling-points .point {
-      max-width: 250px;
-    }
-
-    .selling-points .point h3 {
-      font-size: 1.5rem;
-      margin: 10px 0;
-    }
-
-    .selling-points .point p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-      }
-
-      .selling-points {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .selling-points .point {
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExplorePH</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ffb400;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: #e09b00;
+        }
+    </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
     <div class="container">
-      <h1>Authentic Parisian Sandwiches</h1>
-      <p>By a French Chef. For Manila. Affordable & Artisanal.</p>
-      <a href="https://wa.me/+15202008427" class="cta-button">Order via WhatsApp Now</a>
+        <h1>Explore the Best of the Philippines</h1>
+        <p>Discover cultural events, arts, networking, restaurants, bars, clubs, and tours with ease.</p>
+        <a href="https://wa.me/15202008427" class="cta-button">Contact Us on WhatsApp</a>
     </div>
-  </section>
-
-  <!-- Key Selling Points -->
-  <section class="selling-points container">
-    <div class="point">
-      <h3>✨ Handmade</h3>
-      <p>100% Handmade with Premium Ingredients</p>
-    </div>
-    <div class="point">
-      <h3>🇫🇷 Authentic</h3>
-      <p>From Paris to Manila – Authentic Recipes</p>
-    </div>
-    <div class="point">
-      <h3>🚚 Direct</h3>
-      <p>Order Direct – No Middleman Markups!</p>
-    </div>
-  </section>
 </body>
 </html>
