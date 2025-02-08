@@ -116,6 +116,39 @@ body {
     margin-bottom: 10px;
 }
 
+/* Trusted By Section */
+.trusted-by {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+}
+.trusted-by img {
+    width: 120px;
+    margin: 10px;
+}
+
+/* Customer Reviews */
+.customer-reviews {
+    text-align: center;
+    padding: 50px 20px;
+}
+.review {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Secure Payment */
+.secure-payment, .quality-guarantee, .fast-delivery {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+    margin-top: 20px;
+}
+
 /* WhatsApp Button */
 .whatsapp-button {
     position: fixed;
@@ -147,5 +180,8 @@ body {
     .features-container {
         align-items: center;
         text-align: center;
+    }
+    .trusted-by img {
+        width: 100px;
     }
 }
