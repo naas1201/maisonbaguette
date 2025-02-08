@@ -19,7 +19,7 @@ body {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     background: rgba(255, 255, 255, 0.9);
@@ -29,6 +29,14 @@ body {
 
 .navbar .logo-container img {
     height: 50px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .navbar ul {
@@ -54,9 +62,9 @@ body {
     height: 70vh;
     background: url('images/hero.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    text-align: right;
+    text-align: center;
     padding: 50px;
     position: relative;
 }
@@ -97,59 +105,58 @@ body {
 
 /* Features Section */
 .features {
-    text-align: right;
+    text-align: center;
     padding: 50px 20px;
 }
 
 .features-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
-.feature {
+.feature-card {
     max-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.feature img {
+.feature-card img {
     width: 50px;
     margin-bottom: 10px;
 }
 
-/* Trusted By Section */
-.trusted-by {
-    text-align: center;
-    padding: 50px 20px;
-    background: #fff;
-}
-
-.trusted-by img {
-    width: 100px;
-    margin: 10px;
-}
-
 /* Customer Reviews */
-.customer-reviews {
-    text-align: center;
-    padding: 50px 20px;
+.review-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
 }
 
 .review {
-    max-width: 600px;
-    margin: 0 auto 20px;
+    min-width: 300px;
+    background: white;
     padding: 15px;
-    background: #fff;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
 }
 
 /* Secure Payment */
-.secure-payment, .quality-guarantee, .fast-delivery {
-    text-align: center;
-    padding: 50px 20px;
-    background: #fff;
-    margin-top: 20px;
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.payment-icons img {
+    width: 50px;
 }
 
 /* WhatsApp Button */
@@ -171,49 +178,6 @@ body {
     background: #1ebe5d;
 }
 
-/* Menu Page */
-.menu-container {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.menu-item {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 280px;
-}
-
-.menu-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.order-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #e74c3c;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.order-button:hover {
-    background: #c0392b;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
@@ -224,17 +188,30 @@ body {
         padding: 10px 20px;
     }
     .features-container {
+        flex-direction: column;
         align-items: center;
-        text-align: center;
     }
-    .trusted-by img {
-        width: 80px;
+    .review-slider {
+        flex-direction: column;
     }
-    .menu-items {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .hamburger {
+        display: block;
     }
-    .menu-item img {
+    .navbar ul {
+        display: none;
+    }
+    .navbar ul.hidden {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
         width: 100%;
-        max-height: 180px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .navbar ul li {
+        padding: 10px;
     }
 }
