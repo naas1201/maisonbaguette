@@ -3,125 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExplorePH</title>
+    <title>Baguette Maison - Authentic Parisian Sandwiches</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Baguette Maison - Authentic French Jambon Beurre Sandwiches Delivered Fresh in Manila">
-    <meta name="keywords" content="French Sandwich, Jambon Beurre, Baguette, Parisian Food, Manila">
+    <meta name="keywords" content="French Sandwich, Jambon Beurre, Baguette, Parisian Food, Manila, French Bakery">
     <meta name="author" content="Baguette Maison">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            text-align: center;
-            background: linear-gradient(135deg, #00b4db, #0083b0);
-            color: #fff;
-            padding-top: 80px;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-        }
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        .navbar ul li a:hover {
-            color: #ffb400;
-        }
-        .logo {
-            width: 120px;
-        }
-        .hero {
-            width: 100%;
-            height: 90vh;
-            background: url('hero.jpg') no-repeat center center/cover;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            padding: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            background: #ffb400;
-            color: #fff;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.2s;
-            box-shadow: 0px 4px 10px rgba(255, 180, 0, 0.3);
-        }
-        .cta-button:hover {
-            background: #e09b00;
-            transform: scale(1.05);
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s;
-        }
-        .whatsapp-button:hover {
-            background: #1ebe5d;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img src="logo.png" alt="Baguette Maison Logo" class="logo"></a>
-        <ul>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="images/logo.png" alt="Baguette Maison Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <section class="hero">
         <div class="hero-content">
             <h1>Authentic Parisian Sandwiches</h1>
@@ -129,6 +32,27 @@
             <a href="https://wa.me/15202008427" class="cta-button">Order via WhatsApp Now</a>
         </div>
     </section>
+
+    <section class="features">
+        <div class="features-container">
+            <div class="feature">
+                <img src="images/fresh-baguette-icon.png" alt="Freshly Baked">
+                <h3>Authentic & Fresh</h3>
+                <p>We use traditional French recipes, ensuring every bite feels like Paris.</p>
+            </div>
+            <div class="feature">
+                <img src="images/delivery-icon.png" alt="Fast Delivery">
+                <h3>Quick & Direct</h3>
+                <p>We deliver fresh sandwiches straight to you—no middleman markups!</p>
+            </div>
+            <div class="feature">
+                <img src="images/customers-love-icon.png" alt="Loved by Locals">
+                <h3>Trusted by Locals</h3>
+                <p>Our sandwiches are loved by locals & expats craving a taste of France.</p>
+            </div>
+        </div>
+    </section>
+    
     <a href="https://wa.me/15202008427" class="whatsapp-button">📲 Order via WhatsApp</a>
 </body>
 </html>
