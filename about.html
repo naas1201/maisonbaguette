@@ -16,7 +16,8 @@
         <a href="index.html" class="logo-container">
             <img src="images/logo.png" alt="Baguette Maison Logo" class="logo">
         </a>
-        <nav>
+        <button class="hamburger" id="menu-toggle">☰</button>
+        <nav id="nav-menu" class="hidden">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -40,7 +41,7 @@
             <p>Each bite into our crispy golden baguette, layered with **premium ham and creamy butter**, transports you to the streets of Paris. No shortcuts, just **pure French quality.**</p>
         </div>
         <div class="about-image">
-            <img src="images/about-chef.jpg" alt="French Chef preparing a Jambon Beurre">
+            <img src="images/about-chef.jpg" alt="French Chef preparing a Jambon Beurre" class="responsive-img">
         </div>
     </section>
     
@@ -48,17 +49,17 @@
         <h2>Why Baguette Maison?</h2>
         <div class="reasons">
             <div class="reason">
-                <img src="images/authentic-icon.png" alt="Authentic">
+                <img src="images/authentic-icon.png" alt="Authentic" class="icon-small">
                 <h3>100% Authentic</h3>
                 <p>Traditional recipes, premium ingredients, no compromises.</p>
             </div>
             <div class="reason">
-                <img src="images/handmade-icon.png" alt="Handmade with Love">
+                <img src="images/handmade-icon.png" alt="Handmade with Love" class="icon-small">
                 <h3>Handmade with Love</h3>
                 <p>Each sandwich is **crafted fresh daily** with precision and care.</p>
             </div>
             <div class="reason">
-                <img src="images/premium-ingredients-icon.png" alt="Premium Ingredients">
+                <img src="images/premium-ingredients-icon.png" alt="Premium Ingredients" class="icon-small">
                 <h3>Premium Ingredients</h3>
                 <p>Only the finest **French-style ham, creamy butter, and artisanal baguettes**.</p>
             </div>
@@ -66,5 +67,11 @@
     </section>
     
     <a href="https://wa.me/15202008427" class="whatsapp-button">📲 Order Your Jambon Beurre Now</a>
+    
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("nav-menu").classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>
