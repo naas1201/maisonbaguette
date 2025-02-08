@@ -5,11 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Baguette Maison</title>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style">
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Learn more about Baguette Maison, the home of authentic Jambon Beurre sandwiches in Manila. Inspired by French tradition, made with passion.">
     <meta name="keywords" content="French Sandwich, Jambon Beurre, Baguette, Parisian Food, About Us">
     <meta name="author" content="Baguette Maison">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .navbar .logo-container img {
+            height: 40px;
+        }
+        .hamburger {
+            display: block;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hero {
+            width: 100%;
+            height: 60vh;
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+        .hero-content {
+            max-width: 350px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .why-choose-us .reasons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+        .reason {
+            max-width: 250px;
+            text-align: center;
+        }
+        .reason img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: #25D366;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-button:hover {
+            background: #1ebe5d;
+        }
+        @media (min-width: 768px) {
+            .about-container {
+                flex-direction: row;
+                justify-content: center;
+                text-align: left;
+                gap: 40px;
+            }
+            .why-choose-us .reasons {
+                flex-direction: row;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -26,52 +131,31 @@
             </ul>
         </nav>
     </header>
-    
     <section class="hero about-hero">
         <div class="hero-content">
             <h1>Our Story</h1>
             <p>Bringing the taste of Paris to Manila, one sandwich at a time.</p>
         </div>
     </section>
-    
     <section class="about-container">
         <div class="about-content">
             <h2>Meet the Passion Behind Baguette Maison</h2>
-            <p>Baguette Maison was founded with a simple vision: to bring the **authentic taste of Parisian Jambon Beurre** to Manila. Using only **the finest ingredients**, we craft every sandwich with **tradition, passion, and love**.</p>
-            <p>Each bite into our crispy golden baguette, layered with **premium ham and creamy butter**, transports you to the streets of Paris. No shortcuts, just **pure French quality.**</p>
+            <p>Baguette Maison was founded with a simple vision: to bring the **authentic taste of Parisian Jambon Beurre** to Manila.</p>
         </div>
         <div class="about-image">
-            <img src="images/about-chef.jpg" alt="French Chef preparing a Jambon Beurre" class="responsive-img">
+            <img src="images/about-chef.jpg" alt="French Chef preparing a Jambon Beurre">
         </div>
     </section>
-    
     <section class="why-choose-us">
         <h2>Why Baguette Maison?</h2>
         <div class="reasons">
             <div class="reason">
-                <img src="images/authentic-icon.png" alt="Authentic" class="icon-small">
+                <img src="images/authentic-icon.png" alt="Authentic">
                 <h3>100% Authentic</h3>
                 <p>Traditional recipes, premium ingredients, no compromises.</p>
             </div>
-            <div class="reason">
-                <img src="images/handmade-icon.png" alt="Handmade with Love" class="icon-small">
-                <h3>Handmade with Love</h3>
-                <p>Each sandwich is **crafted fresh daily** with precision and care.</p>
-            </div>
-            <div class="reason">
-                <img src="images/premium-ingredients-icon.png" alt="Premium Ingredients" class="icon-small">
-                <h3>Premium Ingredients</h3>
-                <p>Only the finest **French-style ham, creamy butter, and artisanal baguettes**.</p>
-            </div>
         </div>
     </section>
-    
     <a href="https://wa.me/15202008427" class="whatsapp-button">📲 Order Your Jambon Beurre Now</a>
-    
-    <script>
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("nav-menu").classList.toggle("hidden");
-        });
-    </script>
 </body>
 </html>
