@@ -1,0 +1,144 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.cta-group {
+    margin-top: 20px;
+}
+
+.cta-button {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.primary-cta {
+    background: #ff6b6b;
+    color: white;
+}
+
+.secondary-cta {
+    background: white;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+}
+
+.primary-cta:hover {
+    background: #ff4f4f;
+}
+
+.secondary-cta:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* Features Section */
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: #fff;
+}
+
+.feature-card {
+    text-align: center;
+    max-width: 300px;
+}
+
+.icon-small {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Reviews Section */
+.customer-reviews {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.review-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+}
+
+.review {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+/* Secure Payment Section */
+.secure-payment {
+    text-align: center;
+    background: #ff6b6b;
+    color: white;
+    padding: 40px 20px;
+}
+
+.payment-icons img {
+    width: 60px;
+    margin: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
