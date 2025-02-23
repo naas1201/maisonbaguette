@@ -135,10 +135,67 @@ footer {
     color: white;
 }
 
+/* Menu Page Styles */
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.menu-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.order-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.order-button:hover {
+    background: #ff4f4f;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .features-container {
         flex-direction: column;
         align-items: center;
+    }
+    .menu-container {
+        padding: 20px;
     }
 }
