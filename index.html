@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baguette Maison - Authentic Parisian Flavors in Manila</title>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Baguette Maison brings authentic Parisian sandwiches and beverages to Manila. Enjoy limited edition French Sushi™ and Americano Coffee French Press 22oz now!">
     <meta name="keywords" content="French Sandwich, French Sushi™, Americano Coffee, Parisian Flavors, Manila, Baguette Maison">
     <meta name="author" content="Baguette Maison">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Baguette Maison - Authentic Parisian Flavors in Manila">
+    <meta property="og:description" content="Indulge in French Sushi™ and the perfect Americano Coffee French Press 22oz. Order now for fast delivery!">
+    <meta property="og:image" content="images/social-preview.jpg">
+    <meta property="og:url" content="https://baguettemaison.com">
+    <meta property="og:type" content="website">
+
+    <!-- Preload & Styles -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-    <!-- Dynamic Header (handled via separate JS: js/header.js) -->
+    <!-- Dynamic Header (Handled via header.js) -->
     <header id="header-placeholder"></header>
-    
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -32,8 +45,8 @@
     <section class="trusted-by">
         <h2>Trusted by French Expats & Manila Food Lovers</h2>
         <div class="carousel">
-            <img src="images/french-expats-logo.png" alt="French Expats Community" class="small-logo">
-            <img src="images/foodies-logo.png" alt="Food Enthusiasts" class="small-logo">
+            <img src="images/french-expats-logo.png" alt="French Expats Community" class="small-logo" loading="lazy">
+            <img src="images/foodies-logo.png" alt="Food Enthusiasts" class="small-logo" loading="lazy">
         </div>
     </section>
 
@@ -41,17 +54,17 @@
     <section class="features">
         <div class="features-container">
             <div class="feature-card">
-                <img src="images/fresh-baguette-icon.png" alt="Freshly Baked" class="icon-small">
+                <img src="images/fresh-baguette-icon.png" alt="Freshly Baked" class="icon-small" loading="lazy">
                 <h3>Authentic & Fresh</h3>
                 <p>Handcrafted using traditional French recipes for a genuine taste of Paris.</p>
             </div>
             <div class="feature-card">
-                <img src="images/delivery-icon.png" alt="Fast Delivery" class="icon-small">
+                <img src="images/delivery-icon.png" alt="Fast Delivery" class="icon-small" loading="lazy">
                 <h3>Quick & Reliable</h3>
                 <p>Enjoy prompt delivery designed for Manila’s fast-paced lifestyle.</p>
             </div>
             <div class="feature-card">
-                <img src="images/security-icon.png" alt="Secure Payments" class="icon-small">
+                <img src="images/security-icon.png" alt="Secure Payments" class="icon-small" loading="lazy">
                 <h3>Safe & Secure</h3>
                 <p>Multiple secure payment options ensure a hassle-free experience.</p>
             </div>
@@ -78,25 +91,21 @@
     <section class="secure-payment">
         <h2>Secure & Easy Payment</h2>
         <div class="payment-icons">
-            <img src="images/gcash-icon.png" alt="GCash" class="icon-small">
-            <img src="images/bank-transfer-icon.png" alt="Bank Transfer" class="icon-small">
-            <img src="images/cod-icon.png" alt="Cash on Delivery" class="icon-small">
+            <img src="images/gcash-icon.png" alt="GCash" class="icon-small" loading="lazy">
+            <img src="images/bank-transfer-icon.png" alt="Bank Transfer" class="icon-small" loading="lazy">
+            <img src="images/cod-icon.png" alt="Cash on Delivery" class="icon-small" loading="lazy">
         </div>
     </section>
 
-    <!-- Dynamic Footer (handled via separate JS: js/footer.js) -->
+    <!-- Dynamic Footer (Handled via footer.js) -->
     <footer id="footer-placeholder"></footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/15202008427" class="whatsapp-button">📲 Order via WhatsApp</a>
+    <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Order via WhatsApp</a>
 
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script>
-        // Mobile menu toggle functionality (if needed in header)
-        document.getElementById("menu-toggle")?.addEventListener("click", function() {
-            document.getElementById("nav-menu")?.classList.toggle("hidden");
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
