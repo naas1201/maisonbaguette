@@ -3,65 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baguette Maison - Authentic Parisian Sandwiches</title>
+    <title>Baguette Maison - Authentic Parisian Flavors in Manila</title>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <meta name="description" content="Baguette Maison - Authentic French Jambon Beurre Sandwiches Delivered Fresh in Manila">
-    <meta name="keywords" content="French Sandwich, Jambon Beurre, Baguette, Parisian Food, Manila, French Bakery">
+    <meta name="description" content="Baguette Maison brings authentic Parisian sandwiches and beverages to Manila. Enjoy limited edition French Sushi™ and Americano Coffee French Press 22oz now!">
+    <meta name="keywords" content="French Sandwich, French Sushi™, Americano Coffee, Parisian Flavors, Manila, Baguette Maison">
     <meta name="author" content="Baguette Maison">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <a href="index.html" class="logo-container">
-            <img src="images/logo.png" alt="Baguette Maison Logo" class="logo">
-        </a>
-        <button class="hamburger" id="menu-toggle">☰</button>
-        <nav id="nav-menu" class="hidden">
-            <ul>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Dynamic Header (handled via separate JS: js/header.js) -->
+    <header id="header-placeholder"></header>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Authentic Parisian Sandwiches</h1>
-            <p>By a French Chef. For Manila. Affordable & Artisanal.</p>
-            <a href="https://wa.me/15202008427" class="cta-button">Order via WhatsApp Now</a>
+            <h1>Experience Authentic Parisian Flavors in Manila</h1>
+            <p>Indulge in our limited edition <strong>French Sushi™</strong> and savor the perfect Americano Coffee French Press 22oz – crafted with passion and delivered with speed.</p>
+            <div class="cta-group">
+                <a href="https://wa.me/15202008427" class="cta-button primary-cta">Order Directly Now</a>
+                <a href="menu.html" class="cta-button secondary-cta">View Full Menu</a>
+            </div>
+            <p class="assurance">No obligation • Secure & Confidential • Fast Delivery</p>
         </div>
     </section>
 
     <!-- Trusted By Section -->
     <section class="trusted-by">
-        <h2>Trusted by French Expats & Food Lovers in Manila</h2>
+        <h2>Trusted by French Expats & Manila Food Lovers</h2>
         <div class="carousel">
             <img src="images/french-expats-logo.png" alt="French Expats Community" class="small-logo">
             <img src="images/foodies-logo.png" alt="Food Enthusiasts" class="small-logo">
         </div>
     </section>
-    
+
     <!-- Features Section -->
     <section class="features">
         <div class="features-container">
             <div class="feature-card">
                 <img src="images/fresh-baguette-icon.png" alt="Freshly Baked" class="icon-small">
                 <h3>Authentic & Fresh</h3>
-                <p>We use traditional French recipes, ensuring every bite feels like Paris.</p>
+                <p>Handcrafted using traditional French recipes for a genuine taste of Paris.</p>
             </div>
             <div class="feature-card">
                 <img src="images/delivery-icon.png" alt="Fast Delivery" class="icon-small">
-                <h3>Quick & Direct</h3>
-                <p>We deliver fresh sandwiches straight to you—no middleman markups!</p>
+                <h3>Quick & Reliable</h3>
+                <p>Enjoy prompt delivery designed for Manila’s fast-paced lifestyle.</p>
             </div>
             <div class="feature-card">
-                <img src="images/customers-love-icon.png" alt="Loved by Locals" class="icon-small">
-                <h3>Trusted by Locals</h3>
-                <p>Our sandwiches are loved by locals & expats craving a taste of France.</p>
+                <img src="images/security-icon.png" alt="Secure Payments" class="icon-small">
+                <h3>Safe & Secure</h3>
+                <p>Multiple secure payment options ensure a hassle-free experience.</p>
             </div>
         </div>
     </section>
@@ -71,13 +63,13 @@
         <h2>What Our Customers Say</h2>
         <div class="review-slider">
             <div class="review">
-                <p>⭐️⭐️⭐️⭐️⭐️ "I haven’t had a real Jambon Beurre since leaving Paris. This tastes exactly like home!" - Marie, French Expat</p>
+                <p>⭐️⭐️⭐️⭐️⭐️ "The French Sushi™ is a taste of Paris in every bite. Reliable and delicious—I order every week!" – Marie, French Expat</p>
             </div>
             <div class="review">
-                <p>⭐️⭐️⭐️⭐️⭐️ "I never knew a sandwich could taste this good. Simple, fresh, and packed with flavor." - Juan, Makati</p>
+                <p>⭐️⭐️⭐️⭐️⭐️ "From the first bite, I knew this was genuine Parisian quality. Fast delivery and excellent service!" – Juan, Makati</p>
             </div>
             <div class="review">
-                <p>⭐️⭐️⭐️⭐️⭐️ "Arrived fresh & crispy! Will definitely order again." - Jessica, Quezon City</p>
+                <p>⭐️⭐️⭐️⭐️⭐️ "I love the balance of tradition and modernity in every dish. Highly recommended for a taste of home." – Jessica, Quezon City</p>
             </div>
         </div>
     </section>
@@ -92,12 +84,18 @@
         </div>
     </section>
 
+    <!-- Dynamic Footer (handled via separate JS: js/footer.js) -->
+    <footer id="footer-placeholder"></footer>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/15202008427" class="whatsapp-button">📲 Order via WhatsApp</a>
 
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("nav-menu").classList.toggle("hidden");
+        // Mobile menu toggle functionality (if needed in header)
+        document.getElementById("menu-toggle")?.addEventListener("click", function() {
+            document.getElementById("nav-menu")?.classList.toggle("hidden");
         });
     </script>
 </body>
