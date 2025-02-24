@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Dynamically load header.css from src/css/header.css if not already loaded
-  if (!document.querySelector('link[href="src/css/header.css"]')) {
+  if (!document.querySelector('link[href="/src/css/header.css"]')) {
     const headerCSSLink = document.createElement("link");
     headerCSSLink.rel = "stylesheet";
-    headerCSSLink.href = "src/css/header.css";
+    headerCSSLink.href = "/src/css/header.css";
     document.head.appendChild(headerCSSLink);
   }
 
