@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Debug: Log to confirm the DOM is loaded and script is running
+    console.log("Header script loaded: DOMContentLoaded fired.");
+
     const headerHTML = `
         <header>
             <div class="container">
@@ -19,4 +22,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Insert the header into the page
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
+    console.log("Header HTML inserted into the DOM.");
 });
