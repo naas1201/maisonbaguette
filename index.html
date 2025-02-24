@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baguette Maison - Authentic Parisian Flavors in Manila</title>
+  <title>Baguette Maison - Taste Paris in Manila</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Baguette Maison brings authentic Parisian sandwiches and beverages to Manila. Enjoy limited edition French Sushi™ and Americano Coffee French Press 22oz now!">
-  <meta name="keywords" content="French Sandwich, French Sushi™, Americano Coffee, Parisian Flavors, Manila, Baguette Maison">
+  <meta name="description" content="Experience the authentic taste of Paris in Manila with freshly crafted French delights. Fast, secure, and designed with you in mind.">
+  <meta name="keywords" content="French Cuisine, Authentic Paris, French Sushi™, Fast Delivery, Manila">
   <meta name="author" content="Baguette Maison">
   
   <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="Baguette Maison - Authentic Parisian Flavors in Manila">
-  <meta property="og:description" content="Indulge in French Sushi™ and the perfect Americano Coffee French Press 22oz. Order now for fast delivery!">
+  <meta property="og:title" content="Baguette Maison - Taste Paris in Manila">
+  <meta property="og:description" content="Craving a slice of Paris? Enjoy our signature French Sushi™ and gourmet delights, crafted for busy Manila food lovers." >
   <meta property="og:image" content="/images/social-preview.jpg">
   <meta property="og:url" content="https://baguettemaison.com">
   <meta property="og:type" content="website">
@@ -24,35 +24,157 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <!-- Custom Complementary CSS for Responsive Images and Icons -->
+  <!-- Custom Complementary CSS for Responsive Images and Conversion-Focused Layout -->
   <style>
-    /* General rule for all images */
+    /* Global responsive image handling */
     img {
       max-width: 100%;
       height: auto;
       display: block;
     }
     
-    /* Ensure icons in feature cards are scaled appropriately */
-    .feature-card img {
-      max-width: 80px;
-      margin: 0 auto;
+    /* Hero section styling */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f8f8f8;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      line-height: 1.5;
+      margin-bottom: 30px;
     }
     
-    /* Trusted logos styling */
+    /* Call-to-action button styling */
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .cta-button.primary {
+      background: #d62828;
+      color: #fff;
+    }
+    .cta-button.primary:hover {
+      background: #b22222;
+    }
+    .cta-button.secondary {
+      background: #f4f4f4;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .cta-button.secondary:hover {
+      background: #e2e2e2;
+    }
+    
+    /* Assurance text styling */
+    .assurance {
+      font-size: 0.9em;
+      color: #555;
+    }
+    
+    /* Trusted by section styling */
+    .trusted-by {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .trusted-by h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
     .trusted-by .logos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
     .trusted-by .logos img {
       max-width: 150px;
       width: 100%;
-      height: auto;
     }
     
-    /* Payment icons styling */
+    /* Features section styling */
+    .features {
+      background: #fff;
+      padding: 50px 20px;
+    }
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .feature-card {
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feature-card img {
+      max-width: 80px;
+      margin: 0 auto 15px;
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.95em;
+      color: #666;
+    }
+    
+    /* Customer reviews styling */
+    .customer-reviews {
+      padding: 50px 20px;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .customer-reviews h2 {
+      margin-bottom: 30px;
+      font-size: 1.8em;
+    }
+    .review-slider {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .review p {
+      font-size: 1.1em;
+      line-height: 1.4;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Secure payment section styling */
+    .secure-payment {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .secure-payment h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
     .payment-icons {
       display: flex;
       flex-wrap: wrap;
@@ -61,22 +183,24 @@
     }
     .payment-icons img {
       max-width: 80px;
-      width: auto;
-      height: auto;
     }
     
-    /* Features section container styling */
-    .features-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+    /* Floating WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 1em;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
     }
-    
-    /* For better spacing in the hero section */
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
+    .whatsapp-button:hover {
+      background: #1ebe57;
     }
   </style>
 </head>
@@ -84,80 +208,89 @@
   <!-- Dynamic Header -->
   <header id="header-placeholder"></header>
   
-  <!-- Hero Section -->
+  <!-- Hero Section: Hook & Empathy -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Experience Authentic Parisian Flavors in Manila</h1>
-      <p>Indulge in our limited edition <strong>French Sushi™</strong> and savor the perfect Americano Coffee French Press 22oz – crafted with passion and delivered with speed.</p>
+      <h1>Taste Authentic Parisian Flavors in Manila – Made Just for You!</h1>
+      <p>
+        We understand your time is precious and your cravings deserve the very best. That’s why at Baguette Maison, we craft every bite—from our signature French Sushi™ to our freshly baked baguettes—to deliver an unmistakable Parisian experience right here in Manila.
+      </p>
+      <ul style="list-style: none; padding: 0; margin: 20px 0; font-size: 1.1em; color: #333;">
+        <li>✔ Fast & Reliable Delivery</li>
+        <li>✔ 100% Secure and Confidential Orders</li>
+        <li>✔ Authentic, Gourmet Quality</li>
+      </ul>
       <div class="cta-group">
-        <a href="https://wa.me/15202008427" class="cta-button primary">Order Directly Now</a>
-        <a href="pages/menu.html" class="cta-button secondary">View Full Menu</a>
+        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Experience Authentic Flavors">Order Now – Enjoy Paris in a Bite</a>
+        <a href="pages/menu.html" class="cta-button secondary" aria-label="View Our Full Menu">View Full Menu</a>
       </div>
-      <p class="assurance">No obligation • Secure & Confidential • Fast Delivery</p>
+      <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
     </div>
   </section>
   
-  <!-- Trusted By Section -->
+  <!-- Trusted By Section: Social Proof & Security -->
   <section class="trusted-by">
     <h2>Trusted by French Expats & Manila Food Lovers</h2>
     <div class="logos">
       <img src="/images/french-expats-logo.png" alt="French Expats Community">
       <img src="/images/foodies-logo.png" alt="Food Enthusiasts">
     </div>
+    <p style="margin-top: 20px; font-size: 1em; color: #555;">Join hundreds of satisfied customers who trust us for an authentic Parisian experience.</p>
   </section>
   
-  <!-- Features Section -->
+  <!-- Features Section: Simplified Solutions & Key Benefits -->
   <section class="features">
     <div class="features-container">
       <div class="feature-card">
         <img src="/images/fresh-baguette-icon.png" alt="Freshly Baked">
-        <h3>Authentic & Fresh</h3>
-        <p>Handcrafted using traditional French recipes for a genuine taste of Paris.</p>
+        <h3>Fresh & Authentic</h3>
+        <p>Enjoy gourmet French flavors crafted with traditional recipes, ensuring every bite transports you straight to Paris.</p>
       </div>
       <div class="feature-card">
         <img src="/images/delivery-icon.png" alt="Fast Delivery">
-        <h3>Quick & Reliable</h3>
-        <p>Enjoy prompt delivery designed for Manila’s fast-paced lifestyle.</p>
+        <h3>Speedy Delivery</h3>
+        <p>Our efficient service guarantees your order reaches you quickly—perfect for busy lifestyles.</p>
       </div>
       <div class="feature-card">
         <img src="/images/security-icon.png" alt="Secure Payments">
         <h3>Safe & Secure</h3>
-        <p>Multiple secure payment options ensure a hassle-free experience.</p>
+        <p>Your trust is our priority. We offer multiple secure payment options and ensure a confidential ordering process.</p>
       </div>
     </div>
   </section>
   
-  <!-- Customer Reviews -->
+  <!-- Customer Reviews: Trust & Social Proof -->
   <section class="customer-reviews">
-    <h2>What Our Customers Say</h2>
+    <h2>Real Feedback from Satisfied Customers</h2>
     <div class="review-slider">
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "The French Sushi™ is a taste of Paris in every bite. Reliable and delicious—I order every week!" – Marie, French Expat</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "Baguette Maison delivers a genuine taste of Paris—fresh, delicious, and reliable. My go-to for a gourmet treat in Manila!" – Marie, French Expat</p>
       </div>
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "From the first bite, I knew this was genuine Parisian quality. Fast delivery and excellent service!" – Juan, Makati</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "From the impeccable quality to the fast delivery, every experience has been exceptional. I highly recommend them." – Juan, Makati</p>
       </div>
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "I love the balance of tradition and modernity in every dish. Highly recommended for a taste of home." – Jessica, Quezon City</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "The perfect blend of authenticity and modern convenience. Every bite reminds me of home, with zero compromise on quality." – Jessica, Quezon City</p>
       </div>
     </div>
   </section>
   
-  <!-- Secure Payment Section -->
+  <!-- Secure Payment Section: Reassurance -->
   <section class="secure-payment">
-    <h2>Secure & Easy Payment</h2>
+    <h2>Your Order is 100% Secure</h2>
     <div class="payment-icons">
-      <img src="/images/gcash-icon.png" alt="GCash">
-      <img src="/images/bank-transfer-icon.png" alt="Bank Transfer">
+      <img src="/images/gcash-icon.png" alt="GCash Secure Payment">
+      <img src="/images/bank-transfer-icon.png" alt="Bank Transfer Secure">
       <img src="/images/cod-icon.png" alt="Cash on Delivery">
     </div>
+    <p style="margin-top: 15px; font-size: 1em; color: #555;">Multiple trusted payment methods for your peace of mind.</p>
   </section>
   
   <!-- Dynamic Footer -->
   <footer id="footer-placeholder"></footer>
   
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Order via WhatsApp</a>
+  <!-- Floating WhatsApp Button: Quick Access -->
+  <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Chat & Order</a>
   
   <!-- Scripts -->
   <script src="src/js/header.js" defer></script>
