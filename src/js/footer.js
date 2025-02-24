@@ -4,7 +4,7 @@
     if (!document.querySelector('link[href="src/css/footer.css"]')) {
       const footerCSSLink = document.createElement("link");
       footerCSSLink.rel = "stylesheet";
-      footerCSSLink.href = "src/css/footer.css";
+      footerCSSLink.href = "/src/css/footer.css";
       document.head.appendChild(footerCSSLink);
     }
   };
