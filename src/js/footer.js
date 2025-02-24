@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="footer-brand">
                     <h2>Baguette Maison FOOD OPC</h2>
                     <p><strong>French Sushi™</strong></p>
-                    <p>Belongs to LPP Inc. - FR40981307655</p>
+                    <p>Subsidiary of LPP Inc. - FR40981307655</p>
                 </div>
                 
                 <nav class="footer-nav">
