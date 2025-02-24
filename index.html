@@ -23,6 +23,62 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Custom Complementary CSS for Responsive Images and Icons -->
+  <style>
+    /* General rule for all images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Ensure icons in feature cards are scaled appropriately */
+    .feature-card img {
+      max-width: 80px;
+      margin: 0 auto;
+    }
+    
+    /* Trusted logos styling */
+    .trusted-by .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .trusted-by .logos img {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Payment icons styling */
+    .payment-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .payment-icons img {
+      max-width: 80px;
+      width: auto;
+      height: auto;
+    }
+    
+    /* Features section container styling */
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    /* For better spacing in the hero section */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Dynamic Header -->
