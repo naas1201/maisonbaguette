@@ -3,146 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Culinary Excellence - The Baguette Maison</title>
+  <title>The Baguette Maison – French Culinary Excellence</title>
   <style>
-    /* Reset & Base Styles */
+    /* Base Reset & Typography */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      background-color: #f9f9f9;
+      background: #f4f4f4;
       color: #333;
     }
-    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Container */
     .container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
       padding: 20px;
     }
-    
-    h1, h2, h3 {
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    
-    p {
-      margin: 10px 0;
-    }
-    
-    /* Menu Item Card */
-    .menu-item {
-      background-color: #fff;
-      padding: 20px;
+    /* Dynamic Header Placeholder */
+    header#dynamic-header {
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    
-    .menu-item h2 {
-      font-size: 1.5em;
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 30px 15px;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: #fff;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .hero h1 {
+      font-size: 2em;
       margin-bottom: 10px;
     }
-    
+    .hero p {
+      font-size: 1.1em;
+    }
+    /* Trust Indicators */
+    .trust {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.95em;
+      color: #555;
+    }
+    .trust span {
+      background: #e7f5e1;
+      color: #2a7a2a;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin: 0 5px;
+      font-weight: bold;
+    }
+    /* Menu Items */
+    .menu-item {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .menu-item .content {
+      padding: 20px;
+    }
+    .menu-item h2 {
+      font-size: 1.75em;
+      margin-bottom: 10px;
+      color: #ee0979;
+    }
+    .menu-item p {
+      margin: 8px 0;
+    }
     .menu-item ul {
       list-style: disc;
       margin-left: 20px;
       margin-bottom: 10px;
     }
-    
-    /* CTA Section */
-    .cta {
+    .allergens {
+      background: #fff6f6;
+      border-left: 4px solid #ee0979;
+      padding: 10px 15px;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+    /* CTA Buttons */
+    .cta-buttons {
       text-align: center;
-      margin: 40px 0;
+      margin: 30px 0;
     }
-    
-    .cta h2 {
-      font-size: 1.75em;
-      margin-bottom: 20px;
-    }
-    
-    .btn {
+    .cta-buttons a {
       display: inline-block;
-      padding: 12px 24px;
-      margin: 5px;
+      margin: 10px;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 30px;
       background: linear-gradient(90deg, #ff6a00, #ee0979);
       color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
       transition: background 0.3s ease, transform 0.2s ease;
     }
-    
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    .cta-buttons a:hover {
+      transform: translateY(-3px);
+      opacity: 0.95;
     }
-    
-    /* Mobile-Friendly Adjustments */
+    /* Mobile Responsiveness */
     @media (max-width: 600px) {
-      .menu-item {
-        padding: 15px;
+      .hero h1 {
+        font-size: 1.8em;
       }
-      .cta h2 {
+      .menu-item h2 {
         font-size: 1.5em;
       }
-      .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+      .cta-buttons a {
+        padding: 12px 20px;
+        font-size: 1em;
       }
+    }
+    /* Dynamic Footer Placeholder */
+    footer#dynamic-footer {
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <!-- Dynamic Header -->
-  <header id="dynamic-header"></header>
+  <header id="dynamic-header">
+    <!-- Header content loaded dynamically by header.js -->
+    <h3>The Baguette Maison</h3>
+  </header>
   
-  <main class="container">
-    <section class="intro">
-      <h1>Discover French Culinary Excellence</h1>
-      <p>Experience a taste of France with our exclusive gourmet offerings, crafted to deliver authentic flavors and complete transparency.</p>
+  <div class="container">
+    <!-- Hero Section with Hook -->
+    <section class="hero">
+      <h1>Experience Authentic French Flavors</h1>
+      <p>Delight in our curated menu—crafted for purity, taste, and complete allergen transparency.</p>
     </section>
     
+    <!-- Trust Indicators -->
+    <div class="trust">
+      Trusted by <span>500+ happy customers</span> &amp; recommended by leading gourmet critics.
+    </div>
+    
+    <!-- Menu Section -->
     <section class="menu">
       <!-- French Sushi™ -->
       <div class="menu-item">
-        <h2>French Sushi™</h2>
-        <p>A gourmet fusion featuring:</p>
-        <ul>
-          <li>Artisanal French-made bread (Gluten)</li>
-          <li>Butcher-cooked ham</li>
-          <li>President butter (Dairy)</li>
-          <li>Pickles</li>
-          <li>Signature mayonnaise (Egg)</li>
-        </ul>
-        <p><strong>Allergen Information:</strong> Contains gluten, dairy, and egg.</p>
-        <p><strong>Why You'll Love It:</strong> Enjoy meticulously prepared ingredients with authentic French flavor and complete ingredient transparency.</p>
+        <div class="content">
+          <h2>French Sushi™</h2>
+          <p>Enjoy our gourmet fusion: artisanal French bread, premium butcher-cooked ham, luscious President butter, tangy pickles, and our signature mayonnaise.</p>
+          <p><strong>Key Benefits:</strong></p>
+          <ul>
+            <li>Authentic French ingredients prepared with care</li>
+            <li>Complete allergen transparency</li>
+            <li>Expertly balanced flavors</li>
+          </ul>
+          <div class="allergens">
+            <strong>Allergen Information:</strong> Contains <em>Gluten</em> (bread), <em>Dairy</em> (butter), and <em>Egg</em> (mayonnaise).
+          </div>
+          <p><strong>Your Advantage:</strong> Every bite delivers quality and trust, ensuring a safe dining experience.</p>
+        </div>
       </div>
       
       <!-- French Press Brewed Americano Coffee of the Day -->
       <div class="menu-item">
-        <h2>French Press Brewed Americano Coffee of the Day</h2>
-        <p>Savor the robust taste of freshly brewed Americano, prepared without sugar or additives.</p>
-        <p><strong>Allergen Information:</strong> Allergen-free for a worry-free indulgence.</p>
-        <p><strong>Why You'll Love It:</strong> Experience pure coffee excellence, brewed daily for a consistent, premium cup.</p>
+        <div class="content">
+          <h2>French Press Brewed Americano Coffee of the Day</h2>
+          <p>Savor the robust, pure taste of freshly brewed Americano—crafted without sugar or additives.</p>
+          <p><strong>Key Benefits:</strong></p>
+          <ul>
+            <li>Pure, unadulterated coffee flavor</li>
+            <li>Consistently brewed daily for premium quality</li>
+            <li>Worry-free enjoyment with no allergens</li>
+          </ul>
+          <div class="allergens">
+            <strong>Allergen Information:</strong> This beverage is completely <em>allergen-free</em>.
+          </div>
+          <p><strong>Your Advantage:</strong> Enjoy a refined coffee experience designed for purity and satisfaction.</p>
+        </div>
       </div>
     </section>
     
     <!-- CTA Section -->
-    <section class="cta">
-      <h2>Ready to Savor the Taste of France?</h2>
-      <p>Order now through our secure channels and enjoy an unparalleled gourmet experience.</p>
-      <a href="https://wa.me/15202008427" class="btn" target="_blank">Order via WhatsApp</a>
-      <a href="https://instagram.com/thebaguettemaison" class="btn" target="_blank">Order via Instagram</a>
+    <section class="cta-buttons">
+      <h2>Ready to Order?</h2>
+      <p>Secure your taste of France with our simple, one-click ordering. No obligation &amp; 100% satisfaction guaranteed.</p>
+      <a href="https://wa.me/15202008427" target="_blank">Order via WhatsApp</a>
+      <a href="https://instagram.com/thebaguettemaison" target="_blank">Order via Instagram</a>
     </section>
-  </main>
+  </div>
   
   <!-- Dynamic Footer -->
-  <footer id="dynamic-footer"></footer>
+  <footer id="dynamic-footer">
+    <!-- Footer content loaded dynamically by footer.js -->
+    <p>&copy; 2025 The Baguette Maison. Secure &amp; Confidential | 30-Day Satisfaction Guarantee</p>
+  </footer>
   
   <!-- Scripts -->
   <script src="src/js/header.js" defer></script>
