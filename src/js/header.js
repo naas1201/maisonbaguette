@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <header>
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="/"><img src="src/images/logo.png" alt="Baguette Maison Logo"></a>
+                    <a href="/"><img src="/images/logo.png" alt="Baguette Maison Logo"></a>
                 </div>
                 <nav class="main-nav">
                     <ul>
