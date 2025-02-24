@@ -24,11 +24,15 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <!-- Custom Complementary CSS: Modified Backgrounds Only -->
+  <!-- Custom Complementary CSS: Enhanced Contrast -->
   <style>
-    /* Set a dark overall background for the page */
+    /* Global body styling */
     body {
       background-color: #121212;
+      color: #e0e0e0;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
     }
     
     /* Global responsive image handling */
@@ -42,19 +46,28 @@
     .hero {
       text-align: center;
       padding: 50px 20px;
-      background: #1f1f1f; /* Modified from #f8f8f8 */
+      background: #1f1f1f;
     }
     .hero h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
+      color: #ffffff;
     }
     .hero p {
       font-size: 1.2em;
       line-height: 1.5;
       margin-bottom: 30px;
+      color: #cccccc;
+    }
+    .hero ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #dddddd; /* Lighter text for visibility */
     }
     
-    /* Call-to-action button styling remains unchanged */
+    /* Call-to-action button styling */
     .cta-group {
       display: flex;
       justify-content: center;
@@ -88,13 +101,13 @@
       background: #e2e2e2;
     }
     
-    /* Assurance text styling remains unchanged */
+    /* Assurance text styling */
     .assurance {
       font-size: 0.9em;
-      color: #555;
+      color: #bbbbbb;
     }
     
-    /* Trusted by section styling: Added background */
+    /* Trusted by section styling */
     .trusted-by {
       text-align: center;
       padding: 40px 20px;
@@ -103,6 +116,7 @@
     .trusted-by h2 {
       margin-bottom: 20px;
       font-size: 1.8em;
+      color: #ffffff;
     }
     .trusted-by .logos {
       display: flex;
@@ -114,10 +128,15 @@
       max-width: 150px;
       width: 100%;
     }
+    .trusted-by p {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #dddddd;
+    }
     
-    /* Features section styling: Modified backgrounds */
+    /* Features section styling */
     .features {
-      background: #2c2c2c; /* Modified from white (#fff) */
+      background: #2c2c2c;
       padding: 50px 20px;
     }
     .features-container {
@@ -127,7 +146,7 @@
       gap: 30px;
     }
     .feature-card {
-      background: #3a3a3a; /* Modified from #f8f8f8 */
+      background: #3a3a3a;
       border-radius: 8px;
       padding: 20px;
       max-width: 300px;
@@ -140,21 +159,23 @@
     }
     .feature-card h3 {
       margin-bottom: 10px;
+      color: #ffffff;
     }
     .feature-card p {
       font-size: 0.95em;
-      color: #666;
+      color: #cccccc;
     }
     
-    /* Customer reviews styling: Modified background */
+    /* Customer reviews styling */
     .customer-reviews {
       padding: 50px 20px;
-      background: #1f1f1f; /* Modified from #f0f0f0 */
+      background: #1f1f1f;
       text-align: center;
     }
     .customer-reviews h2 {
       margin-bottom: 30px;
       font-size: 1.8em;
+      color: #ffffff;
     }
     .review-slider {
       display: flex;
@@ -166,13 +187,14 @@
     .review p {
       font-size: 1.1em;
       line-height: 1.4;
-      background: #fff;
+      background: #ffffff;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: #333333;
     }
     
-    /* Secure payment section styling: Added background */
+    /* Secure payment section styling */
     .secure-payment {
       text-align: center;
       padding: 40px 20px;
@@ -181,6 +203,7 @@
     .secure-payment h2 {
       margin-bottom: 20px;
       font-size: 1.8em;
+      color: #ffffff;
     }
     .payment-icons {
       display: flex;
@@ -191,8 +214,13 @@
     .payment-icons img {
       max-width: 80px;
     }
+    .secure-payment p {
+      margin-top: 15px;
+      font-size: 1em;
+      color: #dddddd;
+    }
     
-    /* Floating WhatsApp Button remains unchanged */
+    /* Floating WhatsApp Button */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -222,14 +250,14 @@
       <p>
         We understand your time is precious and your cravings deserve the very best. That’s why at Baguette Maison, we craft every bite—from our signature French Sushi™ to our freshly brewed coffee—to deliver an unmistakable Parisian experience right here in Manila.
       </p>
-      <ul style="list-style: none; padding: 0; margin: 20px 0; font-size: 1.1em; color: #333;">
+      <ul>
         <li>✔ Fast & Reliable Delivery</li>
         <li>✔ 100% Secure and Confidential Orders</li>
         <li>✔ Authentic, Gourmet Quality</li>
       </ul>
       <div class="cta-group">
         <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Experience Authentic Flavors">Order Now – Enjoy Paris in a Bite</a>
-        <a href="/pages/menu.html" class="cta-button secondary" aria-label="View Our Full Menu">View Full Menu</a>
+        <a href="pages/menu.html" class="cta-button secondary" aria-label="View Our Full Menu">View Full Menu</a>
       </div>
       <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
     </div>
@@ -242,7 +270,7 @@
       <img src="/images/french-expats-logo.png" alt="French Expats Community">
       <img src="/images/foodies-logo.png" alt="Food Enthusiasts">
     </div>
-    <p style="margin-top: 20px; font-size: 1em; color: #555;">Join hundreds of satisfied customers who trust us for an authentic Parisian experience.</p>
+    <p>Join hundreds of satisfied customers who trust us for an authentic Parisian experience.</p>
   </section>
   
   <!-- Features Section: Simplified Solutions & Key Benefits -->
@@ -290,7 +318,7 @@
       <img src="/images/bank-transfer-icon.png" alt="Bank Transfer Secure">
       <img src="/images/cod-icon.png" alt="Cash on Delivery">
     </div>
-    <p style="margin-top: 15px; font-size: 1em; color: #555;">Multiple trusted payment methods for your peace of mind.</p>
+    <p>Multiple trusted payment methods for your peace of mind.</p>
   </section>
   
   <!-- Dynamic Footer -->
