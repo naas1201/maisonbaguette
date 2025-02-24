@@ -1,46 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Baguette Maison</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Culinary Excellence - The Baguette Maison</title>
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1, h2, h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 10px 0;
+    }
+    
+    /* Menu Item Card */
+    .menu-item {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .menu-item h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    
+    .menu-item ul {
+      list-style: disc;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    /* CTA Section */
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta h2 {
+      font-size: 1.75em;
+      margin-bottom: 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 5px;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    
+    /* Mobile-Friendly Adjustments */
+    @media (max-width: 600px) {
+      .menu-item {
+        padding: 15px;
+      }
+      .cta h2 {
+        font-size: 1.5em;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Dynamic Header -->
-    <header id="header-placeholder"></header>
-
-    <!-- Menu Section -->
-    <section class="menu">
-        <div class="container">
-            <h1 class="menu-title">Our Signature Menu</h1>
-            
-            <div class="menu-item">
-                <img src="images/sushi.png" alt="French Sushi™" class="menu-img">
-                <div class="menu-info">
-                    <h2>🥖 French Bites (French Sushi™)</h2>
-                    <p>Toasted baguette bites with premium butter, ham, pickles & creamy mayonnaise.</p>
-                    <p class="price">₱50 per piece</p>
-                    <a href="https://wa.me/15202008427" class="cta-button">Order Now</a>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img src="images/americano.jpg" alt="Americano Coffee" class="menu-img">
-                <div class="menu-info">
-                    <h2>☕ Americano Coffee (French Press 22oz)</h2>
-                    <p>Freshly brewed upon order – premium French Roast, bold and rich flavor.</p>
-                    <p class="price">₱120</p>
-                    <a href="https://wa.me/15202008427" class="cta-button">Get Your Coffee</a>
-                </div>
-            </div>
-        </div>
+  <!-- Dynamic Header -->
+  <header id="dynamic-header"></header>
+  
+  <main class="container">
+    <section class="intro">
+      <h1>Discover French Culinary Excellence</h1>
+      <p>Experience a taste of France with our exclusive gourmet offerings, crafted to deliver authentic flavors and complete transparency.</p>
     </section>
-
-    <!-- Dynamic Footer -->
-    <footer id="footer-placeholder"></footer>
-
-    <script src="src/js/header.js"></script>
-    <script src="src/js/footer.js"></script>
+    
+    <section class="menu">
+      <!-- French Sushi™ -->
+      <div class="menu-item">
+        <h2>French Sushi™</h2>
+        <p>A gourmet fusion featuring:</p>
+        <ul>
+          <li>Artisanal French-made bread (Gluten)</li>
+          <li>Butcher-cooked ham</li>
+          <li>President butter (Dairy)</li>
+          <li>Pickles</li>
+          <li>Signature mayonnaise (Egg)</li>
+        </ul>
+        <p><strong>Allergen Information:</strong> Contains gluten, dairy, and egg.</p>
+        <p><strong>Why You'll Love It:</strong> Enjoy meticulously prepared ingredients with authentic French flavor and complete ingredient transparency.</p>
+      </div>
+      
+      <!-- French Press Brewed Americano Coffee of the Day -->
+      <div class="menu-item">
+        <h2>French Press Brewed Americano Coffee of the Day</h2>
+        <p>Savor the robust taste of freshly brewed Americano, prepared without sugar or additives.</p>
+        <p><strong>Allergen Information:</strong> Allergen-free for a worry-free indulgence.</p>
+        <p><strong>Why You'll Love It:</strong> Experience pure coffee excellence, brewed daily for a consistent, premium cup.</p>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+      <h2>Ready to Savor the Taste of France?</h2>
+      <p>Order now through our secure channels and enjoy an unparalleled gourmet experience.</p>
+      <a href="https://wa.me/15202008427" class="btn" target="_blank">Order via WhatsApp</a>
+      <a href="https://instagram.com/thebaguettemaison" class="btn" target="_blank">Order via Instagram</a>
+    </section>
+  </main>
+  
+  <!-- Dynamic Footer -->
+  <footer id="dynamic-footer"></footer>
+  
+  <!-- Scripts -->
+  <script src="src/js/header.js" defer></script>
+  <script src="src/js/footer.js" defer></script>
+  <script src="src/js/script.js" defer></script>
 </body>
 </html>
