@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Load Header and Footer from HTML files
-    loadComponent("header", "/src/components/header.html");
-    loadComponent("footer", "/src/components/footer.html");
+    loadHTML("/src/components/header.html", "header");
+    loadHTML("/src/components/footer.html", "footer");
 
     // Mobile Menu Toggle
     document.addEventListener("click", function (event) {
@@ -24,18 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Utility Function to Load External HTML Components
-    function loadComponent(id, file) {
+    // Function to load external HTML components
+    function loadHTML(file, elementId) {
         fetch(file)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${file}`);
-                }
+                if (!response.ok) throw new Error(`Failed to load ${file}`);
                 return response.text();
             })
-            .then(html => {
-                document.getElementById(id).innerHTML = html;
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
             })
-            .catch(error => console.error(error));
+            .catch(error => console.error("Error loading component:", error));
     }
 });
