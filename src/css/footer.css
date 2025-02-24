@@ -1,8 +1,10 @@
 footer {
-    background: #222;
+    background: #222; /* Keeping your original background */
     color: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
+    font-family: "Arial", sans-serif;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .footer-container {
@@ -12,12 +14,22 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* --- Footer Brand Section --- */
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
 }
 
 .footer-brand h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ff6600;
 }
 
 .footer-brand p {
@@ -25,59 +37,101 @@ footer {
     opacity: 0.8;
 }
 
+/* --- Footer Navigation --- */
+.footer-nav {
+    flex: 1;
+    min-width: 250px;
+}
+
 .footer-nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-nav ul li {
-    display: inline;
+    display: inline-block;
 }
 
 .footer-nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
-    transition: opacity 0.3s ease-in-out;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-nav ul li a:hover {
-    opacity: 0.6;
+    color: #ff6600;
 }
 
-.footer-contact {
+/* --- Call-To-Action Section --- */
+.footer-cta {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer-cta .cta-btn {
+    background: #ff6600;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    display: inline-block;
     margin-top: 10px;
 }
 
+.footer-cta .cta-btn:hover {
+    background: #e55b00;
+    transform: scale(1.05);
+}
+
+/* --- Contact Email Button --- */
+.footer-contact {
+    text-align: center;
+    margin-top: 15px;
+}
+
 .email-btn {
+    background: linear-gradient(135deg, #ff4d4d, #d12f2f);
     color: #fff;
     font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
-    background: #d12f2f;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 6px;
     display: inline-block;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .email-btn:hover {
-    background: #a02020;
+    background: linear-gradient(135deg, #a02020, #7a1616);
+    transform: scale(1.05);
 }
 
-/* Responsive */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
+
     .footer-nav ul {
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
     }
+
     .email-btn {
         font-size: 14px;
-        padding: 6px 12px;
+        padding: 8px 14px;
     }
 }
