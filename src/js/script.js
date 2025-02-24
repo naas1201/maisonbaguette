@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Load Header and Footer from HTML files
-    loadHTML("/src/components/header.html", "header");
-    loadHTML("/src/components/footer.html", "footer");
+    loadHTML("/header.html", "header");
+    loadHTML("/footer.html", "footer");
 
     // Mobile Menu Toggle
     document.addEventListener("click", function (event) {
