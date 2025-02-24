@@ -14,6 +14,7 @@ body {
 
 h1, h2, h3 {
     font-weight: 600;
+    text-align: center;
 }
 
 /* Header */
@@ -74,17 +75,45 @@ header {
     color: white;
 }
 
+.assurance {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Trusted By Section */
+.trusted-by {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.small-logo {
+    width: 100px;
+    height: auto;
+}
+
 /* Features Section */
 .features-container {
     display: flex;
     justify-content: space-around;
     padding: 50px 20px;
     background: #fff;
+    flex-wrap: wrap;
 }
 
 .feature-card {
     text-align: center;
     max-width: 300px;
+    padding: 20px;
 }
 
 .icon-small {
@@ -97,6 +126,7 @@ header {
 .customer-reviews {
     text-align: center;
     padding: 50px 20px;
+    background: #f8f8f8;
 }
 
 .review-slider {
@@ -104,6 +134,7 @@ header {
     overflow-x: auto;
     gap: 20px;
     padding: 10px;
+    scroll-snap-type: x mandatory;
 }
 
 .review {
@@ -112,6 +143,8 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
 }
 
 /* Secure Payment Section */
@@ -122,9 +155,17 @@ header {
     padding: 40px 20px;
 }
 
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
 .payment-icons img {
     width: 60px;
-    margin: 10px;
+    height: auto;
 }
 
 /* Footer */
@@ -135,58 +176,23 @@ footer {
     color: white;
 }
 
-/* Menu Page Styles */
-.menu-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.menu-item {
-    background: #fff;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.menu-item h3 {
-    margin-top: 10px;
-    font-size: 1.5rem;
-}
-
-.menu-item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.menu-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.order-button {
-    display: inline-block;
-    background: #ff6b6b;
+/* Floating WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
     color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 50px;
     text-decoration: none;
-    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease;
 }
 
-.order-button:hover {
-    background: #ff4f4f;
+.whatsapp-button:hover {
+    background: #1EBE5D;
 }
 
 /* Responsive Design */
@@ -195,7 +201,15 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    .menu-container {
-        padding: 20px;
+
+    .carousel {
+        flex-direction: column;
+    }
+
+    .whatsapp-button {
+        font-size: 1rem;
+        padding: 8px 12px;
+        bottom: 15px;
+        right: 15px;
     }
 }
