@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Load Header and Footer
-    loadComponent("header", "src/js/header.html");
-    loadComponent("footer", "src/js/footer.html");
+    // Load Header and Footer from .js files
+    loadScript("src/js/header.js");
+    loadScript("src/js/footer.js");
 
     // Mobile Menu Toggle
     document.addEventListener("click", function (event) {
@@ -24,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Utility Function to Load External Components
-    function loadComponent(tag, filePath) {
-        fetch(filePath)
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector(tag).innerHTML = data;
-            })
-            .catch(error => console.error(`Error loading ${filePath}:`, error));
+    // Utility Function to Load External JS Components
+    function loadScript(scriptPath) {
+        const script = document.createElement("script");
+        script.src = scriptPath;
+        script.defer = true;
+        document.body.appendChild(script);
     }
 });
