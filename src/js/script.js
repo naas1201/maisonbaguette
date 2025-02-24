@@ -1,15 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Load Header and Footer from HTML files
-    loadHTML("/header.html", "header");
-    loadHTML("/footer.html", "footer");
+document.addEventListener('DOMContentLoaded', function() {
+    // Load header
+    fetch('/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header.html:', error));
 
-    // Mobile Menu Toggle
-    document.addEventListener("click", function (event) {
-        if (event.target.matches(".menu-toggle")) {
-            document.querySelector(".nav-links").classList.toggle("active");
-        }
-    });
-
+    // Load footer
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer.html:', error));
+});
     // Smooth Scroll for Anchor Links
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
