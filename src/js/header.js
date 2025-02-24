@@ -20,31 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
             <style>
-                /* Mobile-first Styles */
+                /* Overall header styling */
                 header {
                     width: 100%;
                     background: #fff;
                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                     padding: 10px 5%;
                 }
+                /* Always horizontal layout */
                 .header-wrapper {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     align-items: center;
+                    justify-content: space-between;
                     gap: 15px;
                 }
+                /* Logo settings */
                 .logo img {
                     max-width: 140px;
                     height: auto;
                 }
+                /* Navigation styling (always horizontal) */
                 .main-nav ul {
                     list-style: none;
                     padding: 0;
                     margin: 0;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     align-items: center;
-                    gap: 10px;
+                    gap: 20px;
                 }
                 .main-nav ul li a {
                     text-decoration: none;
@@ -56,13 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 .main-nav ul li a:hover {
                     color: #ff6600;
                 }
+                /* CTA container aligned to the right */
                 .cta-container {
-                    text-align: center;
+                    text-align: right;
                 }
                 .header-tagline {
-                    font-size: 14px;
+                    font-size: 16px;
                     color: #555;
-                    margin: 0 0 5px;
+                    margin: 0 0 8px;
                     line-height: 1.3;
                 }
                 .cta-btn {
@@ -82,25 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     font-size: 12px;
                     color: #777;
                     margin-top: 5px;
-                }
-                /* Desktop Styles */
-                @media screen and (min-width: 768px) {
-                    .header-wrapper {
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: space-between;
-                    }
-                    .main-nav ul {
-                        flex-direction: row;
-                        gap: 20px;
-                    }
-                    .cta-container {
-                        text-align: right;
-                    }
-                    .header-tagline {
-                        font-size: 16px;
-                        margin: 0 0 8px;
-                    }
                 }
             </style>
         </header>
