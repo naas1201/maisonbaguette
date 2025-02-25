@@ -13,75 +13,60 @@
     }
     body {
       font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
     }
-    /* Header Container */
+    /* Header */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 20px;
+      background: #1a1a1a;
     }
     /* Logo */
-    .logo {
-      flex: 0 0 auto;
-    }
     .logo img {
-      max-height: 50px; /* Constrains the logo height */
+      max-height: 50px;
       width: auto;
     }
     /* Navigation */
-    .main-nav {
-      flex: 1;
-      text-align: center;
-    }
     .main-nav ul {
       list-style: none;
-      display: inline-flex;
+      display: flex;
       gap: 20px;
     }
     .main-nav a {
       text-decoration: none;
-      color: #333;
+      color: #fff;
       font-size: 16px;
       font-weight: bold;
+      transition: color 0.3s;
     }
-    /* CTA Container */
-    .cta-container {
-      flex: 0 0 auto;
-      text-align: right;
+    .main-nav a:hover {
+      color: #e63946;
     }
-    .header-tagline {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 5px;
-    }
+    /* CTA Button */
     .cta-btn {
-      padding: 8px 12px;
+      padding: 10px 15px;
       background: #e63946;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      transition: background 0.3s;
     }
-    .trust-text {
-      font-size: 12px;
-      color: #999;
-      margin-top: 5px;
+    .cta-btn:hover {
+      background: #b52e36;
     }
     /* Mobile Adjustments */
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       header {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
       }
       .main-nav ul {
-        gap: 10px;
-      }
-      .cta-container {
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
+        gap: 15px;
+        margin: 10px 0;
       }
     }
   </style>
@@ -99,11 +84,7 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="cta-container">
-      <p class="header-tagline">Experience Authentic Parisian Flavors – Fast, Secure & Trusted by 500+ Customers</p>
-      <a href="/order" class="cta-btn">Order Now</a>
-      <p class="trust-text">No obligation | Secure & Confidential</p>
-    </div>
+    <a href="/order" class="cta-btn">Get Your Baguette</a>
   </header>
 </body>
 </html>
