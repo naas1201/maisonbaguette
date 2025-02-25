@@ -1,14 +1,126 @@
-<footer>
-  <div class="footer-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baguette Maison</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+    }
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background: #1a1a1a;
+    }
+    .logo img {
+      max-height: 50px;
+      width: auto;
+    }
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .main-nav a:hover {
+      color: #e63946;
+    }
+    .cta-btn {
+      padding: 10px 15px;
+      background: #e63946;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover {
+      background: #b52e36;
+    }
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #333;
+    }
+    .footer-brand h2, .footer-brand p {
+      margin: 0;
+    }
+    .footer-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    .footer-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    .footer-nav a:hover {
+      color: #e63946;
+    }
+    .footer-contact a {
+      color: #e63946;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .main-nav ul, .footer-nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/"><img src="/images/logo.png" alt="Baguette Maison Logo"></a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="/order" class="cta-btn">Get Your Baguette</a>
+  </header>
+  <footer>
     <div class="footer-brand">
       <h2>Baguette Maison FOOD OPC</h2>
       <p><strong>French Sushi™</strong></p>
       <p>Subsidiary of LPP Inc. - FR40981307655</p>
-    </div>
-    <div class="footer-cta">
-      <p class="trust-indicator">Trusted by 500+ satisfied customers</p>
-      <a href="/order" class="cta-btn">Place Your Order Now</a>
-      <p class="security-note">No obligation | Secure &amp; Confidential</p>
     </div>
     <nav class="footer-nav">
       <ul>
@@ -19,7 +131,8 @@
       </ul>
     </nav>
     <div class="footer-contact">
-      <a href="mailto:info@baguettemaison.com" class="email-btn">✉️ info@baguettemaison.com</a>
+      <a href="mailto:info@baguettemaison.com">✉️ info@baguettemaison.com</a>
     </div>
-  </div>
-</footer>
+  </footer>
+</body>
+</html>
