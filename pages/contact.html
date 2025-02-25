@@ -1,10 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Baguette Maison</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .contact-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-intro, .contact-details, .contact-cta {
+            margin-bottom: 30px;
+        }
+        .contact-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-details li {
+            margin: 10px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #e63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #b52e36;
+        }
+        iframe {
+            width: 100%;
+            max-width: 640px;
+            height: 1215px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <header id="header"></header>
@@ -28,12 +72,17 @@
         <section class="contact-cta">
             <h2>Let's Talk</h2>
             <p>We value every customer and are here to answer any of your concerns. Don't hesitate to reach out!</p>
-            <a href="mailto:info@baguettemaison.com" class="cta-button primary-cta">Email Us Now</a>
+            <a href="mailto:info@baguettemaison.com" class="cta-button">Email Us Now</a>
+        </section>
+
+        <section class="contact-form">
+            <h2>Contact Form</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUKsNpKaRACQqjtSAucOMRKXpAp9F8cvf48Zpi6zHMVc9weQ/viewform?embedded=true">Loading…</iframe>
         </section>
     </main>
 
     <footer id="footer"></footer>
-
+    
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
 </body>
