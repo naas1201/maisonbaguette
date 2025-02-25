@@ -4,150 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Baguette Maison – French Culinary Excellence</title>
-  <style>
-    /* Base Reset & Typography */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
-    /* Dynamic Header Placeholder */
-    header#dynamic-header {
-      background: #fff;
-      padding: 10px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 30px 15px;
-      background: linear-gradient(135deg, #ff6a00, #ee0979);
-      color: #fff;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-    .hero h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.1em;
-    }
-    /* Trust Indicators */
-    .trust {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 0.95em;
-      color: #555;
-    }
-    .trust span {
-      background: #e7f5e1;
-      color: #2a7a2a;
-      padding: 5px 10px;
-      border-radius: 20px;
-      margin: 0 5px;
-      font-weight: bold;
-    }
-    /* Menu Items */
-    .menu-item {
-      background: #fff;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .menu-item .content {
-      padding: 20px;
-    }
-    .menu-item h2 {
-      font-size: 1.75em;
-      margin-bottom: 10px;
-      color: #ee0979;
-    }
-    .menu-item p {
-      margin: 8px 0;
-    }
-    .menu-item ul {
-      list-style: disc;
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-    .allergens {
-      background: #fff6f6;
-      border-left: 4px solid #ee0979;
-      padding: 10px 15px;
-      margin-top: 10px;
-      font-size: 0.95em;
-    }
-    /* CTA Buttons */
-    .cta-buttons {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      font-weight: bold;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #ff6a00, #ee0979);
-      color: #fff;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .cta-buttons a:hover {
-      transform: translateY(-3px);
-      opacity: 0.95;
-    }
-    /* Mobile Responsiveness */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .menu-item h2 {
-        font-size: 1.5em;
-      }
-      .cta-buttons a {
-        padding: 12px 20px;
-        font-size: 1em;
-      }
-    }
-    /* Dynamic Footer Placeholder */
-    footer#dynamic-footer {
-      background: #fff;
-      padding: 10px 20px;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <!-- Dynamic Header -->
-  <footer id="footer"></footer>
-    <!-- Header content loaded dynamically by header.js -->
-    <h3>Baguette Maison</h3>
-  </header>
-  
+  <header id="header"></header>
+
   <div class="container">
     <!-- Hero Section with Hook -->
     <section class="hero">
@@ -210,10 +72,7 @@
   
   <!-- Dynamic Footer -->
   <footer id="footer"></footer>
-    <!-- Footer content loaded dynamically by footer.js -->
-    <p>&copy; 2025 The Baguette Maison. Secure &amp; Confidential | 30-Day Satisfaction Guarantee</p>
-  </footer>
-  
+
   <!-- Scripts -->
   <script src="src/js/script.js" defer></script>
 </body>
