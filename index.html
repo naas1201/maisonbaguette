@@ -3,130 +3,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Sushi™ - Doctor-Approved Nutrition for Busy Lifestyles</title>
+  <title>French Sushi™ - The Perfect Bite for a Healthy Life</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="French Sushi™: The physician-approved snack combining French artistry with optimal nutrition. Only 60kcal per piece, scientifically crafted for your health goals.">
-  <meta name="keywords" content="French Sushi TM, Healthy Snacks, Doctor-Approved Food, Low Calorie Meal, Nutrient-Dense">
-  <meta name="author" content="Baguette Maison">
+  <meta name="description" content="Experience French Sushi™ – a doctor-approved, nutrient-dense snack with only 60 kcal per piece. Artfully crafted for a healthy life, fast delivery, and secure ordering.">
+  <meta name="keywords" content="French Sushi™, Healthy Snack, Doctor Approved, 60kcal, Gourmet, Secure Delivery, Americano Coffee">
+  <meta name="author" content="French Sushi™">
   
   <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="French Sushi™ - Your Daily Dose of Gourmet Nutrition">
-  <meta property="og:description" content="Medically designed snacks that fuel your body without compromising taste - approved by nutrition experts.">
-  <meta property="og:image" content="/images/health-preview.jpg">
-  <meta property="og:url" content="https://baguettemaison.com">
+  <meta property="og:title" content="French Sushi™ - The Perfect Bite for a Healthy Life">
+  <meta property="og:description" content="Discover French Sushi™ – a doctor-approved, low-calorie snack designed as a piece of art. Only 60 kcal per piece for a balanced, healthy life.">
+  <meta property="og:image" content="/images/social-preview.jpg">
+  <meta property="og:url" content="https://frenchsushi.com">
   <meta property="og:type" content="website">
-
-  <!-- Styles remain mostly the same, just updated color scheme for health focus -->
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Embedded CSS -->
   <style>
-    /* Updated color scheme for health focus */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    /* Global Styles */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hero Section */
     .hero {
-      background: #0d352e;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #cccccc;
+    }
+    .hero ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #dddddd;
+    }
+    .hero ul li {
+      margin: 10px 0;
+    }
+    
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
     .cta-button.primary {
-      background: #2a9d8f;
+      background: #d62828;
+      color: #fff;
     }
     .cta-button.primary:hover {
-      background: #22867a;
+      background: #b22222;
     }
-    /* Added medical badge styling */
-    .medical-badge {
-      background: #ffffff20;
-      padding: 15px;
+    .cta-button.secondary {
+      background: #f4f4f4;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .cta-button.secondary:hover {
+      background: #e2e2e2;
+    }
+    .assurance {
+      font-size: 0.9em;
+      color: #bbbbbb;
+    }
+    
+    /* Trusted Section */
+    .trusted-by {
+      text-align: center;
+      padding: 40px 20px;
+      background: #2c2c2c;
+    }
+    .trusted-by h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #ffffff;
+    }
+    .trusted-by .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .trusted-by .logos img {
+      max-width: 150px;
+      width: 100%;
+    }
+    .trusted-by p {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #dddddd;
+    }
+    
+    /* Features Section */
+    .features {
+      background: #2c2c2c;
+      padding: 50px 20px;
+    }
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .feature-card {
+      background: #3a3a3a;
       border-radius: 8px;
-      margin: 20px auto;
-      max-width: 400px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .feature-card img {
+      max-width: 80px;
+      margin: 0 auto 15px;
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .feature-card p {
+      font-size: 0.95em;
+      color: #cccccc;
+    }
+    
+    /* Nutrition & Health Benefits Section */
+    .nutrition {
+      background: #1f1f1f;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .nutrition h2 {
+      font-size: 1.8em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .nutrition p {
+      font-size: 1.1em;
+      color: #cccccc;
+      margin-bottom: 20px;
+    }
+    .nutrition ul {
+      list-style: none;
+      padding: 0;
+      color: #dddddd;
+      font-size: 1em;
+    }
+    .nutrition ul li {
+      margin: 8px 0;
+    }
+    
+    /* Customer Reviews Section */
+    .customer-reviews {
+      padding: 50px 20px;
+      background: #1f1f1f;
+      text-align: center;
+    }
+    .customer-reviews h2 {
+      margin-bottom: 30px;
+      font-size: 1.8em;
+      color: #ffffff;
+    }
+    .review-slider {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .review p {
+      font-size: 1.1em;
+      line-height: 1.4;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      color: #333333;
+    }
+    
+    /* Secure Payment Section */
+    .secure-payment {
+      text-align: center;
+      padding: 40px 20px;
+      background: #2c2c2c;
+    }
+    .secure-payment h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #ffffff;
+    }
+    .payment-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .payment-icons img {
+      max-width: 80px;
+    }
+    .secure-payment p {
+      margin-top: 15px;
+      font-size: 1em;
+      color: #dddddd;
+    }
+    
+    /* Floating WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 1em;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background: #1ebe57;
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section Redesigned for Health Focus -->
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+  
+  <!-- Hero Section: Hook & Empathy -->
   <section class="hero">
     <div class="hero-content">
-      <h1>French Sushi™: Where Gourmet Meets Good Health</h1>
-      <p class="medical-badge">
-        ✅ Physician-Approved Formula • 60kcal/Serving • Optimal Nutrient Balance
-      </p>
+      <h1>Discover French Sushi™ – The Perfect Bite for a Healthy Life</h1>
       <p>
-        Scientifically crafted for Manila's health-conscious professionals. Enjoy the perfect balance of lean proteins, complex carbs, and essential fats in every bite-sized piece.
+        Indulge in artfully crafted French Sushi™ – a doctor-approved, nutrient-dense snack designed to elevate your well-being without compromising on taste. Each masterpiece is only 60 kcal, low in fat, and perfect for a vibrant lifestyle.
       </p>
       <ul>
-        <li>✔ Doctor-Designed Nutrition Profile</li>
-        <li>✔ 100% Balanced Macronutrients</li>
-        <li>✔ Clinically-Supported Portion Control</li>
+        <li>✔ Doctor Approved & Nutrient-Dense</li>
+        <li>✔ Only 60 kcal per piece</li>
+        <li>✔ Fast, Secure, & Confidential Delivery</li>
       </ul>
       <div class="cta-group">
-        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Your Health Pack Now">
-          Order Now - Start Your Healthier Tomorrow
-        </a>
-        <a href="pages/menu.html" class="cta-button secondary" aria-label="Explore Nutrition Plans">
-          Explore Health Menu
-        </a>
+        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Experience Healthy Artistry">Order Now – Savor the Perfect Bite</a>
+        <a href="pages/menu.html" class="cta-button secondary" aria-label="Explore Our Menu">Explore Menu</a>
       </div>
-      <p class="assurance">Medical Advisory Board Approved • ISO 22000 Certified • Satisfaction Guaranteed</p>
+      <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
     </div>
   </section>
-
-  <!-- Trusted By Section Updated for Medical Credibility -->
+  
+  <!-- Trusted By Section: Social Proof & Security -->
   <section class="trusted-by">
-    <h2>Endorsed by Nutrition Experts</h2>
+    <h2>Trusted by Health Enthusiasts & Gourmet Connoisseurs</h2>
     <div class="logos">
-      <img src="/images/manila-nutritionists.png" alt="Manila Nutrition Association">
-      <img src="/images/health-certified.png" alt="Health Quality Certified">
+      <img src="/images/health-experts-logo.png" alt="Health Experts">
+      <img src="/images/gourmet-logo.png" alt="Gourmet Lovers">
     </div>
-    <p>"French Sushi™ sets new standards in functional snacking" - Dr. Maria Santos, Clinical Nutritionist</p>
+    <p>Join a community of satisfied customers who embrace the art of healthy living.</p>
   </section>
-
-  <!-- Features Section Focused on Health Benefits -->
+  
+  <!-- Features Section: Key Benefits -->
   <section class="features">
     <div class="features-container">
       <div class="feature-card">
-        <img src="/images/science-icon.png" alt="Science Backed">
-        <h3>Nutrient-Optimized</h3>
-        <p>Precision-crafted 60kcal portions with 2.8g protein, 5g complex carbs, and 3.9g healthy fats</p>
+        <img src="/images/artisan-icon.png" alt="Artisan Crafted">
+        <h3>Artisan Crafted</h3>
+        <p>Each French Sushi™ piece is meticulously prepared, fusing traditional French techniques with modern nutritional science.</p>
       </div>
       <div class="feature-card">
-        <img src="/images/medical-icon.png" alt="Doctor Approved">
-        <h3>Physician-Reviewed</h3>
-        <p>Our recipes meet clinical guidelines for weight management and metabolic health</p>
+        <img src="/images/doctor-icon.png" alt="Doctor Approved">
+        <h3>Doctor Approved</h3>
+        <p>Our snack is designed to support a balanced diet – low in calories and fat, yet rich in essential nutrients.</p>
       </div>
       <div class="feature-card">
-        <img src="/images/delivery-icon.png" alt="Discreet Delivery">
-        <h3>Fresh & Discrete</h3>
-        <p>Temperature-controlled delivery ensures optimal freshness and nutritional integrity</p>
+        <img src="/images/delivery-icon.png" alt="Fast & Secure Delivery">
+        <h3>Fast & Secure Delivery</h3>
+        <p>Enjoy prompt, confidential delivery that guarantees your French Sushi™ arrives fresh and ready to inspire.</p>
+      </div>
+      <div class="feature-card">
+        <img src="/images/coffee-icon.png" alt="Premium Americano Coffee">
+        <h3>Premium Americano Coffee</h3>
+        <p>Complement your snack with our robust Americano Coffee, perfectly paired for an elevated daily routine.</p>
       </div>
     </div>
   </section>
-
-  <!-- Health-Focused Customer Reviews -->
+  
+  <!-- Nutrition & Health Benefits Section -->
+  <section class="nutrition">
+    <h2>Nutritional Excellence in Every Bite</h2>
+    <p>Our French Sushi™ is not just a snack—it’s a carefully balanced alicament for optimal health.</p>
+    <ul>
+      <li><strong>Weight:</strong> ~29g per piece</li>
+      <li><strong>Calories:</strong> 60–61 kcal</li>
+      <li><strong>Protein:</strong> ~2.8g</li>
+      <li><strong>Carbohydrates:</strong> ~5.0g</li>
+      <li><strong>Fat:</strong> ~3.9g</li>
+    </ul>
+    <p>Ideal for an all-day snack, French Sushi™ supports your health goals while delighting your senses.</p>
+  </section>
+  
+  <!-- Customer Reviews: Social Proof -->
   <section class="customer-reviews">
-    <h2>Transforming Lives One Bite at a Time</h2>
+    <h2>What Our Customers Are Saying</h2>
     <div class="review-slider">
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "Finally! A tasty snack that fits my diabetic diet. My nutritionist approves!" - Sofia, BGC</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "French Sushi™ has redefined healthy snacking for me. It’s the perfect blend of art and nutrition – truly a masterpiece!" – Claire, Health Enthusiast</p>
       </div>
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "Lost 8kg while enjoying these daily. The perfect work-from-home solution!" - Mark, Ortigas</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "Not only is it delicious, but knowing it’s doctor approved gives me peace of mind. I highly recommend French Sushi™." – Marc, Gourmet Connoisseur</p>
       </div>
       <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "My cardiologist recommended French Sushi™ as part of my heart-healthy diet" - Linda, Makati</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "The convenience and health benefits are unmatched. French Sushi™ is now my go-to snack for a balanced lifestyle." – Sophie, Busy Professional</p>
       </div>
     </div>
   </section>
-
-  <!-- Enhanced Security Section -->
+  
+  <!-- Secure Payment Section -->
   <section class="secure-payment">
-    <h2>Your Health Data is Protected</h2>
+    <h2>Your Order is 100% Secure</h2>
     <div class="payment-icons">
-      <img src="/images/hipaa-icon.png" alt="Health Data Protected">
-      <img src="/images/secure-delivery-icon.png" alt="GDPR Compliant">
+      <img src="/images/gcash-icon.png" alt="GCash Secure Payment">
+      <img src="/images/bank-transfer-icon.png" alt="Bank Transfer Secure">
+      <img src="/images/cod-icon.png" alt="Cash on Delivery">
     </div>
-    <p>PH Data Privacy Act Compliant • Secure Health Consultation</p>
+    <p>Multiple trusted payment methods for your peace of mind.</p>
   </section>
-
-  <!-- Floating WhatsApp Button with Health Focus -->
-  <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Consult Our Nutrition Advisor">
-    📲 Speak to Our Health Expert
-  </a>
+  
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+  
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Chat & Order</a>
+  
+  <!-- Scripts -->
+  <script src="/src/js/script.js" defer></script>
 </body>
 </html>
