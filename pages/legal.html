@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Google Doc</title>
+    <link rel="stylesheet" href="/src/css/style.css"> <!-- Assuming you have a CSS file -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <script src="/src/js/header.js" defer></script>
+    </header>
 
+    <!-- Main Content -->
+    <main>
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vTL4YMSVfRRhuncsTSjN1wFQHnVXag4FPhs5USlvcmbwE9dp8Ksia1BhANZNdAnoiYTCQ1y11tBaODA/pub?embedded=true" 
+                width="100%" height="600px" style="border:none;"></iframe>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <script src="/src/js/footer.js" defer></script>
+    </footer>
+    
+    <!-- Load main JavaScript -->
+    <script src="/src/js/script.js" defer></script>
+</body>
+</html>
