@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Sushi™ - The Perfect Bite for a Healthy Life</title>
+  <title>French Sushi™ - Affordable Luxury in Every Bite</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Experience French Sushi™ – a doctor-approved, nutrient-dense snack with only 60 kcal per piece. Artfully crafted for a healthy life, fast delivery, and secure ordering.">
-  <meta name="keywords" content="French Sushi™, Healthy Snack, Doctor Approved, 60kcal, Gourmet, Secure Delivery, Americano Coffee">
+  <meta name="description" content="Experience French Sushi™ – affordable luxury in every bite, a doctor-endorsed, nutrient-dense gourmet snack with only 60 kcal per piece. Enjoy exclusive direct-order benefits and secure ordering.">
+  <meta name="keywords" content="French Sushi™, Affordable Luxury, Healthy Snack, Doctor Endorsed, 60kcal, Gourmet, Secure Ordering, French Coffee">
   <meta name="author" content="French Sushi™">
   
   <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="French Sushi™ - The Perfect Bite for a Healthy Life">
-  <meta property="og:description" content="Discover French Sushi™ – a doctor-approved, low-calorie snack designed as a piece of art. Only 60 kcal per piece for a balanced, healthy life.">
+  <meta property="og:title" content="French Sushi™ - Affordable Luxury in Every Bite">
+  <meta property="og:description" content="Discover French Sushi™ – affordable luxury redefined. Indulge in a nutrient-dense gourmet snack with only 60 kcal per piece, crafted by culinary experts and endorsed by health professionals.">
   <meta property="og:image" content="/images/social-preview.jpg">
   <meta property="og:url" content="https://frenchsushi.com">
   <meta property="og:type" content="website">
@@ -24,13 +24,28 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
     
+    :root {
+      --primary-color: #d4af37; /* Gold-like tone for luxury */
+      --secondary-color: #e0e0e0;
+      --bg-dark: #121212;
+      --bg-darker: #1f1f1f;
+      --bg-mid: #2a2a2a;
+      --bg-light: #2c2c2c;
+      --text-light: #e0e0e0;
+      --text-muted: #cccccc;
+      --text-secondary: #bbbbbb;
+    }
+    
     /* Global Styles */
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: 'Poppins', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
     }
     img {
@@ -40,118 +55,145 @@
     }
     a {
       text-decoration: none;
+      color: inherit;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    
+    /* Header and Footer placeholders */
+    #header, #footer {
+      background-color: var(--bg-mid);
+      padding: 20px;
+      text-align: center;
     }
     
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+      background: linear-gradient(135deg, var(--bg-darker), var(--bg-mid));
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
     }
     .hero h1 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      color: #ffffff;
+      font-size: 3em;
+      color: var(--primary-color);
     }
     .hero p {
       font-size: 1.2em;
-      margin-bottom: 30px;
-      color: #cccccc;
+      color: var(--text-muted);
     }
-    .hero ul {
+    .hero .hero-bullets {
       list-style: none;
-      padding: 0;
-      margin: 20px 0;
+      margin: 30px 0;
       font-size: 1.1em;
-      color: #dddddd;
+      color: var(--secondary-color);
     }
-    .hero ul li {
+    .hero .hero-bullets li {
       margin: 10px 0;
     }
-    
-    /* CTA Buttons */
-    .cta-group {
+    .hero .cta-group {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
     .cta-button {
       padding: 15px 30px;
       font-size: 1em;
       border: none;
-      cursor: pointer;
       border-radius: 5px;
-      text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
     }
     .cta-button.primary {
-      background: #d62828;
-      color: #fff;
+      background: var(--primary-color);
+      color: #000;
     }
     .cta-button.primary:hover {
-      background: #b22222;
+      background: #bfa133;
+      transform: scale(1.05);
     }
     .cta-button.secondary {
-      background: #f4f4f4;
-      color: #333;
-      border: 1px solid #ccc;
+      background: var(--bg-light);
+      color: var(--text-light);
+      border: 1px solid var(--secondary-color);
     }
     .cta-button.secondary:hover {
-      background: #e2e2e2;
+      background: var(--bg-mid);
+      transform: scale(1.05);
     }
     .assurance {
       font-size: 0.9em;
-      color: #bbbbbb;
+      color: var(--text-secondary);
+      margin-top: 10px;
     }
     
-    /* Trusted Section */
-    .trusted-by {
+    /* Our Story Section */
+    .our-story {
+      background: var(--bg-darker);
       text-align: center;
-      padding: 40px 20px;
-      background: #2c2c2c;
+      padding: 60px 20px;
     }
-    .trusted-by h2 {
-      margin-bottom: 20px;
-      font-size: 1.8em;
-      color: #ffffff;
+    .our-story h2 {
+      color: var(--primary-color);
+      font-size: 2.5em;
     }
-    .trusted-by .logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-    .trusted-by .logos img {
-      max-width: 150px;
-      width: 100%;
-    }
-    .trusted-by p {
-      margin-top: 20px;
-      font-size: 1em;
-      color: #dddddd;
+    .our-story p {
+      font-size: 1.1em;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 30px;
     }
     
     /* Features Section */
     .features {
-      background: #2c2c2c;
-      padding: 50px 20px;
+      background: var(--bg-mid);
+      padding: 60px 20px;
     }
-    .features-container {
+    .features .features-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
     }
     .feature-card {
-      background: #3a3a3a;
+      background: var(--bg-darker);
       border-radius: 8px;
       padding: 20px;
-      max-width: 300px;
+      max-width: 280px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
     }
     .feature-card img {
       max-width: 80px;
@@ -159,77 +201,80 @@
     }
     .feature-card h3 {
       margin-bottom: 10px;
-      color: #ffffff;
+      color: var(--primary-color);
     }
     .feature-card p {
       font-size: 0.95em;
-      color: #cccccc;
+      color: var(--text-muted);
     }
     
-    /* Nutrition & Health Benefits Section */
+    /* Nutrition Section */
     .nutrition {
-      background: #1f1f1f;
-      padding: 50px 20px;
+      background: var(--bg-darker);
       text-align: center;
+      padding: 60px 20px;
     }
     .nutrition h2 {
-      font-size: 1.8em;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-    .nutrition p {
-      font-size: 1.1em;
-      color: #cccccc;
+      font-size: 2.5em;
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
     .nutrition ul {
       list-style: none;
       padding: 0;
-      color: #dddddd;
-      font-size: 1em;
+      font-size: 1.1em;
+      color: var(--text-muted);
+      max-width: 400px;
+      margin: 20px auto;
     }
     .nutrition ul li {
-      margin: 8px 0;
+      margin: 10px 0;
     }
     
-    /* Customer Reviews Section */
-    .customer-reviews {
-      padding: 50px 20px;
-      background: #1f1f1f;
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--bg-darker);
+      padding: 60px 20px;
       text-align: center;
     }
-    .customer-reviews h2 {
+    .testimonials h2 {
+      font-size: 2.5em;
+      color: var(--primary-color);
       margin-bottom: 30px;
-      font-size: 1.8em;
-      color: #ffffff;
     }
-    .review-slider {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .testimonial-slider {
+      position: relative;
       max-width: 800px;
       margin: 0 auto;
+      overflow: hidden;
     }
-    .review p {
-      font-size: 1.1em;
-      line-height: 1.4;
-      background: #ffffff;
+    .testimonial {
       padding: 20px;
+      background: var(--bg-light);
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      color: #333333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      color: #333;
+      font-size: 1.1em;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      transition: opacity 0.5s ease;
+    }
+    .testimonial.active {
+      opacity: 1;
+      position: relative;
     }
     
     /* Secure Payment Section */
     .secure-payment {
+      background: var(--bg-mid);
       text-align: center;
-      padding: 40px 20px;
-      background: #2c2c2c;
+      padding: 60px 20px;
     }
     .secure-payment h2 {
+      font-size: 2.5em;
+      color: var(--primary-color);
       margin-bottom: 20px;
-      font-size: 1.8em;
-      color: #ffffff;
     }
     .payment-icons {
       display: flex;
@@ -241,9 +286,9 @@
       max-width: 80px;
     }
     .secure-payment p {
-      margin-top: 15px;
       font-size: 1em;
-      color: #dddddd;
+      color: var(--text-muted);
+      margin-top: 15px;
     }
     
     /* Floating WhatsApp Button */
@@ -257,11 +302,24 @@
       border-radius: 50px;
       font-size: 1em;
       text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
     }
     .whatsapp-button:hover {
       background: #1ebe57;
+      transform: scale(1.1);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .features .features-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+      }
     }
   </style>
 </head>
@@ -269,97 +327,101 @@
   <!-- Dynamic Header -->
   <div id="header"></div>
   
-  <!-- Hero Section: Hook & Empathy -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Discover French Sushi™ – The Perfect Bite for a Healthy Life</h1>
-      <p>
-        Indulge in artfully crafted French Sushi™ – a doctor-approved, nutrient-dense snack designed to elevate your well-being without compromising on taste. Each masterpiece is only 60 kcal, low in fat, and perfect for a vibrant lifestyle.
-      </p>
-      <ul>
-        <li>✔ Doctor Approved & Nutrient-Dense</li>
-        <li>✔ Only 60 kcal per piece</li>
-        <li>✔ Fast, Secure, & Confidential Delivery</li>
+      <h1>French Sushi™ – Affordable Luxury in Every Bite</h1>
+      <p>Experience a revolutionary culinary journey where French tradition meets Asian innovation. Indulge in our exclusive French Sushi™, a nutrient-dense masterpiece reimagined for the modern gourmet.</p>
+      <ul class="hero-bullets">
+        <li>✔ Affordable Luxury & Exclusive Value</li>
+        <li>✔ Doctor-Endorsed – Only 60 kcal per piece</li>
+        <li>✔ Direct Order Perks & Free Academy Access</li>
+        <li>✔ Limited Edition – Crafted for Manila’s Elite</li>
       </ul>
       <div class="cta-group">
-        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Experience Healthy Artistry">Order Now – Savor the Perfect Bite</a>
-        <a href="pages/menu.html" class="cta-button secondary" aria-label="Explore Our Menu">Explore Menu</a>
+        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Savor Affordable Luxury">Order Now – Savor Luxury</a>
+        <a href="#our-story" class="cta-button secondary" aria-label="Discover Our Story">Discover Our Story</a>
       </div>
       <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
     </div>
   </section>
-
-<!-- Trusted By Section: Social Proof & Security -->
-<section class="trusted-by">
-  <h2>Endorsed by Health Enthusiasts & Gourmet Connoisseurs</h2>
-  <p>Our products are celebrated by a community of health-conscious individuals and gourmet lovers. Experience the fusion of health and culinary excellence with us.</p>
-</section>
   
-  <!-- Features Section: Key Benefits -->
+  <!-- Our Story Section -->
+  <section id="our-story" class="our-story">
+    <h2>Our Culinary Journey</h2>
+    <p>Born from the vision of a seasoned chef who honed his craft in Asia and the endorsement of a renowned Filipina doctor, French Sushi™ is more than a snack—it’s a statement of affordable luxury. Our creation transforms the classic French baguette into a work of art, where culinary mastery meets nutritional science.</p>
+  </section>
+  
+  <!-- Features Section -->
   <section class="features">
     <div class="features-container">
       <div class="feature-card">
         <img src="/images/artisan-icon.png" alt="Artisan Crafted">
         <h3>Artisan Crafted</h3>
-        <p>Each French Sushi™ piece is meticulously prepared, fusing traditional French techniques with modern nutritional science.</p>
+        <p>Each piece is meticulously prepared, blending traditional French techniques with modern nutritional science.</p>
       </div>
       <div class="feature-card">
-        <img src="/images/doctor-icon.png" alt="Doctor Approved">
-        <h3>Doctor Approved</h3>
-        <p>Our snack is designed to support a balanced diet – low in calories and fat, yet rich in essential nutrients.</p>
+        <img src="/images/doctor-icon.png" alt="Doctor Endorsed">
+        <h3>Doctor Endorsed</h3>
+        <p>Our gourmet snack is approved by health experts to support a balanced, vibrant lifestyle.</p>
       </div>
       <div class="feature-card">
-        <img src="/images/delivery-icon.png" alt="Fast & Secure Delivery">
-        <h3>Fast & Secure Delivery</h3>
-        <p>Enjoy prompt, confidential delivery that guarantees your French Sushi™ arrives fresh and ready to inspire.</p>
+        <img src="/images/delivery-icon.png" alt="Direct Order Benefits">
+        <h3>Direct Order Benefits</h3>
+        <p>Ordering directly unlocks exclusive advantages – premium pricing and free access to our culinary academy.</p>
       </div>
       <div class="feature-card">
-        <img src="/images/coffee-icon.jpg" alt="Premium Americano Coffee">
-        <h3>Premium Americano Coffee</h3>
-        <p>Complement your snack with our robust Americano Coffee, perfectly paired for an elevated daily routine.</p>
+        <img src="/images/coffee-icon.jpg" alt="Gourmet Pairing">
+        <h3>Gourmet Pairing</h3>
+        <p>Complement your French Sushi™ with our signature French coffee selections, crafted to perfection.</p>
+      </div>
+      <div class="feature-card">
+        <img src="/images/academy-icon.png" alt="Exclusive Academy" onerror="this.src='/images/doctor-icon.png'">
+        <h3>Exclusive Academy Access</h3>
+        <p>Order directly and gain free entry to our academy, where luxury meets culinary mastery.</p>
       </div>
     </div>
   </section>
   
-  <!-- Nutrition & Health Benefits Section -->
+  <!-- Nutrition Section -->
   <section class="nutrition">
-    <h2>Nutritional Excellence in Every Bite</h2>
-    <p>Our French Sushi™ is not just a snack—it’s a carefully balanced alicament for optimal health.</p>
+    <h2>Nutritional Mastery</h2>
+    <p>Engineered for both flavor and wellness, each delicately crafted piece of French Sushi™ offers:</p>
     <ul>
       <li><strong>Weight:</strong> ~29g per piece</li>
-      <li><strong>Calories:</strong> 60–61 kcal</li>
+      <li><strong>Calories:</strong> 60 kcal</li>
       <li><strong>Protein:</strong> ~2.8g</li>
       <li><strong>Carbohydrates:</strong> ~5.0g</li>
       <li><strong>Fat:</strong> ~3.9g</li>
     </ul>
-    <p>Ideal for an all-day snack, French Sushi™ supports your health goals while delighting your senses.</p>
+    <p>Select from our packages – "Slim and Satisfy", "Heart Package", or "Energy Boost Pack" – and enjoy the exclusive perks of direct ordering.</p>
   </section>
   
-  <!-- Customer Reviews: Social Proof -->
-  <section class="customer-reviews">
-    <h2>What Our Customers Are Saying</h2>
-    <div class="review-slider">
-      <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "French Sushi™ has redefined healthy snacking for me. It’s the perfect blend of art and nutrition – truly a masterpiece!" – Claire, Health Enthusiast</p>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Patrons Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <p>⭐️⭐️⭐️⭐️⭐️ "An exquisite fusion of tradition and innovation. French Sushi™ delivers affordable luxury in every bite." – Claire</p>
       </div>
-      <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "Not only is it delicious, but knowing it’s doctor approved gives me peace of mind. I highly recommend French Sushi™." – Marc, Gourmet Connoisseur</p>
+      <div class="testimonial">
+        <p>⭐️⭐️⭐️⭐️⭐️ "The health benefits and gourmet flavor are unmatched. A true masterpiece for a vibrant lifestyle." – Marc</p>
       </div>
-      <div class="review">
-        <p>⭐️⭐️⭐️⭐️⭐️ "The convenience and health benefits are unmatched. French Sushi™ is now my go-to snack for a balanced lifestyle." – Sophie, Busy Professional</p>
+      <div class="testimonial">
+        <p>⭐️⭐️⭐️⭐️⭐️ "I love the exclusive perks of ordering directly – it transforms a simple snack into an experience of affordable luxury." – Sophie</p>
       </div>
     </div>
   </section>
   
   <!-- Secure Payment Section -->
   <section class="secure-payment">
-    <h2>Your Order is 100% Secure</h2>
+    <h2>Your Order, Our Priority</h2>
     <div class="payment-icons">
       <img src="/images/gcash-icon.png" alt="GCash Secure Payment">
       <img src="/images/bank-transfer-icon.png" alt="Bank Transfer Secure">
       <img src="/images/cod-icon.png" alt="Cash on Delivery">
     </div>
-    <p>Multiple trusted payment methods for your peace of mind.</p>
+    <p>Experience secure, seamless ordering with multiple trusted payment methods.</p>
   </section>
   
   <!-- Dynamic Footer -->
@@ -368,7 +430,40 @@
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/15202008427" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Chat & Order</a>
   
-  <!-- Scripts -->
-  <script src="/src/js/script.js" defer></script>
+  <!-- Embedded JavaScript -->
+  <script>
+    // Testimonial Slider Functionality
+    (function() {
+      const testimonials = document.querySelectorAll('.testimonial');
+      let currentIndex = 0;
+      const totalTestimonials = testimonials.length;
+      
+      function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+          testimonial.classList.toggle('active', i === index);
+        });
+      }
+      
+      function nextTestimonial() {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        showTestimonial(currentIndex);
+      }
+      
+      // Auto-slide every 5 seconds
+      setInterval(nextTestimonial, 5000);
+    })();
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Additional interactivity can be added here if necessary
+  </script>
 </body>
 </html>
