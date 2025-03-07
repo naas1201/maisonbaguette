@@ -144,7 +144,7 @@
   /* --- Inject Header HTML --- */
   var headerHTML = `
     <div class="header-container">
-      <a href="/index.html" class="logo">
+      <a href="index.html" class="logo">
         <img src="/images/logo.png" alt="Baguette Maison Logo">
       </a>
       <nav class="nav-menu">
@@ -170,7 +170,7 @@
       <!-- Left Column: Repeated Header Links -->
       <div class="footer-left">
         <ul>
-          <li><a href="/index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="/pages/about.html">About</a></li>
           <li><a href="/pages/menu.html">Menu</a></li>
           <li><a href="https://blog.baguettemaison.com" target="_blank">Blog</a></li>
