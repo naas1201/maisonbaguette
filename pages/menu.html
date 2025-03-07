@@ -3,130 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Baguette Maison – French Culinary Excellence</title>
-  <!-- Import a modern font -->
+  <title>The Baguette Maison – Your Health Prescription</title>
+  <!-- Import fonts for modern clarity and a handwritten signature style -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script&display=swap" rel="stylesheet" />
   <style>
+    /* Root variables for a clinical, trustworthy palette */
     :root {
-      --primary-color: #ff5733;
-      --secondary-color: #c70039;
-      --accent-color: #ffcc00;
-      --background-color: #f8f8f8;
+      --primary-color: #2a9d8f;       /* Teal – a healthy, calming color */
+      --secondary-color: #264653;     /* Dark slate for authority */
+      --accent-color: #e76f51;        /* Warm accent reminiscent of a prescription stamp */
+      --background-color: #fefefe;    /* Crisp, clean white for a prescription pad feel */
       --text-color: #333;
-      --font-family: 'Montserrat', sans-serif;
+      --prescription-bg: #f9f9f9;
+      --prescription-border: #ccc;
+      --signature-color: #2a9d8f;
     }
     
+    /* Global reset and base styles */
     *, *::before, *::after {
       box-sizing: border-box;
-    }
-    
-    body {
       margin: 0;
-      font-family: var(--font-family);
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
+      padding: 20px;
     }
-    
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
-    
     header, footer {
       text-align: center;
       padding: 20px;
+      background: var(--secondary-color);
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
-    header {
-      background: var(--accent-color);
-      color: var(--text-color);
-    }
-    
-    main {
-      padding: 20px 0;
-    }
-    
+    /* Hero Section: Introducing the “Prescription” */
     .hero {
       background: var(--accent-color);
+      color: #fff;
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
       border-radius: 10px;
-      color: var(--text-color);
       margin-bottom: 30px;
+      position: relative;
     }
-    
     .hero h1 {
-      font-size: 2em;
-      margin: 0 0 10px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    
     .hero p {
-      font-size: 1.1em;
-      margin: 0;
+      font-size: 1.2em;
     }
     
-    .trust {
-      text-align: center;
-      font-size: 1em;
-      margin: 20px 0;
-      font-weight: 700;
-    }
-    
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .menu-item {
-      background: #fff;
-      color: var(--text-color); /* Ensures text is dark */
+    /* Prescription-style Menu Items */
+    .prescription {
+      background: var(--prescription-bg);
+      border: 2px dashed var(--prescription-border);
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .prescription::before {
+      content: "Prescription";
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+    .prescription h2 {
+      margin-bottom: 10px;
+      font-size: 1.8em;
+      color: var(--primary-color);
+    }
+    .prescription p {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    .prescription ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+      list-style-type: square;
+    }
+    .prescription ul li {
+      margin-bottom: 5px;
     }
     
-    .menu-item h2 {
-      margin-top: 0;
+    /* Doctor's Note at the bottom of each prescription */
+    .doctors-note {
+      border-top: 1px solid var(--prescription-border);
+      margin-top: 20px;
+      padding-top: 10px;
+      font-style: italic;
+      font-size: 0.9em;
+      text-align: right;
+      color: var(--primary-color);
+    }
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8em;
+      color: var(--signature-color);
     }
     
-    .menu-item ul {
-      list-style: disc;
-      margin: 10px 0 10px 20px;
-      padding: 0;
-    }
-    
+    /* Call To Action Section */
     .cta {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
       color: #fff;
       text-align: center;
       padding: 40px 20px;
       border-radius: 10px;
       margin-top: 30px;
     }
-    
     .cta h2 {
-      margin-top: 0;
       font-size: 2em;
+      margin-bottom: 10px;
     }
-    
     .cta p {
       font-size: 1.2em;
-      margin: 10px 0 30px;
+      margin-bottom: 20px;
     }
-    
     .cta-buttons {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 15px;
-      align-items: center;
     }
-    
     .cta-buttons a {
       background: #fff;
       color: var(--primary-color);
@@ -135,34 +150,22 @@
       text-decoration: none;
       font-weight: 700;
       transition: background 0.3s, transform 0.3s;
-      width: 80%;
-      max-width: 300px;
+      min-width: 200px;
       text-align: center;
     }
-    
     .cta-buttons a:hover {
       background: var(--secondary-color);
       color: #fff;
       transform: scale(1.05);
     }
     
-    /* Desktop adjustments */
-    @media (min-width: 768px) {
-      .menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
       }
-      .menu-item {
-        width: calc(50% - 10px);
-      }
-      .cta-buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
-      .cta-buttons a {
-        margin: 0 10px;
-        width: auto;
+      .cta h2 {
+        font-size: 1.8em;
       }
     }
   </style>
@@ -171,70 +174,80 @@
   <!-- Header Section (Loaded Dynamically) -->
   <header id="header"></header>
   
-  <!-- Main Content -->
-  <main>
-    <div class="container">
-      <!-- Hero Section -->
-      <section class="hero">
-        <h1>Experience Authentic French Flavors</h1>
-        <p>Delight in our curated menu—crafted for purity, taste, and complete allergen transparency.</p>
-      </section>
-      
-      <!-- Trust Indicators -->
-      <div class="trust">
-        Trusted by <span>500+ happy customers</span> &amp; recommended by leading gourmet critics.
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Your Health Prescription</h1>
+      <p>Experience a revolutionary approach to gourmet wellness—handcrafted by culinary experts and endorsed by medical professionals.</p>
+    </section>
+    
+    <!-- Prescription Menu Items -->
+    <section class="prescription">
+      <h2>French Sushi™</h2>
+      <p><strong>Dosage:</strong> 1 piece per serving (approx. 29g)</p>
+      <p><strong>Nutritional Benefits:</strong></p>
+      <ul>
+        <li>Only 60 kcal per serving</li>
+        <li>Low in fat and balanced in nutrients</li>
+        <li>Supports metabolism and a vibrant lifestyle</li>
+      </ul>
+      <p><strong>Instructions:</strong> Consume as a nutrient-dense snack between meals to sustain energy and promote wellness.</p>
+      <div class="doctors-note">
+        <p>— Prescribed by Dr. <span class="signature">Maria Santos</span></p>
       </div>
-      
-      <!-- Menu Section -->
-      <section class="menu">
-        <!-- French Sushi™ -->
-        <article class="menu-item">
-          <h2>French Sushi™</h2>
-          <p>Enjoy our gourmet fusion: artisanal French bread, premium butcher-cooked ham, luscious President butter, tangy pickles, and our signature mayonnaise.</p>
-          <p><strong>Key Benefits:</strong></p>
-          <ul>
-            <li>Authentic French ingredients prepared with care</li>
-            <li>Complete allergen transparency</li>
-            <li>Expertly balanced flavors</li>
-          </ul>
-          <p><strong>Allergen Information:</strong> Contains <em>Gluten</em> (bread), <em>Dairy</em> (butter), and <em>Egg</em> (mayonnaise).</p>
-          <p><strong>Your Advantage:</strong> Every bite delivers quality and trust, ensuring a safe dining experience.</p>
-        </article>
-        
-        <!-- French Press Brewed Americano Coffee of the Day -->
-        <article class="menu-item">
-          <h2>French Press Brewed Americano Coffee of the Day</h2>
-          <p>Savor the robust, pure taste of freshly brewed Americano—crafted without sugar or additives.</p>
-          <p><strong>Key Benefits:</strong></p>
-          <ul>
-            <li>Pure, unadulterated coffee flavor</li>
-            <li>Consistently brewed daily for premium quality</li>
-            <li>Worry-free enjoyment with no allergens</li>
-          </ul>
-          <p><strong>Allergen Information:</strong> This beverage is completely <em>allergen-free</em>.</p>
-          <p><strong>Your Advantage:</strong> Enjoy a refined coffee experience designed for purity and satisfaction.</p>
-        </article>
-      </section>
-      
-      <!-- CTA Section -->
-      <section class="cta">
-        <h2>Ready to Order?</h2>
-        <p>Secure your taste of France with our simple, one-click ordering. No obligation &amp; 100% satisfaction guaranteed.</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/15202008427" target="_blank">Order via WhatsApp</a>
-          <a href="https://instagram.com/thebaguettemaison" target="_blank">Order via Instagram</a>
-        </div>
-      </section>
-    </div>
+    </section>
+    
+    <section class="prescription">
+      <h2>French Press Brewed Americano Coffee</h2>
+      <p><strong>Dosage:</strong> 1 cup per serving</p>
+      <p><strong>Nutritional Benefits:</strong></p>
+      <ul>
+        <li>Pure, robust flavor for enhanced alertness</li>
+        <li>Allergen-free formulation</li>
+        <li>Boosts mental clarity and focus</li>
+      </ul>
+      <p><strong>Instructions:</strong> Enjoy daily for a refreshing burst of energy and improved concentration.</p>
+      <div class="doctors-note">
+        <p>— Recommended by Dr. <span class="signature">Maria Santos</span></p>
+      </div>
+    </section>
+    
+    <!-- Call To Action Section -->
+    <section class="cta">
+      <h2>Secure Your Health Prescription</h2>
+      <p>Embrace the fusion of gourmet excellence and medical endorsement. Order directly to experience full benefits and exclusive perks.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/15202008427" target="_blank">Order via WhatsApp</a>
+        <a href="https://instagram.com/thebaguettemaison" target="_blank">Order via Instagram</a>
+      </div>
+    </section>
   </main>
   
   <!-- Footer Section (Loaded Dynamically) -->
   <footer id="footer"></footer>
-  <div class="container">
-    <p>&copy; 2025 The Baguette Maison. All rights reserved.</p>
-  </div>
   
-  <!-- Scripts -->
-  <script src="../src/js/script.js" defer></script>
+  <script>
+    // Enhance interactivity with subtle hover effects on each prescription
+    document.querySelectorAll('.prescription').forEach(function(section) {
+      section.addEventListener('mouseover', function() {
+        section.style.boxShadow = "0 8px 12px rgba(0,0,0,0.2)";
+      });
+      section.addEventListener('mouseout', function() {
+        section.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+      });
+    });
+    
+    // Smooth scrolling for any internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Additional interactive elements can be added here if needed
+  </script>
 </body>
 </html>
