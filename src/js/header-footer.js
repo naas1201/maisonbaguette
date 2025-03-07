@@ -144,16 +144,16 @@
   /* --- Inject Header HTML --- */
   var headerHTML = `
     <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Baguette Maison Logo">
+      <a href="/index.html" class="logo">
+        <img src="/images/logo.png" alt="Baguette Maison Logo">
       </a>
       <nav class="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/menu.html">Menu</a></li>
           <li><a href="https://blog.baguettemaison.com" target="_blank">Blog</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/639260488976" class="cta-order" target="_blank">Order Now</a>
@@ -170,19 +170,19 @@
       <!-- Left Column: Repeated Header Links -->
       <div class="footer-left">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/menu.html">Menu</a></li>
           <li><a href="https://blog.baguettemaison.com" target="_blank">Blog</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </div>
       <!-- Middle Column: Additional Pages -->
       <div class="footer-middle">
         <ul>
-          <li><a href="pages/legal.html">Legal</a></li>
+          <li><a href="/pages/legal.html">Legal</a></li>
           <li><a href="https://career.baguettemaison.com" target="_blank">Careers</a></li>
-          <li><a href="pages/cookies.html">Cookies</a></li>
+          <li><a href="/pages/cookies.html">Cookies</a></li>
         </ul>
       </div>
       <!-- Right Column: Company Info & Social Links -->
