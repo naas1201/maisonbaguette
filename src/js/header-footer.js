@@ -145,7 +145,7 @@
   var headerHTML = `
     <div class="header-container">
       <a href="/index.html" class="logo">
-        <img src="/images/logo.jpeg" alt="Baguette Maison Logo">
+        <img src="/images/logofinal.png" alt="Baguette Maison Logo">
       </a>
       <nav class="nav-menu">
         <ul>
