@@ -145,21 +145,23 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
-      const token = getParameterByName('token');
+      // Check for the "secret" parameter in the URL
+      const secret = getParameterByName('secret');
+      const expectedSecret = 'secure520@#%'; // Set your static secret here
       
-      // If token is not present, redirect to homepage
-      if (!token) {
+      if (secret !== expectedSecret) {
+        // Redirect to homepage if secret is missing or doesn't match
         window.location.href = '/index.html';
         return;
       }
       
       // Trigger webhook POST request immediately
-      fetch('https://baguettemaison.com/pages/paymentWebhook', {
+      fetch('https://baguettemaison.com/pm/paymentWebhook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ token: token })
+        body: JSON.stringify({ secret: secret })
       })
       .then(response => {
         console.log('Webhook triggered successfully.');
