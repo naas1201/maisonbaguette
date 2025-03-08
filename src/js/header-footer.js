@@ -157,7 +157,7 @@
           <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </nav>
-      <a href="https://wa.me/639260488976" class="cta-order" target="_blank">Order Now</a>
+      <a href="/pages/order.html" class="cta-order" target="_blank">Order Now</a>
     </div>
   `;
   var headerEl = document.getElementById('header');
