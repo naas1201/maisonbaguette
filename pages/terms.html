@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions for Promotions | Baguette Maison</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Review the terms and conditions for our various promotions including Self Promotion, Grab Promotions, Foodpanda Promotions, and Other Promotions.">
+  <meta name="keywords" content="Terms and Conditions, Promotions, Self Promotion, Grab Promotions, Foodpanda Promotions, Other Promotions, Baguette Maison">
+  <meta name="author" content="Baguette Maison">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  
+  <!-- Inline CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    :root {
+      --primary-color: #d4af37;
+      --secondary-color: #e0e0e0;
+      --bg-dark: #121212;
+      --bg-darker: #1f1f1f;
+      --bg-mid: #2a2a2a;
+      --bg-light: #2c2c2c;
+      --text-light: #e0e0e0;
+      --text-muted: #cccccc;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    p.intro {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--text-muted);
+    }
+    
+    /* Category Cards */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    
+    .category-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+      width: 280px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+    
+    .card-header {
+      background: var(--bg-mid);
+      padding: 20px;
+      font-size: 1.5em;
+      color: var(--primary-color);
+      position: relative;
+    }
+    
+    .card-header::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+    
+    .category-card.expanded .card-header::after {
+      transform: rotate(45deg);
+    }
+    
+    .subcard {
+      display: none;
+      padding: 20px;
+      background: var(--bg-darker);
+    }
+    
+    .category-card.expanded .subcard {
+      display: block;
+    }
+    
+    .criteria-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .criteria-list li {
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--bg-mid);
+      padding-bottom: 10px;
+    }
+    
+    .criteria-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+    
+    .criteria-desc {
+      font-size: 0.9em;
+      color: var(--text-muted);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+  
+  <div class="container">
+    <h1>Promotion Terms & Conditions</h1>
+    <p class="intro">Review the criteria for our different promotions. Click on a category to expand details.</p>
+    
+    <!-- Card Categories -->
+    <div class="cards-container">
+      <!-- Self Promotion Card -->
+      <div class="category-card" id="card-self">
+        <div class="card-header">Self Promotion</div>
+        <div class="subcard">
+          <ul class="criteria-list">
+            <li>
+              <div class="criteria-title">Discount Percentage/Amount</div>
+              <div class="criteria-desc">The explicit reduction (e.g., 20% off, $5 off) applied to the product or service.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Promotion Duration</div>
+              <div class="criteria-desc">The time frame during which the promotion is valid (e.g., 1 week, weekend-only, limited-time offers).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Frequency</div>
+              <div class="criteria-desc">How often the promotion is repeated (daily, weekly, seasonal, or one-time).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Target Audience</div>
+              <div class="criteria-desc">Tailoring rates for specific demographics (students, seniors, loyalty members, new customers).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Channel-Specific Offers</div>
+              <div class="criteria-desc">Variations based on where the promotion is advertised (e.g., app-exclusive deals, in-store vs. online).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Bundling/Combos</div>
+              <div class="criteria-desc">Discounts for grouping items (e.g., "meal deals" with a burger, fries, and drink).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Volume Discounts</div>
+              <div class="criteria-desc">Reduced rates for bulk purchases (e.g., "Buy 2, get 1 free").</div>
+            </li>
+            <li>
+              <div class="criteria-title">Time-Based Pricing</div>
+              <div class="criteria-desc">Dynamic pricing tied to time (e.g., happy hour, early-bird specials).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Loyalty Program Integration</div>
+              <div class="criteria-desc">Rewards or points redeemable for discounts (e.g., 10% off after 5 purchases).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Geographic Adjustments</div>
+              <div class="criteria-desc">Regional pricing variations due to cost of living, competition, or local demand.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Seasonality</div>
+              <div class="criteria-desc">Promotions aligned with holidays, festivals, or seasonal demand (e.g., summer BBQ deals).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Payment Condition</div>
+              <div class="criteria-desc">Adjustments based on competitors’ promotions to stay competitive.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Minimum Purchase Requirements</div>
+              <div class="criteria-desc">Conditions like "Spend 25 to unlock a discount."</div>
+            </li>
+            <li>
+              <div class="criteria-title">Terms and Conditions</div>
+              <div class="criteria-desc">Restrictions (exclusions, blackout dates, or limitations on redeemable items).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Creative Presentation</div>
+              <div class="criteria-desc">How the promotion is marketed (e.g., "Flash Sale!" vs. "Members-Only Discount") to enhance perceived value.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Other if Applicable</div>
+              <div class="criteria-desc">A flexible field for any additional criteria not covered above.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Grab Promotions Card -->
+      <div class="category-card" id="card-grab">
+        <div class="card-header">Grab Promotions</div>
+        <div class="subcard">
+          <ul class="criteria-list">
+            <!-- Same 16 criteria as template -->
+            <li>
+              <div class="criteria-title">Discount Percentage/Amount</div>
+              <div class="criteria-desc">The explicit reduction (e.g., 20% off, $5 off) applied to the product or service.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Promotion Duration</div>
+              <div class="criteria-desc">The time frame during which the promotion is valid.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Frequency</div>
+              <div class="criteria-desc">How often the promotion is repeated.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Target Audience</div>
+              <div class="criteria-desc">Tailoring rates for specific demographics.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Channel-Specific Offers</div>
+              <div class="criteria-desc">Variations based on where the promotion is advertised.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Bundling/Combos</div>
+              <div class="criteria-desc">Discounts for grouping items.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Volume Discounts</div>
+              <div class="criteria-desc">Reduced rates for bulk purchases.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Time-Based Pricing</div>
+              <div class="criteria-desc">Dynamic pricing tied to time.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Loyalty Program Integration</div>
+              <div class="criteria-desc">Rewards or points redeemable for discounts.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Geographic Adjustments</div>
+              <div class="criteria-desc">Regional pricing variations.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Seasonality</div>
+              <div class="criteria-desc">Promotions aligned with holidays or seasonal demand.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Payment Condition</div>
+              <div class="criteria-desc">Adjustments based on competitors’ promotions.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Minimum Purchase Requirements</div>
+              <div class="criteria-desc">Conditions like minimum spending to unlock a discount.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Terms and Conditions</div>
+              <div class="criteria-desc">Restrictions, blackout dates, or limitations.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Creative Presentation</div>
+              <div class="criteria-desc">Marketing style to enhance perceived value.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Other if Applicable</div>
+              <div class="criteria-desc">Additional flexible criteria.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Foodpanda Promotions Card -->
+      <div class="category-card" id="card-foodpanda">
+        <div class="card-header">Foodpanda Promotions</div>
+        <div class="subcard">
+          <ul class="criteria-list">
+            <!-- 16 criteria -->
+            <li>
+              <div class="criteria-title">Discount Percentage/Amount</div>
+              <div class="criteria-desc">The explicit reduction applied to the product or service.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Promotion Duration</div>
+              <div class="criteria-desc">The valid time frame for the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Frequency</div>
+              <div class="criteria-desc">How often the promotion is repeated.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Target Audience</div>
+              <div class="criteria-desc">Specified demographics for the offer.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Channel-Specific Offers</div>
+              <div class="criteria-desc">Deals based on the advertising channel.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Bundling/Combos</div>
+              <div class="criteria-desc">Discounts when items are purchased together.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Volume Discounts</div>
+              <div class="criteria-desc">Reduced rates for bulk purchases.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Time-Based Pricing</div>
+              <div class="criteria-desc">Dynamic pricing during special hours.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Loyalty Program Integration</div>
+              <div class="criteria-desc">Rewards or points redeemable for further discounts.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Geographic Adjustments</div>
+              <div class="criteria-desc">Regional pricing variations.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Seasonality</div>
+              <div class="criteria-desc">Offers aligned with holidays or seasons.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Payment Condition</div>
+              <div class="criteria-desc">Additional payment conditions as needed.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Minimum Purchase Requirements</div>
+              <div class="criteria-desc">Minimum spend requirements to unlock discounts.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Terms and Conditions</div>
+              <div class="criteria-desc">Any applicable restrictions or blackout dates.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Creative Presentation</div>
+              <div class="criteria-desc">The marketing style and language used.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Other if Applicable</div>
+              <div class="criteria-desc">Any additional criteria not listed above.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Other Promotions Card -->
+      <div class="category-card" id="card-other">
+        <div class="card-header">Other Promotions</div>
+        <div class="subcard">
+          <ul class="criteria-list">
+            <!-- 16 criteria -->
+            <li>
+              <div class="criteria-title">Discount Percentage/Amount</div>
+              <div class="criteria-desc">The explicit reduction applied (e.g., 20% off, $5 off).</div>
+            </li>
+            <li>
+              <div class="criteria-title">Promotion Duration</div>
+              <div class="criteria-desc">The duration during which the promotion is active.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Frequency</div>
+              <div class="criteria-desc">How often the promotion is available.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Target Audience</div>
+              <div class="criteria-desc">The specific audience targeted by the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Channel-Specific Offers</div>
+              <div class="criteria-desc">Offers tailored for specific advertising channels.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Bundling/Combos</div>
+              <div class="criteria-desc">Discounts offered when items are bundled.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Volume Discounts</div>
+              <div class="criteria-desc">Discounts for bulk purchases.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Time-Based Pricing</div>
+              <div class="criteria-desc">Pricing that changes based on time-specific factors.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Loyalty Program Integration</div>
+              <div class="criteria-desc">Promotions that work with loyalty rewards systems.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Geographic Adjustments</div>
+              <div class="criteria-desc">Adjustments in pricing based on geographic location.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Seasonality</div>
+              <div class="criteria-desc">Promotions tied to seasonal trends or events.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Payment Condition</div>
+              <div class="criteria-desc">Any special payment conditions tied to the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Minimum Purchase Requirements</div>
+              <div class="criteria-desc">Minimum purchase amounts required to qualify for the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Terms and Conditions</div>
+              <div class="criteria-desc">General restrictions and limitations applicable to the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Creative Presentation</div>
+              <div class="criteria-desc">The style and language used to market the promotion.</div>
+            </li>
+            <li>
+              <div class="criteria-title">Other if Applicable</div>
+              <div class="criteria-desc">Any additional criteria that might be relevant.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+  
+  <!-- Inline JavaScript for Card Interactivity -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all category cards
+      var cards = document.querySelectorAll('.category-card');
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          // Toggle expanded state on click
+          card.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+  
+  <!-- Load Header and Footer Script -->
+  <script src="/src/js/header-footer.js" defer></script>
+</body>
+</html>
