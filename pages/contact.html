@@ -1,52 +1,94 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Baguette Maison</title>
-    <link rel="stylesheet" href="../css/styles.css">
     <style>
+        /* Base Styles */
+        :root {
+            --primary-red: #e63946;
+            --dark-bg: #121212;
+            --light-text: #fff;
+            --input-bg: #2d2d2d;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #121212;
-            color: #fff;
+            font-family: 'Arial', sans-serif;
+            background: var(--dark-bg);
+            color: var(--light-text);
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
         }
+
         .contact-container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        .contact-intro, .contact-details, .contact-cta {
-            margin-bottom: 30px;
+
+        /* Form Styles */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
         }
-        .contact-details ul {
-            list-style: none;
-            padding: 0;
+
+        .contact-info, .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
         }
-        .contact-details li {
-            margin: 10px 0;
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #e63946;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .cta-button:hover {
-            background: #b52e36;
-        }
-        iframe {
+
+        input, textarea {
             width: 100%;
-            max-width: 640px;
-            height: 1215px;
+            padding: 12px;
+            background: var(--input-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        button[type="submit"] {
+            background: var(--primary-red);
+            color: white;
+            padding: 1rem 2rem;
             border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Status Messages */
+        .status-message {
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+            display: none;
+        }
+
+        .success { background: #2ecc71; }
+        .error { background: #e74c3c; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -54,35 +96,91 @@
     <header id="header"></header>
     
     <main class="contact-container">
-        <section class="contact-intro">
-            <h1>Contact Baguette Maison</h1>
-            <p>Have a question? Need assistance? We're here to help. Reach out to us and we'll get back to you as soon as possible.</p>
-        </section>
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <section class="contact-info">
+                <h2>Our Contact Details</h2>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>+63 912 345 6789</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:info@baguettemaison.com">info@baguettemaison.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Address</h3>
+                    <p>Baguette Maison FOOD OPC<br>Metro Manila, Philippines</p>
+                </div>
+            </section>
 
-        <section class="contact-details">
-            <h2>Get in Touch</h2>
-            <ul>
-                <li>📍 <strong>Visit Us:</strong> Baguette Maison FOOD OPC, Metro Manila</li>
-                <li>📧 <strong>Email:</strong> <a href="mailto:info@baguettemaison.com">info@baguettemaison.com</a></li>
-                <li>📞 <strong>Phone:</strong> +63 912 345 6789</li>
-                <li>⏰ <strong>Hours:</strong> Mon - Sun, 8 AM - 8 PM</li>
-            </ul>
-        </section>
-        
-        <section class="contact-cta">
-            <h2>Let's Talk</h2>
-            <p>We value every customer and are here to answer any of your concerns. Don't hesitate to reach out!</p>
-            <a href="mailto:info@baguettemaison.com" class="cta-button">Email Us Now</a>
-        </section>
-
-        <section class="contact-form">
-            <h2>Contact Form</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUKsNpKaRACQqjtSAucOMRKXpAp9F8cvf48Zpi6zHMVc9weQ/viewform?embedded=true">Loading…</iframe>
-        </section>
+            <!-- Contact Form -->
+            <form id="contactForm" class="contact-form">
+                <h2>Send Us a Message</h2>
+                <div class="form-group">
+                    <label for="email">Your Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject*</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA_5igjfUJY1hcGL"></div>
+                <div class="status-message"></div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </main>
 
     <footer id="footer"></footer>
-   
-    <script src="/src/js/script.js" defer></script>
-  </body>
+
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    
+    <!-- Header/Footer Loader -->
+    <script src="/src/js/header-footer.js"></script>
+
+    <!-- Form Handling -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const statusMessage = document.querySelector('.status-message');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            submitButton.disabled = true;
+            statusMessage.style.display = 'none';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('/api/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Submission failed');
+                
+                statusMessage.textContent = 'We received your message and will get back to you as soon as possible. Until then, have a good day!';
+                statusMessage.className = 'status-message success';
+                form.reset();
+            } catch (error) {
+                statusMessage.textContent = 'Sorry, there is a technical issue. Mind trying to send us an email?';
+                statusMessage.className = 'status-message error';
+            } finally {
+                statusMessage.style.display = 'block';
+                submitButton.disabled = false;
+                window.scrollTo({ top: statusMessage.offsetTop - 100, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
 </html>
