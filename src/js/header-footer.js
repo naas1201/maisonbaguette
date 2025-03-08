@@ -152,6 +152,7 @@
           <li><a href="/index.html">Home</a></li>
           <li><a href="/pages/about.html">About</a></li>
           <li><a href="/pages/menu.html">Menu</a></li>
+          <li><a href="https://academy.baguettemaison.com" target="_blank">Academy</a></li>
           <li><a href="https://blog.baguettemaison.com" target="_blank">Blog</a></li>
           <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
