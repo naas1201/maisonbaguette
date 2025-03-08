@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baguette Maison Careers - Join Our Team</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore career opportunities at Baguette Maison. Join our dynamic team in various departments and enjoy exceptional perks and a vibrant work environment.">
+  <meta name="keywords" content="Baguette Maison, Careers, Jobs, Employment, Recruitment, Job Openings">
+  <meta name="author" content="Baguette Maison">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="/image/x-icon" href="/images/favicon.ico">
+  
+  <!-- Inline CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    :root {
+      --primary-color: #d4af37;
+      --secondary-color: #e0e0e0;
+      --bg-dark: #121212;
+      --bg-darker: #1f1f1f;
+      --bg-mid: #2a2a2a;
+      --bg-light: #2c2c2c;
+      --text-light: #e0e0e0;
+      --text-muted: #cccccc;
+      --text-secondary: #bbbbbb;
+    }
+    
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Container */
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    /* Perks Section */
+    .perks-section {
+      margin-bottom: 40px;
+    }
+    .perks-header {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .perk-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .perk-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 calc(33.333% - 20px);
+      min-width: 250px;
+      transition: transform 0.3s ease;
+    }
+    .perk-card:hover {
+      transform: translateY(-3px);
+    }
+    .perk-title {
+      font-size: 1.2em;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .perk-description {
+      font-size: 0.95em;
+      color: var(--text-muted);
+    }
+    
+    /* Collaborators Section */
+    .collaborator-section {
+      margin-bottom: 40px;
+    }
+    .collaborator-header {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .collaborator-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .collaborator-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 calc(33.333% - 20px);
+      min-width: 250px;
+      transition: transform 0.3s ease;
+    }
+    .collaborator-card:hover {
+      transform: translateY(-3px);
+    }
+    .collaborator-title {
+      font-size: 1.2em;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .collaborator-description {
+      font-size: 0.95em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .collaborator-contact {
+      display: inline-block;
+      padding: 10px 15px;
+      background: var(--primary-color);
+      color: #000;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .collaborator-contact:hover {
+      background: #bfa133;
+      transform: scale(1.05);
+    }
+    
+    /* Department Cards for Job Opportunities */
+    .department-section {
+      margin-bottom: 40px;
+    }
+    .department-section h2 {
+      color: var(--primary-color);
+    }
+    .department-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .department-header {
+      padding: 20px;
+      background: var(--bg-mid);
+      color: var(--primary-color);
+      font-size: 1.5em;
+      position: relative;
+    }
+    .department-header::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+    .department-card.expanded .department-header::after {
+      transform: rotate(45deg);
+    }
+    .job-list {
+      display: none;
+      padding: 20px;
+      background: var(--bg-darker);
+    }
+    .department-card.expanded .job-list {
+      display: block;
+    }
+    .job-card {
+      background: var(--bg-mid);
+      border: 1px solid var(--bg-light);
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .job-card:hover {
+      transform: translateY(-3px);
+    }
+    .job-title {
+      font-size: 1.2em;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .job-description {
+      font-size: 0.95em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .salary-range {
+      font-size: 0.9em;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .perk-cards, .collaborator-cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+  
+  <div class="container">
+    <h1>Careers at Baguette Maison</h1>
+    <p>Join our dynamic team and explore opportunities to grow with us. We value excellence, innovation, and collaboration.</p>
+    
+    <!-- Perks Section -->
+    <section class="perks-section">
+      <h2 class="perks-header">Perks of Working for Us</h2>
+      <div class="perk-cards">
+        <div class="perk-card">
+          <div class="perk-title">Superior Salary</div>
+          <div class="perk-description">
+            We pay better than our competitors to attract and retain top talent.
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-title">Continuous Training</div>
+          <div class="perk-description">
+            We invest in your professional growth by covering training and development costs.
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-title">Flexible Working Hours</div>
+          <div class="perk-description">
+            Enjoy a regulated 40-hour work week with extensive work-from-home options.
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-title">Free Language Lessons</div>
+          <div class="perk-description">
+            Benefit from free French and Tagalog lessons to enhance your communication skills.
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-title">Free Medical Consultation</div>
+          <div class="perk-description">
+            Enjoy unlimited free medical consultations to keep you healthy.
+          </div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-title">Franchise Opportunity</div>
+          <div class="perk-description">
+            After 2 years, eligible employees can access a loan to open their own shop under our franchise.
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Collaborators & Partnerships Section -->
+    <section class="collaborator-section">
+      <h2 class="collaborator-header">Collaborators & Partnerships</h2>
+      <div class="collaborator-cards">
+        <!-- Collaborator Card 1: Co-Rent Shop -->
+        <div class="collaborator-card">
+          <div class="collaborator-title">Co-Rent Shop Partnership</div>
+          <div class="collaborator-description">
+            We propose to rent a portion of your shop in busy areas—such as Malate, Makati, and BGC—to display our products and share our clientele, enhancing both brands.
+          </div>
+          <a class="collaborator-contact" href="mailto:careers@baguettemaison.com">Contact Us</a>
+        </div>
+        <!-- Collaborator Card 2: Influencer Wanted -->
+        <div class="collaborator-card">
+          <div class="collaborator-title">Influencer Collaboration</div>
+          <div class="collaborator-description">
+            We are ready to collaborate with influencers. With a minimum of 1500 followers and a 20% engagement rate, share your genuine perspective on our brand.
+          </div>
+          <a class="collaborator-contact" href="mailto:careers@baguettemaison.com">Contact Us</a>
+        </div>
+        <!-- Collaborator Card 3: Franchise Opening -->
+        <div class="collaborator-card">
+          <div class="collaborator-title">Franchise Opportunities</div>
+          <div class="collaborator-description">
+            We are expanding our brand and welcome franchise inquiries. Explore the possibility of owning a Baguette Maison franchise.
+          </div>
+          <a class="collaborator-contact" href="mailto:franchise@baguettemaison.com">Contact Us</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Job Opportunities Section -->
+    <section class="department-section">
+      <h2>Job Opportunities</h2>
+      <!-- Research and Development (No Openings) -->
+      <div class="department-card" id="dept-rnd">
+        <div class="department-header">Research and Development</div>
+        <div class="job-list">
+          <p style="color: var(--text-muted);">No openings</p>
+        </div>
+      </div>
+      
+      <!-- Legal Department -->
+      <div class="department-card" id="dept-legal">
+        <div class="department-header">Legal Department</div>
+        <div class="job-list">
+          <div class="job-card">
+            <div class="job-title">Trademark-Registration Lawyer</div>
+            <div class="job-description">
+              Manage the trademark registration process, advise on intellectual property, and ensure legal compliance.
+            </div>
+            <div class="salary-range">Salary: PHP 80,000 - 100,000</div>
+          </div>
+          <div class="job-card">
+            <div class="job-title">BIR Tax Lawyer (PH Tax Specialist)</div>
+            <div class="job-description">
+              Provide legal counsel on BIR regulations and PH tax law. Draft documents and represent the company in tax matters.
+            </div>
+            <div class="salary-range">Salary: PHP 85,000 - 105,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Culinary Department -->
+      <div class="department-card" id="dept-culinary">
+        <div class="department-header">Culinary Department</div>
+        <div class="job-list">
+          <div class="job-card">
+            <div class="job-title">French Chef (Paris) - Senior</div>
+            <div class="job-description">
+              Collaborate with our head chef to infuse authentic French techniques into our menu. Bring your Parisian flair and innovation.
+            </div>
+            <div class="salary-range">Salary: PHP 90,000 - 120,000</div>
+          </div>
+          <div class="job-card">
+            <div class="job-title">Culinary Service Staff (PH)</div>
+            <div class="job-description">
+              Assist in food preparation and support daily kitchen operations while ensuring quality service.
+            </div>
+            <div class="salary-range">Salary: PHP 30,000 - 40,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Operations & Service Department -->
+      <div class="department-card" id="dept-ops">
+        <div class="department-header">Operations & Service Department</div>
+        <div class="job-list">
+          <div class="job-card">
+            <div class="job-title">Quality Assurance Supervisor</div>
+            <div class="job-description">
+              Oversee quality control procedures, implement process improvements, and ensure customer satisfaction.
+            </div>
+            <div class="salary-range">Salary: PHP 50,000 - 65,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Marketing & Digital Strategy -->
+      <div class="department-card" id="dept-marketing">
+        <div class="department-header">Marketing & Digital Strategy</div>
+        <div class="job-list">
+          <div class="job-card">
+            <div class="job-title">Influencer Manager</div>
+            <div class="job-description">
+              Lead influencer marketing campaigns and develop digital strategies to boost brand awareness.
+            </div>
+            <div class="salary-range">Salary: PHP 55,000 - 70,000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+  
+  <!-- Inline JavaScript for Collapsible Department Cards -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var deptCards = document.querySelectorAll('.department-card');
+      deptCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          card.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+  
+  <!-- Load Header and Footer -->
+  <script src="src/js/header-footer.js" defer></script>
+</body>
+</html>
