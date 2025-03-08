@@ -131,9 +131,9 @@
   <!-- Dynamic Footer -->
   <div id="footer"></div>
   
-  <!-- Inline JavaScript -->
+  <!-- Inline JavaScript to Send JSON Payload -->
   <script>
-    // Function to get URL parameters
+    // Function to extract URL parameters
     function getParameterByName(name) {
       name = name.replace(/[\[\]]/g, '\\$&');
       const url = window.location.href;
@@ -147,7 +147,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Check for the "secret" parameter in the URL
       const secret = getParameterByName('secret');
-      const expectedSecret = 'secure520'; // Set your static secret here
+      const expectedSecret = 'secure520'; // Expected static secret
       
       if (secret !== expectedSecret) {
         // Redirect to homepage if secret is missing or doesn't match
@@ -155,20 +155,20 @@
         return;
       }
       
-      // Trigger webhook POST request immediately
+      // Build the JSON payload
+      const payload = { secret: secret };
+      
+      // Send the POST request to the webhook endpoint
       fetch('https://baguettemaison.com/pm/paymentWebhook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ secret: secret })
+        body: JSON.stringify(payload)
       })
-      .then(response => {
-        console.log('Webhook triggered successfully.');
-      })
-      .catch(error => {
-        console.error('Error triggering webhook:', error);
-      });
+      .then(response => response.json())
+      .then(data => console.log('Webhook response:', data))
+      .catch(error => console.error('Error triggering webhook:', error));
     });
   </script>
   
