@@ -182,7 +182,8 @@
       <div class="footer-middle">
         <ul>
           <li><a href="/pages/legal.html">Legal</a></li>
-          <li><a href="https://career.baguettemaison.com" target="_blank">Careers</a></li>
+          <li><a href="/pages/terms.html">Terms</a></li>
+          <li><a href="/pages/careers.html">Careers</a></li>
           <li><a href="/pages/cookies.html">Cookies</a></li>
         </ul>
       </div>
@@ -190,7 +191,7 @@
       <div class="footer-right">
         <p>Baguette Maison FOOD OPC<br>French Sushi™</p>
         <p>Subsidiary of <a href="https://lpp.ovh" target="_blank">LPP Inc. - FR40981307655</a></p>
-        <p>Company registration number 2025020190665-00</p>
+        <p>SEC Company registration number 2025020190665-00</p>
         <div class="social-links">
           <a href="https://instagram.com/thebaguettemaison" target="_blank">Instagram</a>
           <a href="https://wa.me/639260488976" target="_blank">WhatsApp</a>
