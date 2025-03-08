@@ -191,7 +191,7 @@
       <div class="footer-right">
         <p>Baguette Maison FOOD OPC<br>French Sushi™</p>
         <p>Subsidiary of <a href="https://lpp.ovh" target="_blank">LPP Inc. - FR40981307655</a></p>
-        <p>SEC Company registration number 2025020190665-00</p>
+        <p>SEC Company registration number 2025020190665</p>
         <div class="social-links">
           <a href="https://instagram.com/thebaguettemaison" target="_blank">Instagram</a>
           <a href="https://wa.me/639260488976" target="_blank">WhatsApp</a>
