@@ -184,6 +184,7 @@
           <li><a href="/pages/legal.html">Legal</a></li>
           <li><a href="/pages/terms.html">Terms</a></li>
           <li><a href="/pages/careers.html">Careers</a></li>
+          <li><a href="/pages/corporate.html">Corporate</a></li>
           <li><a href="/pages/cookies.html">Cookies</a></li>
         </ul>
       </div>
