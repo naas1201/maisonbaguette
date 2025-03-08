@@ -75,13 +75,20 @@
       text-align: center;
     }
     
-    /* Hero Section */
+    /* Hero Section with Animated Gradient */
     .hero {
       text-align: center;
       background: linear-gradient(135deg, var(--bg-darker), var(--bg-mid));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       padding: 80px 20px;
       position: relative;
       overflow: hidden;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .hero::after {
       content: "";
@@ -149,10 +156,25 @@
       background: var(--bg-mid);
       transform: scale(1.05);
     }
+    /* Additional visual cue for CTA buttons */
+    .cta-button:hover {
+      box-shadow: 0 0 10px var(--primary-color);
+    }
     .assurance {
       font-size: 0.9em;
       color: var(--text-secondary);
       margin-top: 10px;
+    }
+    
+    /* Scroll Animation Styles */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     /* Our Story Section */
@@ -329,7 +351,7 @@
   
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content animate-on-scroll">
       <h1>French Sushi™ – Affordable Luxury in Every Bite</h1>
       <p>Experience a revolutionary culinary journey where French tradition meets Asian innovation. Indulge in our exclusive French Sushi™, a nutrient-dense masterpiece reimagined for the modern gourmet.</p>
       <ul class="hero-bullets">
@@ -339,7 +361,7 @@
         <li>✔ Limited Edition – Crafted for Manila’s Elite</li>
       </ul>
       <div class="cta-group">
-        <a href="https://wa.me/15202008427" class="cta-button primary" aria-label="Order Now – Savor Affordable Luxury">Order Now – Savor Luxury</a>
+        <a href="https://wa.me/639260488976" class="cta-button primary" aria-label="Order Now – Savor Affordable Luxury">Order Now – Savor Luxury</a>
         <a href="/pages/about.html" class="cta-button secondary" aria-label="Discover Our Story">Discover Our Story</a>
       </div>
       <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
@@ -347,13 +369,13 @@
   </section>
   
   <!-- Our Story Section -->
-  <section id="our-story" class="our-story">
+  <section id="our-story" class="our-story animate-on-scroll">
     <h2>Our Culinary Journey</h2>
     <p>Born from the vision of a seasoned chef who honed his craft in Asia and the endorsement of a renowned Filipina doctor, French Sushi™ is more than a snack—it’s a statement of affordable luxury. Our creation transforms the classic French baguette into a work of art, where culinary mastery meets nutritional science.</p>
   </section>
   
   <!-- Features Section -->
-  <section class="features">
+  <section class="features animate-on-scroll">
     <div class="features-container">
       <div class="feature-card">
         <img src="/images/artisan-icon.png" alt="Artisan Crafted">
@@ -384,7 +406,7 @@
   </section>
   
   <!-- Nutrition Section -->
-  <section class="nutrition">
+  <section class="nutrition animate-on-scroll">
     <h2>Nutritional Mastery</h2>
     <p>Engineered for both flavor and wellness, each delicately crafted piece of French Sushi™ offers:</p>
     <ul>
@@ -398,7 +420,7 @@
   </section>
   
   <!-- Testimonials Section -->
-  <section class="testimonials">
+  <section class="testimonials animate-on-scroll">
     <h2>What Our Patrons Say</h2>
     <div class="testimonial-slider">
       <div class="testimonial active">
@@ -414,7 +436,7 @@
   </section>
   
   <!-- Secure Payment Section -->
-  <section class="secure-payment">
+  <section class="secure-payment animate-on-scroll">
     <h2>Your Order, Our Priority</h2>
     <div class="payment-icons">
       <img src="/images/gcash-icon.png" alt="GCash Secure Payment">
@@ -462,6 +484,22 @@
         });
       });
     });
+    
+    // Intersection Observer for Scroll Animations
+    (function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    })();
     
     // Additional interactivity can be added here if necessary
   </script>
