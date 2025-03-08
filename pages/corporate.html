@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Solutions | Baguette Maison</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover corporate solutions by Baguette Maison – the innovator of French Sushi. Experience our health-focused, prescription-style menu designed exclusively for corporate events.">
+  <meta name="keywords" content="Corporate, French Sushi, Corporate Events, Health-Focused, Prescription Menu, Baguette Maison">
+  <meta name="author" content="Baguette Maison">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Inline CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    :root {
+      --primary-color: #d4af37;
+      --secondary-color: #e0e0e0;
+      --bg-dark: #121212;
+      --bg-darker: #1f1f1f;
+      --bg-mid: #2a2a2a;
+      --text-light: #e0e0e0;
+      --text-muted: #cccccc;
+      --accent-color: #f5f5f5;
+      --cta-bg: #d4af37;
+      --cta-hover: #bfa133;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    h1, h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .section-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .section-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .section-card p {
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: var(--text-muted);
+    }
+    
+    /* Pricing Table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    
+    .pricing-table th, .pricing-table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid var(--bg-mid);
+    }
+    
+    .pricing-table th {
+      background: var(--bg-mid);
+      color: var(--primary-color);
+    }
+    
+    /* Trust & Certifications */
+    .trust-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .trust-item {
+      width: 100px;
+      text-align: center;
+    }
+    
+    .trust-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+    
+    .trust-item p {
+      font-size: 0.85em;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    
+    /* Testimonial Slider */
+    .testimonial-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      padding: 20px;
+      background: var(--bg-darker);
+      border: 1px solid var(--bg-mid);
+      border-radius: 8px;
+    }
+    
+    .testimonial {
+      display: none;
+      text-align: center;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1.1em;
+      padding: 10px;
+    }
+    
+    .testimonial.active {
+      display: block;
+    }
+    
+    /* CTA Section */
+    .cta-card {
+      background: var(--cta-bg);
+      color: #000;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 30px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    
+    .cta-card:hover {
+      background: var(--cta-hover);
+      transform: scale(1.02);
+    }
+    
+    .cta-card a {
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .trust-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+  
+  <div class="container">
+    <!-- What We Offer Section -->
+    <div class="section-card">
+      <h2>What We Offer</h2>
+      <p>
+        At Baguette Maison, the inventor of French Sushi™, we present a revolutionary, health-focused menu that transforms your corporate events into a culinary experience. Our signature prescription-style French Sushi is designed to boost wellbeing while delighting the palate. For events, we offer a variety of French Sushi options – from subtly sweet to delicately savory – all crafted with the same dedication to health benefits.
+      </p>
+    </div>
+    
+    <!-- Pricing & Discounts Section -->
+    <div class="section-card">
+      <h2>Pricing & Discounts</h2>
+      <p>
+        Our corporate pricing is transparent and competitive. Enjoy our premium French Sushi at just <strong>₱50 per piece</strong> (discounted from the original ₱70). We offer volume discounts to further enhance your event’s value:
+      </p>
+      <table class="pricing-table">
+        <tr>
+          <th>Quantity</th>
+          <th>Discount</th>
+        </tr>
+        <tr>
+          <td>50 – 99 pieces</td>
+          <td>No discount (₱50 each)</td>
+        </tr>
+        <tr>
+          <td>100 – 149 pieces</td>
+          <td>10% off</td>
+        </tr>
+        <tr>
+          <td>150+ pieces</td>
+          <td>20% off</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- No Hidden Fees Section -->
+    <div class="section-card">
+      <h2>No Hidden Fees</h2>
+      <p>
+        We believe in complete transparency. There are <strong>no hidden fees</strong> – the price you see is the price you pay.
+      </p>
+    </div>
+    
+    <!-- Conditions & Requirements Section -->
+    <div class="section-card">
+      <h2>Conditions & Requirements</h2>
+      <p>
+        To ensure a smooth event, please note the following conditions:
+      </p>
+      <ul>
+        <li>Minimum order: 50 pieces.</li>
+        <li>Advance notice: 10 days required for preparation and logistics.</li>
+        <li>A 25% deposit is required upon booking; installment plans are available.</li>
+      </ul>
+    </div>
+    
+    <!-- Certifications & Trust Section -->
+    <div class="section-card">
+      <h2>Certifications & Trust</h2>
+      <p>
+        Our commitment to excellence is proven by our registrations and industry standards. We are BIR and SEC registered, and our operations adhere strictly to HACCP and other industry benchmarks.
+      </p>
+      <div class="trust-container">
+        <div class="trust-item">
+          <img src="/images/security-icon.png" alt="Security">
+          <p>SSL Secured</p>
+        </div>
+        <div class="trust-item">
+          <img src="/images/icon-business.png" alt="Business">
+          <p>BIR Registered</p>
+        </div>
+        <div class="trust-item">
+          <img src="/images/health-experts-logo.png" alt="Health Experts">
+          <p>HACCP Certified</p>
+        </div>
+        <div class="trust-item">
+          <img src="/images/frenchsushi.png" alt="French Sushi">
+          <p>Innovative</p>
+        </div>
+        <div class="trust-item">
+          <img src="/images/gourmet-logo.jpg" alt="Gourmet">
+          <p>Premium Quality</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Testimonial Slider Section -->
+    <div class="section-card">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial active">
+          "Baguette Maison transformed our annual corporate event. The quality of their French Sushi was unmatched and our guests loved it." – Corporate Client A
+        </div>
+        <div class="testimonial">
+          "Our team was impressed by the health benefits and innovative flavors. Truly a game-changer in corporate catering." – Corporate Client B
+        </div>
+        <div class="testimonial">
+          "Reliable, transparent pricing and no hidden fees. Their service exceeded our expectations." – Corporate Client C
+        </div>
+        <div class="testimonial">
+          "The premium quality and attention to detail made our event a huge success. Highly recommended!" – Corporate Client D
+        </div>
+        <div class="testimonial">
+          "Fast, professional, and innovative – Baguette Maison is our go-to for corporate events." – Corporate Client E
+        </div>
+        <div class="testimonial">
+          "Their French Sushi not only tastes great but also supports a healthy lifestyle, which resonated with our company values." – Corporate Client F
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call-to-Action Section -->
+    <div class="section-card cta-card">
+      <h2>Ready to Elevate Your Corporate Event?</h2>
+      <p>
+        Contact us at <a href="mailto:corporate@baguettemaison.com">corporate@baguettemaison.com</a> with your company name, contact name, the number of sushi required, any special variation needed, and the event date. We promise to respond within 24 hours.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+  
+  <!-- Inline JavaScript for Testimonial Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonials = document.querySelectorAll('.testimonial');
+      let currentIndex = 0;
+      const total = testimonials.length;
+      
+      function showTestimonial(index) {
+        testimonials.forEach((el, i) => {
+          el.classList.toggle('active', i === index);
+        });
+      }
+      
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % total;
+        showTestimonial(currentIndex);
+      }, 5000);
+    });
+  </script>
+  
+  <!-- Load Header and Footer Script -->
+  <script src="/src/js/header-footer.js" defer></script>
+</body>
+</html>
