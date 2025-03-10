@@ -325,7 +325,7 @@
         if (!discordResponse.ok) throw new Error('Failed to send order notification to Discord.');
         
         // Update product stock in KV (endpoint to be implemented)
-        let stockResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/storeOrder', {
+        let stockResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/updateStock', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ cart: cart })
