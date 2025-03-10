@@ -299,7 +299,7 @@
       try {
         // All transmissions occur over HTTPS ensuring security.
         // Store order in KV (endpoint to be implemented on Cloudflare Workers)
-        let kvResponse = await fetch('/api/storeOrder', {
+        let kvResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/storeOrder', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderData)
@@ -325,7 +325,7 @@
         if (!discordResponse.ok) throw new Error('Failed to send order notification to Discord.');
         
         // Update product stock in KV (endpoint to be implemented)
-        let stockResponse = await fetch('/api/updateStock', {
+        let stockResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/storeOrder', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ cart: cart })
