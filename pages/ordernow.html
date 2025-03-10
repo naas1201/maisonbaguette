@@ -62,17 +62,17 @@
         <p>Experience our premium French Sushi packages, each piece crafted to perfection. (1 piece = PHP 50.00)</p>
         <button class="btn" onclick="toggleSubcards('food')">View Packages</button>
         <div class="subcards" id="food-subcards" style="display:none;">
-          <!-- Packages 1 to 10 -->
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 1', 3, 3 * 50)">Package 1 - 3 pieces - PHP 150.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 2', 6, 6 * 50)">Package 2 - 6 pieces - PHP 300.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 3', 9, 9 * 50)">Package 3 - 9 pieces - PHP 450.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 4', 12, 12 * 50)">Package 4 - 12 pieces - PHP 600.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 5', 15, 15 * 50)">Package 5 - 15 pieces - PHP 750.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 6', 18, 18 * 50)">Package 6 - 18 pieces - PHP 900.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 7', 21, 21 * 50)">Package 7 - 21 pieces - PHP 1050.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 8', 24, 24 * 50)">Package 8 - 24 pieces - PHP 1200.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 9', 27, 27 * 50)">Package 9 - 27 pieces - PHP 1350.00</div>
-          <div class="subcard" onclick="addToCart('French Sushi', 'Package 10', 30, 30 * 50)">Package 10 - 30 pieces - PHP 1500.00</div>
+          <!-- Updated Packages 1 to 10 with unique identifiers and unit price -->
+          <div class="subcard" onclick="addToCart('French Sushi - Package 1', 'Package 1 - 3 pieces', 3, 50)">Package 1 - 3 pieces - PHP 150.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 2', 'Package 2 - 6 pieces', 6, 50)">Package 2 - 6 pieces - PHP 300.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 3', 'Package 3 - 9 pieces', 9, 50)">Package 3 - 9 pieces - PHP 450.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 4', 'Package 4 - 12 pieces', 12, 50)">Package 4 - 12 pieces - PHP 600.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 5', 'Package 5 - 15 pieces', 15, 50)">Package 5 - 15 pieces - PHP 750.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 6', 'Package 6 - 18 pieces', 18, 50)">Package 6 - 18 pieces - PHP 900.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 7', 'Package 7 - 21 pieces', 21, 50)">Package 7 - 21 pieces - PHP 1050.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 8', 'Package 8 - 24 pieces', 24, 50)">Package 8 - 24 pieces - PHP 1200.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 9', 'Package 9 - 27 pieces', 27, 50)">Package 9 - 27 pieces - PHP 1350.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi - Package 10', 'Package 10 - 30 pieces', 30, 50)">Package 10 - 30 pieces - PHP 1500.00</div>
         </div>
       </div>
       
@@ -101,7 +101,7 @@
         <p>Enjoy the perfect combination of our French Sushi and Coffee selections.</p>
         <button class="btn" onclick="toggleSubcards('package')">View Mix Package</button>
         <div class="subcards" id="package-subcards" style="display:none;">
-          <div class="subcard" onclick="addToCart('Mix Package', 'Food & Coffee Combo', 1, 30)">Food & Coffee Combo - PHP 450.00</div>
+          <div class="subcard" onclick="addToCart('Mix Package - Combo', 'Food & Coffee Combo', 1, 450)">Food & Coffee Combo - PHP 450.00</div>
         </div>
       </div>
     </div>
@@ -221,17 +221,13 @@
       if(coffeeType.toLowerCase().includes("cafe au lait")) {
         basePrice += 10;
       }
-      addToCart(coffeeType + " (" + size.charAt(0).toUpperCase() + size.slice(1) + ", " + temp + ")", coffeeType, 1, basePrice);
+      // Use a unique item name so each click adds a new line
+      addToCart(coffeeType + " (" + size.charAt(0).toUpperCase() + size.slice(1) + ", " + temp + ")", coffeeType + " (" + size + ", " + temp + ")", 1, basePrice);
     }
     
-    // Add item to cart
+    // Add item to cart (each click creates a new line)
     function addToCart(itemName, displayName, quantity, price) {
-      let existing = cart.find(item => item.itemName === itemName);
-      if(existing) {
-        existing.quantity += quantity;
-      } else {
-        cart.push({ itemName, displayName, quantity, price });
-      }
+      cart.push({ itemName, displayName, quantity, price });
       updateCartUI();
       saveCart();
       showModal("Item added to cart securely!");
@@ -298,7 +294,7 @@
       
       try {
         // All transmissions occur over HTTPS ensuring security.
-        // Store order in KV (endpoint to be implemented on Cloudflare Workers)
+        // Store order in KV (endpoint on Cloudflare Workers)
         let kvResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/storeOrder', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -306,7 +302,7 @@
         });
         if (!kvResponse.ok) throw new Error('Failed to store order securely.');
         
-        // Send order details to Discord webhook with improved clarity
+        // Send order details to Discord webhook
         let discordResponse = await fetch('https://discordapp.com/api/webhooks/1348457230193655808/f5JleFAmtBqJyAhDRwfI2oNF3hLO3-fHHysLhupQYVR1lFspE03UkBrUDnM9jfxE2Ztk', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -324,7 +320,7 @@
         });
         if (!discordResponse.ok) throw new Error('Failed to send order notification to Discord.');
         
-        // Update product stock in KV (endpoint to be implemented)
+        // Update product stock in KV (endpoint on Cloudflare Workers)
         let stockResponse = await fetch('https://orderandstock.qmpro.workers.dev/api/updateStock', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
