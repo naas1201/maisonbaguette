@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Your Gourmet Selection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Inline CSS -->
+  <style>
+    /* Reset & Base Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f0f0f0; }
+    /* Header & Footer */
+    #header, #footer { background: #0070f3; color: #fff; text-align: center; padding: 10px; }
+    /* Layout */
+    .container { display: flex; flex-wrap: wrap; width: 100%; min-height: 100vh; }
+    .menu { width: 70%; padding: 20px; }
+    .cart { width: 30%; background: #ffffff; padding: 20px; border-left: 2px solid #e0e0e0; position: relative; }
+    /* Cards */
+    .card { background: #ffffff; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; }
+    .card h3 { margin-bottom: 10px; }
+    .card p { font-size: 14px; color: #555; }
+    .btn { display: inline-block; padding: 10px 20px; background: #0070f3; color: #fff; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px; font-size: 16px; transition: background 0.3s ease; }
+    .btn:hover { background: #005bb5; }
+    .subcards { margin-top: 10px; padding-left: 15px; }
+    .subcard { padding: 8px; background: #f9f9f9; margin: 5px 0; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+    .subcard:hover { background: #e9e9e9; }
+    /* Cart Styles */
+    .cart-item { border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+    .cart-item button { background: transparent; border: none; color: #ff0000; cursor: pointer; }
+    .total { font-size: 18px; font-weight: bold; margin-top: 20px; }
+    .small-text { font-size: 10px; }
+    /* Order Form */
+    .order-form { margin-top: 20px; }
+    .order-form input, .order-form textarea, .order-form select { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
+    /* Modals */
+    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 1000; }
+    .modal-content { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; width: 80%; text-align: center; }
+    /* Testimonial Carousel */
+    .carousel { margin: 20px 0; }
+    .carousel-item { background: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; }
+    .countdown { font-size: 18px; margin-top: 10px; }
+  </style>
+  <!-- External header/footer loader -->
+  <script src="/src/js/header-footer.js"></script>
+</head>
+<body>
+  <!-- Header (populated by external script) -->
+  <div id="header"></div>
+  
+  <div class="container">
+    <div class="menu">
+      <!-- Testimonial Carousel -->
+      <div class="carousel" id="testimonial-carousel">
+        <div class="carousel-item">"The service was exceptional and my order arrived on time!" – Customer A</div>
+        <div class="carousel-item">"Secure, reliable, and delicious. I feel safe ordering here." – Customer B</div>
+        <div class="carousel-item">"Professional and efficient service, highly recommended." – Customer C</div>
+      </div>
+      
+      <!-- Food Category Card -->
+      <div class="card" id="food-card">
+        <h3>Food (French Sushi)</h3>
+        <p>Experience our premium French Sushi packages, each piece crafted to perfection. (1 piece = PHP 50.00)</p>
+        <button class="btn" onclick="toggleSubcards('food')">View Packages</button>
+        <div class="subcards" id="food-subcards" style="display:none;">
+          <!-- Packages 1 to 10 -->
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 1', 3, 3 * 50)">Package 1 - 3 pieces - PHP 150.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 2', 6, 6 * 50)">Package 2 - 6 pieces - PHP 300.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 3', 9, 9 * 50)">Package 3 - 9 pieces - PHP 450.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 4', 12, 12 * 50)">Package 4 - 12 pieces - PHP 600.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 5', 15, 15 * 50)">Package 5 - 15 pieces - PHP 750.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 6', 18, 18 * 50)">Package 6 - 18 pieces - PHP 900.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 7', 21, 21 * 50)">Package 7 - 21 pieces - PHP 1050.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 8', 24, 24 * 50)">Package 8 - 24 pieces - PHP 1200.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 9', 27, 27 * 50)">Package 9 - 27 pieces - PHP 1350.00</div>
+          <div class="subcard" onclick="addToCart('French Sushi', 'Package 10', 30, 30 * 50)">Package 10 - 30 pieces - PHP 1500.00</div>
+        </div>
+      </div>
+      
+      <!-- Beverage Category Card -->
+      <div class="card" id="beverage-card">
+        <h3>Beverage (Coffee)</h3>
+        <p>Select your coffee option. Choose between Iced and Hot, and then your preferred type.</p>
+        <button class="btn" onclick="toggleSubcards('beverage')">View Coffee Options</button>
+        <div class="subcards" id="beverage-subcards" style="display:none;">
+          <div class="subcard" onclick="toggleSubcards('iced')">Iced Coffee</div>
+          <div class="subcards" id="iced-subcards" style="display:none; padding-left:15px;">
+            <div class="subcard" onclick="selectCoffee('Iced', 'Cafe au Lait')">Cafe au Lait (Iced)</div>
+            <div class="subcard" onclick="selectCoffee('Iced', 'Cafe Francais')">Cafe Francais (Iced)</div>
+          </div>
+          <div class="subcard" onclick="toggleSubcards('hot')">Hot Coffee</div>
+          <div class="subcards" id="hot-subcards" style="display:none; padding-left:15px;">
+            <div class="subcard" onclick="selectCoffee('Hot', 'Cafe au Lait')">Cafe au Lait (Hot)</div>
+            <div class="subcard" onclick="selectCoffee('Hot', 'Cafe Francais')">Cafe Francais (Hot)</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Package Category Card (Mix of Food & Beverage) -->
+      <div class="card" id="package-card">
+        <h3>Package (Mix of Food & Beverage)</h3>
+        <p>Enjoy the perfect combination of our French Sushi and Coffee selections.</p>
+        <button class="btn" onclick="toggleSubcards('package')">View Mix Package</button>
+        <div class="subcards" id="package-subcards" style="display:none;">
+          <div class="subcard" onclick="addToCart('Mix Package', 'Food & Coffee Combo', 1, 30)">Food & Coffee Combo - PHP 450.00</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cart Section -->
+    <div class="cart">
+      <h3>Your Cart</h3>
+      <div id="cart-items">
+        <!-- Items dynamically added here -->
+      </div>
+      <div class="total" id="cart-total">
+        Total: PHP 0.00 (includes 12% VAT*)<br>
+        <span class="small-text">*VAT applies. <a href="terms.html">Terms &amp; Conditions</a></span>
+      </div>
+      <button class="btn" onclick="showOrderForm()">Order Now</button>
+      
+      <!-- Order Form -->
+      <div class="order-form" id="order-form" style="display:none;">
+        <h3>Complete Your Order Securely</h3>
+        <label for="customer-name">Name</label>
+        <input type="text" id="customer-name" placeholder="Your Name" required>
+        <label for="customer-address">Delivery Address</label>
+        <input type="text" id="customer-address" placeholder="Your Address" required>
+        <label for="customer-contact">Contact Number</label>
+        <input type="text" id="customer-contact" placeholder="Your Contact Number" required>
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" onchange="paymentMethodChange()">
+          <option value="cod">Cash on Delivery (COD)</option>
+          <option value="gcash">Gcash</option>
+        </select>
+        <div id="gcash-extra" style="display:none;">
+          <img src="/images/gcash.jpg" alt="Gcash Payment" style="width:100px; margin:10px 0;">
+          <label for="gcash-txn">Gcash Transaction Number</label>
+          <input type="text" id="gcash-txn" placeholder="Transaction Number">
+          <label for="gcash-time">Time of Payment</label>
+          <input type="text" id="gcash-time" placeholder="Time of Payment">
+        </div>
+        <label for="special-request">Special Request</label>
+        <textarea id="special-request" placeholder="We will do our best to accommodate your request but cannot promise success"></textarea>
+        <button class="btn" onclick="submitOrder()">Submit Order</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for feedback messages -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <!-- Feedback message will appear here -->
+    </div>
+  </div>
+  
+  <!-- Redirect Modal with Countdown -->
+  <div class="modal" id="redirectModal">
+    <div class="modal-content" id="redirect-content">
+      <p id="redirect-message">Thank you for your order! We are preparing it now.</p>
+      <p class="countdown" id="countdown">Redirecting in 6...</p>
+    </div>
+  </div>
+  
+  <!-- Inline JavaScript -->
+  <script>
+    let cart = [];
+    const CART_STORAGE_KEY = 'order_cart';
+    const CART_EXPIRY_KEY = 'order_cart_expiry';
+    const CART_EXPIRY_MINUTES = 20;
+    
+    // Load header and footer content from /src/js/header-footer.js (if the function is defined)
+    if(typeof loadHeaderFooter === 'function') {
+      loadHeaderFooter();
+    }
+    
+    // Load cart from localStorage on page load
+    window.onload = function() {
+      const storedCart = localStorage.getItem(CART_STORAGE_KEY);
+      const expiry = localStorage.getItem(CART_EXPIRY_KEY);
+      if(storedCart && expiry) {
+        const now = new Date().getTime();
+        if(now < parseInt(expiry)) {
+          cart = JSON.parse(storedCart);
+          updateCartUI();
+        } else {
+          localStorage.removeItem(CART_STORAGE_KEY);
+          localStorage.removeItem(CART_EXPIRY_KEY);
+        }
+      }
+    }
+    
+    // Save cart with expiry
+    function saveCart() {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      const expiryTime = new Date().getTime() + CART_EXPIRY_MINUTES * 60000;
+      localStorage.setItem(CART_EXPIRY_KEY, expiryTime.toString());
+    }
+    
+    // Toggle subcards visibility
+    function toggleSubcards(category) {
+      const elem = document.getElementById(category + '-subcards');
+      if(elem) {
+        elem.style.display = (elem.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+    
+    // Handle coffee selection and pricing
+    function selectCoffee(temp, coffeeType) {
+      let size = prompt("Select size for " + coffeeType + " (" + temp + ") - Options: Moyen, Grand, Geant:", "Moyen");
+      if (!size) return;
+      size = size.trim().toLowerCase();
+      let basePrice = 0;
+      if(size === 'moyen') basePrice = 100;
+      else if(size === 'grand') basePrice = 110;
+      else if(size === 'geant') basePrice = 120;
+      else {
+        showModal("Invalid size selected. Please choose Moyen, Grand, or Geant.");
+        return;
+      }
+      // Add extra for Cafe au Lait
+      if(coffeeType.toLowerCase().includes("cafe au lait")) {
+        basePrice += 10;
+      }
+      addToCart(coffeeType + " (" + size.charAt(0).toUpperCase() + size.slice(1) + ", " + temp + ")", coffeeType, 1, basePrice);
+    }
+    
+    // Add item to cart
+    function addToCart(itemName, displayName, quantity, price) {
+      let existing = cart.find(item => item.itemName === itemName);
+      if(existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({ itemName, displayName, quantity, price });
+      }
+      updateCartUI();
+      saveCart();
+      showModal("Item added to cart securely!");
+    }
+    
+    // Remove item from cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+      saveCart();
+      showModal("Item removed from cart.");
+    }
+    
+    // Update cart display and total (including 12% VAT)
+    function updateCartUI() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = '';
+      let subtotal = 0;
+      cart.forEach((item, index) => {
+        subtotal += item.price * item.quantity;
+        let itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        itemDiv.innerHTML = item.displayName + " x" + item.quantity + " - PHP " + (item.price * item.quantity).toFixed(2) +
+                            ' <button onclick="removeFromCart(' + index + ')">Remove</button>';
+        cartItemsContainer.appendChild(itemDiv);
+      });
+      let total = subtotal * 1.12; // Add 12% VAT
+      document.getElementById('cart-total').innerHTML = "Total: PHP " + total.toFixed(2) + " (includes 12% VAT*)" +
+          "<br><span class='small-text'>*VAT applies. <a href='terms.html'>Terms &amp; Conditions</a></span>";
+    }
+    
+    // Show the order form
+    function showOrderForm() {
+      document.getElementById('order-form').style.display = 'block';
+    }
+    
+    // Update order form for payment method
+    function paymentMethodChange() {
+      const method = document.getElementById('payment-method').value;
+      document.getElementById('gcash-extra').style.display = (method === 'gcash') ? 'block' : 'none';
+    }
+    
+    // Submit the order: send to KV endpoints and Discord webhook
+    async function submitOrder() {
+      const orderData = {
+        customer: {
+          name: document.getElementById('customer-name').value,
+          address: document.getElementById('customer-address').value,
+          contact: document.getElementById('customer-contact').value,
+          paymentMethod: document.getElementById('payment-method').value,
+          gcashTxn: document.getElementById('gcash-txn').value || null,
+          gcashTime: document.getElementById('gcash-time').value || null,
+          specialRequest: document.getElementById('special-request').value
+        },
+        cart: cart,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Validate required fields
+      if(!orderData.customer.name || !orderData.customer.address || !orderData.customer.contact) {
+        showModal("Please fill in all required fields.");
+        return;
+      }
+      
+      try {
+        // All transmissions occur over HTTPS ensuring security.
+        // Store order in KV (endpoint to be implemented on Cloudflare Workers)
+        let kvResponse = await fetch('/api/storeOrder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderData)
+        });
+        if (!kvResponse.ok) throw new Error('Failed to store order securely.');
+        
+        // Send order details to Discord webhook with improved clarity
+        let discordResponse = await fetch('https://discordapp.com/api/webhooks/1348457230193655808/f5JleFAmtBqJyAhDRwfI2oNF3hLO3-fHHysLhupQYVR1lFspE03UkBrUDnM9jfxE2Ztk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            content: "**New Order Received:**\n" +
+                     "Customer: " + orderData.customer.name + "\n" +
+                     "Address: " + orderData.customer.address + "\n" +
+                     "Contact: " + orderData.customer.contact + "\n" +
+                     "Payment: " + orderData.customer.paymentMethod.toUpperCase() + "\n" +
+                     (orderData.customer.paymentMethod === 'gcash' ? ("Gcash Txn: " + orderData.customer.gcashTxn + "\nTime: " + orderData.customer.gcashTime + "\n") : "") +
+                     "Special Request: " + orderData.customer.specialRequest + "\n" +
+                     "Order Details: " + JSON.stringify(orderData.cart, null, 2) + "\n" +
+                     "Timestamp: " + orderData.timestamp
+          })
+        });
+        if (!discordResponse.ok) throw new Error('Failed to send order notification to Discord.');
+        
+        // Update product stock in KV (endpoint to be implemented)
+        let stockResponse = await fetch('/api/updateStock', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cart: cart })
+        });
+        if (!stockResponse.ok) throw new Error('Failed to update stock management.');
+        
+        // Clear cart and localStorage
+        cart = [];
+        localStorage.removeItem(CART_STORAGE_KEY);
+        localStorage.removeItem(CART_EXPIRY_KEY);
+        updateCartUI();
+        
+        // Show order complete modal and initiate countdown redirect
+        showRedirectModal();
+      } catch (err) {
+        showModal("Order submission failed: " + err.message);
+      }
+    }
+    
+    // Show a modal message for feedback
+    function showModal(message) {
+      const modal = document.getElementById('modal');
+      const modalContent = document.getElementById('modal-content');
+      modalContent.textContent = message;
+      modal.style.display = 'flex';
+      setTimeout(() => { modal.style.display = 'none'; }, 3000);
+    }
+    
+    // Show redirect modal with countdown animation
+    function showRedirectModal() {
+      const redirectModal = document.getElementById('redirectModal');
+      const countdownElem = document.getElementById('countdown');
+      redirectModal.style.display = 'flex';
+      let seconds = 6;
+      countdownElem.textContent = "Redirecting in " + seconds + "...";
+      const interval = setInterval(() => {
+        seconds--;
+        if(seconds > 0) {
+          countdownElem.textContent = "Redirecting in " + seconds + "...";
+        } else {
+          clearInterval(interval);
+          redirectModal.style.display = 'none';
+          // Redirect to about.html
+          window.location.href = 'about.html';
+        }
+      }, 1000);
+    }
+  </script>
+  
+  <!-- Footer (populated by external script) -->
+  <div id="footer"></div>
+</body>
+</html>
