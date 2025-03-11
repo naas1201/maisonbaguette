@@ -56,8 +56,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      /* Optional: Uncomment the next line to use an image as a logo in the hero */
-      /* background: url('/images/frenchsushi.png') no-repeat center; background-size: contain; */
     }
     
     .hero h1 {
@@ -83,26 +81,50 @@
       to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Pay Now Button */
-    .pay-button {
+    /* Primary CTA Button */
+    .cta-main {
       display: inline-block;
       background: var(--cta-bg);
       color: #000;
-      padding: 15px 30px;
+      padding: 18px 40px;
       border: none;
-      border-radius: 5px;
-      font-size: 1.1em;
+      border-radius: 8px;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      text-decoration: none;
+      margin: 25px 0 15px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .cta-main:hover {
+      background: var(--cta-hover);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Secondary PayPal Button */
+    .cta-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--primary-color);
+      padding: 12px 25px;
+      border: 2px solid var(--primary-color);
+      border-radius: 6px;
+      font-size: 0.9em;
       font-weight: 600;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background var(--transition-speed), transform var(--transition-speed);
+      transition: all var(--transition-speed);
       text-decoration: none;
-      margin: 20px 0;
+      margin: 10px 0;
     }
-    
-    .pay-button:hover {
-      background: var(--cta-hover);
-      transform: scale(1.05);
+
+    .cta-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: scale(1.02);
     }
     
     /* Trust Icons Carousel */
@@ -188,7 +210,8 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 2em; }
       .hero p { font-size: 1em; }
-      .pay-button { font-size: 1em; padding: 12px 24px; }
+      .cta-main { font-size: 1.1em; padding: 15px 30px; }
+      .cta-secondary { font-size: 0.8em; padding: 10px 20px; }
       .icons-carousel .icon-item img { max-width: 50px; max-height: 50px; }
       .testimonial { font-size: 1em; }
     }
@@ -203,7 +226,11 @@
     <section class="hero">
       <h1>Experience Healthy French Sushi</h1>
       <p>Doctor-endorsed, weight-loss focused, and gourmet – the perfect addition to your event.</p>
-      <a class="pay-button" href="https://www.paypal.com/ncp/payment/GW2PD6DH83N7A" target="_blank" rel="noopener noreferrer">Pay Now</a>
+      <a class="cta-main" href="/pages/ordernow.html">Order & Pay Directly</a>
+      <br>
+      <a class="cta-secondary" href="https://www.paypal.com/ncp/payment/GW2PD6DH83N7A" target="_blank" rel="noopener noreferrer">
+        Pay via PayPal
+      </a>
     </section>
     
     <!-- Trust Icons Carousel -->
@@ -284,9 +311,6 @@
         testimonials[tIndex].classList.add('active');
       }, 5000);
     });
-    
-    // Optionally, you could add JS for the icons carousel if needed.
-    // Here, we use CSS animation for a seamless loop.
   </script>
   
   <!-- Load Header and Footer Script -->
