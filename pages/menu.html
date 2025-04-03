@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Baguette Maison FOOD OPC - Prescription Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Inline CSS -->
   <style>
     :root {
-      --brand-primary: #002147; /* Deep navy for luxury */
-      --brand-accent: #D4AF37;  /* Gold accent for premium feel */
+      --brand-primary: #002147; /* Deep navy: luxury & heritage */
+      --brand-accent: #D4AF37;  /* Gold accent: premium feel */
       --text-color: #333;
       --background-color: #f8f8f8;
       --card-bg: #fff;
       --transition-speed: 0.3s;
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
       margin: 0;
@@ -22,7 +26,7 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-    /* Header and Footer containers */
+    /* Header and Footer Containers */
     #header, #footer {
       background-color: var(--brand-primary);
       color: #fff;
@@ -53,15 +57,21 @@
       color: var(--brand-accent);
       margin-bottom: 15px;
     }
+    /* Grid Layout for Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
     /* Card Styles */
     .card {
       background-color: var(--card-bg);
       border: 1px solid #ddd;
       border-left: 4px solid var(--brand-accent);
-      margin-bottom: 15px;
       border-radius: 4px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       overflow: hidden;
+      position: relative;
       transition: transform var(--transition-speed);
     }
     .card:hover {
@@ -70,21 +80,26 @@
     .card-header {
       padding: 15px;
       cursor: pointer;
+      background-color: #fafafa;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #fafafa;
-      transition: background-color var(--transition-speed);
     }
     .card-header:hover {
       background-color: #f0f0f0;
     }
-    .card-header span.title {
+    .card-header .title {
       font-weight: bold;
       font-size: 1.1rem;
     }
-    .card-header i {
-      transition: transform var(--transition-speed);
+    .card-header .icons {
+      display: flex;
+      gap: 8px;
+      font-size: 1rem;
+      color: var(--brand-accent);
+    }
+    .card-header .icons i {
+      cursor: pointer;
     }
     .card-body {
       display: none;
@@ -103,7 +118,6 @@
       font-style: italic;
       color: var(--brand-accent);
     }
-    /* CTA Buttons */
     .cta {
       display: inline-block;
       margin-top: 10px;
@@ -201,134 +215,463 @@
   <main>
     <h1 class="menu-title">Baguette Maison Prescription Menu</h1>
 
-    <!-- FOOD Category -->
+    <!-- FOOD CATEGORY -->
     <h2 class="category-title">FOOD</h2>
 
-    <!-- Savory Sub-Category -->
+    <!-- SAVORY CREPES SUB-CATEGORY -->
     <h3 class="subcategory-title">Savory Crepes</h3>
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Savory Crepe - Classic Prescription (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+    <div class="card-grid">
+      <!-- Savory Crepe 1 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Le Classique Santé (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A timeless blend of eggs, ham, butter, and English sliced cheese – a nourishing classic that delights and satisfies.</p>
+          <p class="did-you-know">Did you know? The French perfected crepes in the 13th century – a recipe that has stood the test of time!</p>
+          <button class="cta" onclick="addToCart('Le Classique Santé')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Enjoy our savory crepe, a balanced blend of eggs, ham, butter, and a hint of English sliced cheese (available in one variety) for protein and nourishment.</p>
-        <p><strong>Health Note:</strong> Crafted to support a healthy lifestyle while indulging in French elegance.</p>
-        <p><strong>Drink Pairing:</strong> Pair with our <a href="#coffee" class="cta">Pure Coffee</a> for an invigorating start.</p>
-        <button class="cta" onclick="addToCart('Savory Crepe - Classic Prescription')">Add to Cart</button>
+      <!-- Savory Crepe 2 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">La Provençale (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A fresh medley of eggs, tomato, basil, and a drizzle of olive oil – light yet flavorful for a refined palate.</p>
+          <p class="did-you-know">Did you know? Traditional Provençal recipes are known for their healthful simplicity!</p>
+          <button class="cta" onclick="addToCart('La Provençale')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Savory Crepe 3 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Le Gourmet Vital (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> An innovative twist with eggs, smoked turkey, caramelized onions, and a hint of light cheese – energy in every bite.</p>
+          <p class="did-you-know">Did you know? Culinary innovation is at the heart of French cuisine – every crepe tells a story!</p>
+          <button class="cta" onclick="addToCart('Le Gourmet Vital')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
-    <!-- Sweet Sub-Category -->
+    <!-- SWEET CREPES SUB-CATEGORY -->
     <h3 class="subcategory-title">Sweet Crepes</h3>
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Sweet Crepe - Delightful Prescription (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+    <div class="card-grid">
+      <!-- Sweet Crepe 1 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">La Douceur Française (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A delightful blend of sugar, our homemade cream chantilly, vanilla ice cream, and butter – a prescription for pure indulgence.</p>
+          <p class="did-you-know">Did you know? Chantilly cream is made in-house daily to ensure the freshest taste!</p>
+          <button class="cta" onclick="addToCart('La Douceur Française')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Our sweet crepe features sugar, cream chantilly, vanilla ice cream, and butter – a light, luxurious dessert that lifts your spirits.</p>
-        <p><strong>Health Note:</strong> A balanced treat that satisfies your sweet cravings with a touch of French savoir-faire.</p>
-        <p><strong>Drink Pairing:</strong> Best enjoyed with our <a href="#coffee" class="cta">Cloud Coffee</a> for a harmonious aftertaste.</p>
-        <button class="cta" onclick="addToCart('Sweet Crepe - Delightful Prescription')">Add to Cart</button>
+      <!-- Sweet Crepe 2 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Le Rêve Sucré (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A dreamy combination of sugar, fresh seasonal fruits, our signature cream chantilly, and a drizzle of honey – sweet, vibrant, and wholesome.</p>
+          <p class="did-you-know">Did you know? Fresh fruits are handpicked every morning to maximize nutritional benefits!</p>
+          <button class="cta" onclick="addToCart('Le Rêve Sucré')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Sweet Crepe 3 -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">La Merveille Gourmande (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Indulge in the rich taste of sugar, chocolate spread, our freshly whipped cream chantilly, and a sprinkle of cinnamon – a gourmet delight.</p>
+          <p class="did-you-know">Did you know? A dash of cinnamon not only adds flavor but also aids in digestion!</p>
+          <button class="cta" onclick="addToCart('La Merveille Gourmande')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
-    <!-- French Sushi Sub-Category -->
+    <!-- FRENCH SUSHI SUB-CATEGORY -->
     <h3 class="subcategory-title">French Sushi</h3>
-    <!-- French Sushi Savory -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">French Sushi Savory – 50 PHP/pc (min. 3 pcs, TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+    <div class="card-grid">
+      <!-- French Sushi Savory -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">French Sushi Savory (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A reimagined toast: perfectly toasted artisanal bread, luxurious butter, and our savory marmalade of the day – a true prescription for balance.</p>
+          <p class="did-you-know">Did you know? Our marmalade is crafted fresh daily for a burst of authentic flavor!</p>
+          <button class="cta" onclick="addToCart('French Sushi Savory')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> A gourmet toast reimagined: toasted artisanal bread, rich butter, and our marmalade of the day – redefined as a savory delight.</p>
-        <p><strong>Health Note:</strong> A light, nutrient-controlled recipe that nourishes and excites your palate.</p>
-        <p><strong>Drink Pairing:</strong> Complement with our signature <a href="#coffee" class="cta">Pure Coffee</a> for a crisp finish.</p>
-        <button class="cta" onclick="addToCart('French Sushi Savory')">Add to Cart</button>
-      </div>
-    </div>
-    <!-- French Sushi Sweet -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">French Sushi Sweet – 50 PHP/pc (min. 3 pcs, TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> A delightful twist on a classic: toasted artisanal bread, creamy butter, and our daily selection of sweet marmalade – a prescription for indulgence.</p>
-        <p><strong>Health Note:</strong> Enjoy a balance of flavor and nourishment that complements your healthy lifestyle.</p>
-        <p><strong>Drink Pairing:</strong> We suggest pairing with our refreshing <a href="#tea" class="cta">French Press Tea</a> for a serene dining experience.</p>
-        <button class="cta" onclick="addToCart('French Sushi Sweet')">Add to Cart</button>
+      <!-- French Sushi Sweet -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">French Sushi Sweet (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A sweet twist on our classic toast – toasted artisanal bread, rich butter, and our daily selection of sweet marmalade, delivering indulgence in every bite.</p>
+          <p class="did-you-know">Did you know? A touch of sweetness can transform a simple toast into a gourmet experience!</p>
+          <button class="cta" onclick="addToCart('French Sushi Sweet')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
-    <!-- BEVERAGE Category -->
+    <!-- BEVERAGE CATEGORY -->
     <h2 class="category-title">BEVERAGE</h2>
 
-    <!-- Coffee Sub-Category -->
+    <!-- COFFEE SUB-CATEGORY -->
     <h3 class="subcategory-title">Coffee</h3>
-    <!-- Pure Coffee -->
-    <div class="card" id="coffee">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Pure Coffee (Cafe Allonge) – 150 PHP (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+    <div class="card-grid">
+      <!-- Milky Coffees (5 items) -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Au Lait (Milky Coffee) – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A harmonious blend of French press coffee with steamed milk – a velvety classic.</p>
+          <p class="did-you-know">Did you know? Our milk is steamed to perfection to preserve its natural sweetness!</p>
+          <button class="cta" onclick="addToCart('Cafe Au Lait')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Brewed using premium French beans via French press, our Pure Coffee offers a robust, invigorating experience.</p>
-        <p><strong>Health Note:</strong> Rich in antioxidants and low in calories – a perfect boost for a balanced lifestyle.</p>
-        <button class="cta" onclick="addToCart('Pure Coffee (Cafe Allonge)')">Add to Cart</button>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Macchiato Caramel – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Espresso marked with a dash of caramel and crowned with our signature homemade chantilly – a decadent, health-conscious treat.</p>
+          <p class="did-you-know">Did you know? Our chantilly is whipped fresh every day in-house!</p>
+          <button class="cta" onclick="addToCart('Cafe Macchiato Caramel')">Add to Cart</button>
+        </div>
       </div>
-    </div>
-    <!-- Cloud Coffee -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Cloud Coffee (Cafe Au Lait) – 150 PHP (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Mocha Délicieux – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Espresso blended with chocolate, vanilla, and our luxurious chantilly – a true indulgence with a healthy twist.</p>
+          <p class="did-you-know">Did you know? Mocha dates back to ancient times as a noble beverage for warriors!</p>
+          <button class="cta" onclick="addToCart('Cafe Mocha Délicieux')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> A harmonious blend of French press coffee and milk, offering creaminess with every sip.</p>
-        <p><strong>Health Note:</strong> Enhanced with quality proteins and calcium, supporting both indulgence and wellness.</p>
-        <button class="cta" onclick="addToCart('Cloud Coffee (Cafe Au Lait)')">Add to Cart</button>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Vanillé Exquis – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> An elegant fusion of espresso and vanilla, finished with our own chantilly – smooth and sublime.</p>
+          <p class="did-you-know">Did you know? Vanilla is known for its antioxidant properties and mood-enhancing effects!</p>
+          <button class="cta" onclick="addToCart('Cafe Vanillé Exquis')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Choco-Chantilly – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A luscious blend of espresso and rich chocolate with our homemade chantilly – the perfect pick-me-up.</p>
+          <p class="did-you-know">Did you know? A touch of chocolate can boost energy levels and elevate your mood!</p>
+          <button class="cta" onclick="addToCart('Cafe Choco-Chantilly')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Americano Coffees (2 items) -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Allonge – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A robust, long espresso – a straightforward energy boost for those who appreciate the pure flavor of coffee.</p>
+          <p class="did-you-know">Did you know? Americano originated during World War II as a way for American soldiers to enjoy European espresso!</p>
+          <button class="cta" onclick="addToCart('Cafe Allonge')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Cafe Allonge Chantilly – 150 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A classic Americano, elegantly finished with our signature homemade chantilly.</p>
+          <p class="did-you-know">Did you know? Chantilly not only enhances taste but also adds a creamy texture that coffee lovers adore!</p>
+          <button class="cta" onclick="addToCart('Cafe Allonge Chantilly')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
-    <!-- Tea Sub-Category -->
+    <!-- TEA SUB-CATEGORY -->
     <h3 class="subcategory-title">Tea</h3>
-    <div class="card" id="tea">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">French Press Tea – 200 PHP (TVA 12% incl.; +50 PHP for sharing)</span>
-        <i class="fa fa-chevron-down"></i>
+    <div class="card-grid">
+      <!-- Pure Teas (5 items) -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Lemon Vitalité – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A refreshing lemon tea infused in a French teapot – perfectly balancing zest and health.</p>
+          <p class="did-you-know">Did you know? Lemons are renowned for their vitamin C and detoxifying properties!</p>
+          <button class="cta" onclick="addToCart('Lemon Vitalité')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Infused with premium Lipton tea leaves in a French teapot, our tea is designed for sharing and rejuvenation.</p>
-        <p><strong>Health Note:</strong> A rich source of antioxidants to support your health – <span class="did-you-know">Did you know? The tea trade once sparked historic conflicts between France and England!</span></p>
-        <button class="cta" onclick="addToCart('French Press Tea')">Add to Cart</button>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Jasmine Éclat – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A delicate jasmine tea that soothes the senses and rejuvenates your spirit.</p>
+          <p class="did-you-know">Did you know? Jasmine tea has been celebrated for centuries for its calming aroma!</p>
+          <button class="cta" onclick="addToCart('Jasmine Éclat')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">French Breakfast – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A robust black tea reimagined as French Breakfast – a wake-up call with a refined twist.</p>
+          <p class="did-you-know">Did you know? The concept of breakfast tea was popularized in Europe to kick-start the day with elegance!</p>
+          <button class="cta" onclick="addToCart('French Breakfast')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Mint Revitalisant – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A crisp mint tea that reinvigorates your senses and supports digestion – a natural tonic.</p>
+          <p class="did-you-know">Did you know? Mint tea is celebrated for its soothing effects on the stomach!</p>
+          <button class="cta" onclick="addToCart('Mint Revitalisant')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Earl Grey Élégance – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A sophisticated blend of black tea and bergamot, offering a distinct aroma and a touch of luxury.</p>
+          <p class="did-you-know">Did you know? Bergamot is known not only for its fragrance but also for its antioxidant benefits!</p>
+          <button class="cta" onclick="addToCart('Earl Grey Élégance')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
-    <!-- Other Beverages Sub-Category -->
-    <h3 class="subcategory-title">Other Beverages</h3>
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Soft Drinks & Sparkling – Prices Vary (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+    <!-- TEA WITH MILK (DIY ADD MILK) SUB-CATEGORY -->
+    <h3 class="subcategory-title">Tea with Milk <small>(DIY – add milk to taste)</small></h3>
+    <div class="card-grid">
+      <!-- Repeat same teas with milk -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Lemon Vitalité with Milk – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Our vibrant lemon tea with a touch of milk for creaminess – crafted for a balanced, refreshing experience.</p>
+          <p class="did-you-know">Did you know? A splash of milk can enhance the tea’s texture and flavor complexity!</p>
+          <button class="cta" onclick="addToCart('Lemon Vitalité with Milk')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Choose from Coke Zero, Cola, Perrier, or San Pellegrino for a refreshing complement to your meal.</p>
-        <p><strong>Health Note:</strong> Carefully selected to ensure balance and refreshment with every sip.</p>
-        <button class="cta" onclick="addToCart('Soft Drinks & Sparkling')">Add to Cart</button>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Jasmine Éclat with Milk – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Delicate jasmine tea enriched with milk – an aromatic, creamy delight for refined palates.</p>
+          <p class="did-you-know">Did you know? Adding milk to jasmine tea can mellow its bold flavors while keeping its signature aroma!</p>
+          <button class="cta" onclick="addToCart('Jasmine Éclat with Milk')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">French Breakfast with Milk – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Our robust French Breakfast tea paired with milk – a luxurious start to any morning.</p>
+          <p class="did-you-know">Did you know? French Breakfast tea is celebrated for its bold, invigorating qualities!</p>
+          <button class="cta" onclick="addToCart('French Breakfast with Milk')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Mint Revitalisant with Milk – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A crisp mint tea paired with milk for a soothing and creamy finish – pure refreshment.</p>
+          <p class="did-you-know">Did you know? Mint tea with milk offers a unique blend of coolness and creaminess that’s both refreshing and satisfying!</p>
+          <button class="cta" onclick="addToCart('Mint Revitalisant with Milk')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Earl Grey Élégance with Milk – 200 PHP (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> A sophisticated Earl Grey tea with a hint of milk – for those who crave elegance in every sip.</p>
+          <p class="did-you-know">Did you know? Bergamot in Earl Grey is prized not only for its taste but also for its natural antioxidants!</p>
+          <button class="cta" onclick="addToCart('Earl Grey Élégance with Milk')">Add to Cart</button>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span class="title">Wine & Beer – Glass/Serving (TVA 12% incl.)</span>
-        <i class="fa fa-chevron-down"></i>
+
+    <!-- OTHER BEVERAGES SUB-CATEGORY -->
+    <h3 class="subcategory-title">Other Beverages</h3>
+    <div class="card-grid">
+      <!-- Soft Drinks & Sparkling -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Soft Drinks & Sparkling – Prices Vary (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Choose from Coke Zero, Cola, Perrier, or San Pellegrino – refreshing options to complement your meal.</p>
+          <p class="did-you-know">Did you know? Sparkling water can aid digestion and keep you refreshed!</p>
+          <button class="cta" onclick="addToCart('Soft Drinks & Sparkling')">Add to Cart</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Enjoy our "Wine of the Day", a refined Bordeaux selection, paired with an exclusive French beer – an epitome of French luxury.</p>
-        <p><strong>Health Note:</strong> Savor these beverages in moderation as the perfect complement to your dining experience.</p>
-        <button class="cta" onclick="addToCart('Wine & Beer')">Add to Cart</button>
+      <!-- Wine & Beer -->
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          <span class="title">Wine & Beer – Glass/Serving (TVA 12% incl.)</span>
+          <div class="icons">
+            <i class="fas fa-heart" title="Customer Favorite"></i>
+            <i class="fas fa-star" title="Customers Fav"></i>
+            <i class="fas fa-thumbs-up" title="Recommended by the Chef"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Prescription:</strong> Enjoy our "Wine of the Day" from Bordeaux paired with an exclusive French beer – a sophisticated complement to any dining experience.</p>
+          <p class="did-you-know">Did you know? A glass of red wine in moderation is known to promote cardiovascular health!</p>
+          <button class="cta" onclick="addToCart('Wine & Beer')">Add to Cart</button>
+        </div>
       </div>
     </div>
 
@@ -348,13 +691,11 @@
     // Toggle card details on click (simple display toggle)
     function toggleCard(header) {
       var body = header.nextElementSibling;
-      var icon = header.querySelector('i');
+      var icons = header.querySelector('.icons i');
       if (body.style.display === "block") {
         body.style.display = "none";
-        icon.style.transform = "rotate(0deg)";
       } else {
         body.style.display = "block";
-        icon.style.transform = "rotate(180deg)";
       }
     }
 
@@ -363,7 +704,6 @@
     const CART_EXPIRY_KEY = "baguetteMaisonCartExpiry";
     const CART_EXPIRY_TIME = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
 
-    // Load cart from localStorage
     function loadCart() {
       const now = new Date().getTime();
       const expiry = localStorage.getItem(CART_EXPIRY_KEY);
@@ -374,14 +714,12 @@
       return JSON.parse(localStorage.getItem(CART_KEY)) || [];
     }
 
-    // Save cart to localStorage with new expiry
     function saveCart(cart) {
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
       localStorage.setItem(CART_EXPIRY_KEY, new Date().getTime() + CART_EXPIRY_TIME);
       renderCart();
     }
 
-    // Render the cart items in the cart container
     function renderCart() {
       const cart = loadCart();
       const cartContainer = document.getElementById("cart-items");
@@ -390,12 +728,11 @@
         const div = document.createElement("div");
         div.className = "cart-item";
         div.innerHTML = `<span>${item.name} (x${item.quantity})</span>
-                         <button onclick="removeFromCart(${index})"><i class="fa fa-trash"></i></button>`;
+                         <button onclick="removeFromCart(${index})"><i class="fas fa-trash"></i></button>`;
         cartContainer.appendChild(div);
       });
     }
 
-    // Add an item to the cart
     function addToCart(name) {
       const cart = loadCart();
       const existingIndex = cart.findIndex(item => item.name === name);
@@ -408,21 +745,18 @@
       alert(`Added "${name}" to your cart.`);
     }
 
-    // Remove an item from the cart by index
     function removeFromCart(index) {
       const cart = loadCart();
       cart.splice(index, 1);
       saveCart(cart);
     }
 
-    // Clear the cart
     function clearCart() {
       localStorage.removeItem(CART_KEY);
       localStorage.removeItem(CART_EXPIRY_KEY);
       renderCart();
     }
 
-    // Initialize cart on page load
     document.addEventListener("DOMContentLoaded", function() {
       renderCart();
     });
@@ -430,14 +764,14 @@
     // Load header and footer via external script
     (function(){
       var script = document.createElement('script');
-      script.src = '/js/header-footer.js';
+      script.src = '/src/js/header-footer.js';
       document.body.appendChild(script);
     })();
 
     // Log errors to console for troubleshooting (user sees generic message)
     window.onerror = function(message, source, lineno, colno, error) {
       console.error("Error:", message, "in", source, "at line", lineno);
-      return true; // Prevent default error handling
+      return true;
     };
   </script>
 </body>
