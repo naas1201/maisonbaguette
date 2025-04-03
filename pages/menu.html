@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Baguette Maison FOOD OPC - Prescription Menu</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Inline CSS -->
   <style>
     :root {
-      --brand-primary: #002147; /* deep navy: evokes French luxury */
-      --brand-accent: #D4AF37; /* gold accent for premium feel */
+      --brand-primary: #002147; /* Deep navy for luxury */
+      --brand-accent: #D4AF37;  /* Gold accent for premium feel */
       --text-color: #333;
       --background-color: #f8f8f8;
+      --card-bg: #fff;
+      --transition-speed: 0.3s;
     }
     body {
       margin: 0;
@@ -27,41 +31,70 @@
     }
     main {
       padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-    .menu-title {
+    h1.menu-title {
       text-align: center;
       margin-bottom: 30px;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--brand-primary);
     }
+    h2.category-title {
+      margin-top: 40px;
+      font-size: 2rem;
+      border-bottom: 2px solid var(--brand-accent);
+      padding-bottom: 5px;
+      color: var(--brand-primary);
+    }
+    h3.subcategory-title {
+      margin-top: 30px;
+      font-size: 1.75rem;
+      color: var(--brand-accent);
+      margin-bottom: 15px;
+    }
+    /* Card Styles */
     .card {
-      background-color: #fff;
+      background-color: var(--card-bg);
       border: 1px solid #ddd;
       border-left: 4px solid var(--brand-accent);
       margin-bottom: 15px;
       border-radius: 4px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform var(--transition-speed);
+    }
+    .card:hover {
+      transform: scale(1.02);
     }
     .card-header {
       padding: 15px;
       cursor: pointer;
-      font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: #fafafa;
+      transition: background-color var(--transition-speed);
     }
     .card-header:hover {
       background-color: #f0f0f0;
     }
-    .card-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      padding: 0 15px;
+    .card-header span.title {
+      font-weight: bold;
+      font-size: 1.1rem;
     }
-    .card-body.active {
+    .card-header i {
+      transition: transform var(--transition-speed);
+    }
+    .card-body {
+      display: none;
       padding: 15px;
+      border-top: 1px solid #ddd;
+      animation: fadeIn var(--transition-speed);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .card-body p {
       margin: 10px 0;
@@ -70,6 +103,7 @@
       font-style: italic;
       color: var(--brand-accent);
     }
+    /* CTA Buttons */
     .cta {
       display: inline-block;
       margin-top: 10px;
@@ -78,10 +112,67 @@
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
+      transition: background-color var(--transition-speed);
     }
     .cta:hover {
       background-color: var(--brand-accent);
     }
+    /* Cart Styles */
+    .cart-container {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      width: 300px;
+      background-color: var(--card-bg);
+      border: 1px solid #ddd;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      padding: 15px;
+      z-index: 1000;
+    }
+    .cart-container h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--brand-primary);
+      border-bottom: 1px solid var(--brand-accent);
+      padding-bottom: 5px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      padding: 5px;
+      background-color: #f4f4f4;
+      border-radius: 4px;
+    }
+    .cart-item span {
+      flex: 1;
+    }
+    .cart-item button {
+      background: none;
+      border: none;
+      color: var(--brand-primary);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .cart-clear {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .cart-clear button {
+      background-color: var(--brand-primary);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+    .cart-clear button:hover {
+      background-color: var(--brand-accent);
+    }
+    /* Compliance & Legal Notice */
     .compliance {
       font-size: 0.9rem;
       color: #555;
@@ -95,129 +186,149 @@
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <div id="header"></div>
 
+  <!-- Cart Container -->
+  <div class="cart-container" id="cart">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <div class="cart-clear">
+      <button onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
   <main>
     <h1 class="menu-title">Baguette Maison Prescription Menu</h1>
-    
-    <!-- French Sushi Card -->
+
+    <!-- FOOD Category -->
+    <h2 class="category-title">FOOD</h2>
+
+    <!-- Savory Sub-Category -->
+    <h3 class="subcategory-title">Savory Crepes</h3>
     <div class="card">
       <div class="card-header" onclick="toggleCard(this)">
-        <span>French Sushi – 50 PHP (min. 3 pcs, TVA 12% incl.)</span>
-        <span>&#9660;</span>
+        <span class="title">Savory Crepe - Classic Prescription (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
       </div>
       <div class="card-body">
-        <p><strong>Prescription:</strong> Our signature French Sushi is a gourmet toast crafted with artisanal bread, President butter, cooked ham, pickle, and mayonnaise – perfectly portioned to emphasize the health benefits of quality proteins and controlled fats.</p>
-        <p><strong>Health Note:</strong> Enjoy a balanced energy intake with each bite and a fun twist: <span class="did-you-know">Did you know that French innovation turned simple toast into a work of culinary art?</span></p>
-        <p><strong>Drink Pairing:</strong> We recommend our <a href="#coffee" class="cta">Cafe Allonge</a> for a refined, healthy kick.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+        <p><strong>Prescription:</strong> Enjoy our savory crepe, a balanced blend of eggs, ham, butter, and a hint of English sliced cheese (available in one variety) for protein and nourishment.</p>
+        <p><strong>Health Note:</strong> Crafted to support a healthy lifestyle while indulging in French elegance.</p>
+        <p><strong>Drink Pairing:</strong> Pair with our <a href="#coffee" class="cta">Pure Coffee</a> for an invigorating start.</p>
+        <button class="cta" onclick="addToCart('Savory Crepe - Classic Prescription')">Add to Cart</button>
       </div>
     </div>
 
-    <!-- Pizza Package Card -->
+    <!-- Sweet Sub-Category -->
+    <h3 class="subcategory-title">Sweet Crepes</h3>
     <div class="card">
       <div class="card-header" onclick="toggleCard(this)">
-        <span>Pizza Package – Special Collection (TVA 12% incl.)</span>
-        <span>&#9660;</span>
+        <span class="title">Sweet Crepe - Delightful Prescription (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
       </div>
       <div class="card-body">
-        <p><strong>Prescription:</strong> A grand ensemble of our French Sushi pieces artfully arranged to form a pizza-like masterpiece – perfect for sharing and indulgence with a healthy twist.</p>
-        <p><strong>Health Note:</strong> Satisfy your cravings while knowing every ingredient is carefully portioned to maintain nutritional balance.</p>
-        <p><strong>Drink Pairing:</strong> Complement with a glass of our exclusive <a href="#wine" class="cta">Wine of the Day</a> for an exquisite dining experience.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+        <p><strong>Prescription:</strong> Our sweet crepe features sugar, cream chantilly, vanilla ice cream, and butter – a light, luxurious dessert that lifts your spirits.</p>
+        <p><strong>Health Note:</strong> A balanced treat that satisfies your sweet cravings with a touch of French savoir-faire.</p>
+        <p><strong>Drink Pairing:</strong> Best enjoyed with our <a href="#coffee" class="cta">Cloud Coffee</a> for a harmonious aftertaste.</p>
+        <button class="cta" onclick="addToCart('Sweet Crepe - Delightful Prescription')">Add to Cart</button>
       </div>
     </div>
 
-    <!-- Coffee Cards -->
+    <!-- French Sushi Sub-Category -->
+    <h3 class="subcategory-title">French Sushi</h3>
+    <!-- French Sushi Savory -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="title">French Sushi Savory – 50 PHP/pc (min. 3 pcs, TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> A gourmet toast reimagined: toasted artisanal bread, rich butter, and our marmalade of the day – redefined as a savory delight.</p>
+        <p><strong>Health Note:</strong> A light, nutrient-controlled recipe that nourishes and excites your palate.</p>
+        <p><strong>Drink Pairing:</strong> Complement with our signature <a href="#coffee" class="cta">Pure Coffee</a> for a crisp finish.</p>
+        <button class="cta" onclick="addToCart('French Sushi Savory')">Add to Cart</button>
+      </div>
+    </div>
+    <!-- French Sushi Sweet -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="title">French Sushi Sweet – 50 PHP/pc (min. 3 pcs, TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> A delightful twist on a classic: toasted artisanal bread, creamy butter, and our daily selection of sweet marmalade – a prescription for indulgence.</p>
+        <p><strong>Health Note:</strong> Enjoy a balance of flavor and nourishment that complements your healthy lifestyle.</p>
+        <p><strong>Drink Pairing:</strong> We suggest pairing with our refreshing <a href="#tea" class="cta">French Press Tea</a> for a serene dining experience.</p>
+        <button class="cta" onclick="addToCart('French Sushi Sweet')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- BEVERAGE Category -->
+    <h2 class="category-title">BEVERAGE</h2>
+
+    <!-- Coffee Sub-Category -->
+    <h3 class="subcategory-title">Coffee</h3>
+    <!-- Pure Coffee -->
     <div class="card" id="coffee">
       <div class="card-header" onclick="toggleCard(this)">
-        <span>Cafe Allonge – 150 PHP (TVA 12% incl.)</span>
-        <span>&#9660;</span>
+        <span class="title">Pure Coffee (Cafe Allonge) – 150 PHP (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
       </div>
       <div class="card-body">
-        <p><strong>Prescription:</strong> Brewed via French press using premium French beans for a pure, invigorating experience. Ideal for boosting your alertness and promoting a healthy metabolic rate.</p>
-        <p><strong>Health Note:</strong> Rich in antioxidants and low in calories – a perfect partner to a balanced lifestyle.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+        <p><strong>Prescription:</strong> Brewed using premium French beans via French press, our Pure Coffee offers a robust, invigorating experience.</p>
+        <p><strong>Health Note:</strong> Rich in antioxidants and low in calories – a perfect boost for a balanced lifestyle.</p>
+        <button class="cta" onclick="addToCart('Pure Coffee (Cafe Allonge)')">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Cloud Coffee -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="title">Cloud Coffee (Cafe Au Lait) – 150 PHP (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> A harmonious blend of French press coffee and milk, offering creaminess with every sip.</p>
+        <p><strong>Health Note:</strong> Enhanced with quality proteins and calcium, supporting both indulgence and wellness.</p>
+        <button class="cta" onclick="addToCart('Cloud Coffee (Cafe Au Lait)')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Tea Sub-Category -->
+    <h3 class="subcategory-title">Tea</h3>
+    <div class="card" id="tea">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="title">French Press Tea – 200 PHP (TVA 12% incl.; +50 PHP for sharing)</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Infused with premium Lipton tea leaves in a French teapot, our tea is designed for sharing and rejuvenation.</p>
+        <p><strong>Health Note:</strong> A rich source of antioxidants to support your health – <span class="did-you-know">Did you know? The tea trade once sparked historic conflicts between France and England!</span></p>
+        <button class="cta" onclick="addToCart('French Press Tea')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Other Beverages Sub-Category -->
+    <h3 class="subcategory-title">Other Beverages</h3>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="title">Soft Drinks & Sparkling – Prices Vary (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Choose from Coke Zero, Cola, Perrier, or San Pellegrino for a refreshing complement to your meal.</p>
+        <p><strong>Health Note:</strong> Carefully selected to ensure balance and refreshment with every sip.</p>
+        <button class="cta" onclick="addToCart('Soft Drinks & Sparkling')">Add to Cart</button>
       </div>
     </div>
     <div class="card">
       <div class="card-header" onclick="toggleCard(this)">
-        <span>Cafe Au Lait – 150 PHP (TVA 12% incl.)</span>
-        <span>&#9660;</span>
+        <span class="title">Wine & Beer – Glass/Serving (TVA 12% incl.)</span>
+        <i class="fa fa-chevron-down"></i>
       </div>
       <div class="card-body">
-        <p><strong>Prescription:</strong> Our signature French press coffee with milk – delivering a harmonious blend of creamy texture and robust flavor. The milk enhances nutritional value with quality proteins and calcium.</p>
-        <p><strong>Health Note:</strong> Experience the luxury of health in every sip.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Tea Card -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span>French Press Tea – 200 PHP (TVA 12% incl.; +50 PHP for sharing)</span>
-        <span>&#9660;</span>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Infused with a blend of premium Lipton tea leaves, our French Press Tea is a rejuvenating beverage that promotes relaxation and health. Perfect for sharing with friends.</p>
-        <p><strong>Health Note:</strong> Rich in antioxidants and designed to support a balanced lifestyle. <span class="did-you-know">Did you know? The historic conflict between France and England was partly ignited by tea trade disputes!</span></p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Beverages Card -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span>Beverages (Coke Zero, Cola, Perrier, San Pellegrino) – Prices Vary (TVA 12% incl.)</span>
-        <span>&#9660;</span>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Choose from a selection of premium soft drinks and mineral waters to refresh and complement your dining experience.</p>
-        <p><strong>Health Note:</strong> All beverages are served with the assurance of quality and balance, ensuring you enjoy both taste and wellness.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Wine & Beer Card -->
-    <div class="card" id="wine">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span>Red Wine & French Beer – Glass/Serving Prices Vary (TVA 12% incl.)</span>
-        <span>&#9660;</span>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Enjoy our “Wine of the Day” – a refined Bordeaux selection – paired with an exquisite French beer that elevates your dining ritual.</p>
-        <p><strong>Health Note:</strong> Served in moderation, these beverages complement your meal with an air of luxury and tasteful indulgence.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Savory Crepes Card -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span>Savory Crepes – 3 Varieties (Mid-Priced, TVA 12% incl.)</span>
-        <span>&#9660;</span>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Indulge in our health-oriented savory crepes crafted with eggs, ham, butter, and English sliced cheese (in one variety) to deliver a balanced mix of proteins and essential nutrients.</p>
-        <p><strong>Health Note:</strong> Designed for a refined palate, our crepes offer both nourishment and taste without compromising on luxury.</p>
-        <p><strong>Drink Pairing:</strong> Best enjoyed with a refreshing <a href="#coffee" class="cta">Cafe Allonge</a> or <a href="#wine" class="cta">Red Wine</a>.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Sweet Crepes Card -->
-    <div class="card">
-      <div class="card-header" onclick="toggleCard(this)">
-        <span>Sweet Crepes – 3 Varieties (Mid-Priced, TVA 12% incl.)</span>
-        <span>&#9660;</span>
-      </div>
-      <div class="card-body">
-        <p><strong>Prescription:</strong> Our sweet crepes are a delightful prescription for indulgence – featuring sugar, cream chantilly, vanilla ice cream, and butter to create a light, yet luxurious dessert.</p>
-        <p><strong>Health Note:</strong> Enjoy a well-balanced treat that elevates your mood and provides that extra touch of French savoir-faire.</p>
-        <p><strong>Drink Pairing:</strong> We recommend complementing with our signature <a href="#coffee" class="cta">Cafe Au Lait</a> for a harmonious aftertaste.</p>
-        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+        <p><strong>Prescription:</strong> Enjoy our "Wine of the Day", a refined Bordeaux selection, paired with an exclusive French beer – an epitome of French luxury.</p>
+        <p><strong>Health Note:</strong> Savor these beverages in moderation as the perfect complement to your dining experience.</p>
+        <button class="cta" onclick="addToCart('Wine & Beer')">Add to Cart</button>
       </div>
     </div>
 
@@ -225,35 +336,105 @@
     <div class="compliance">
       <p>TVA of 12% included. Service charge of 10% excluded.</p>
       <p>Terms and Conditions of Use, allergen information available at <a href="http://www.baguettemaison.com" target="_blank">www.baguettemaison.com</a>. Discounts available for PWD, seniors, students, and <strong>adorable people</strong> (on demand).</p>
-      <p><a href="/pages/contact.html">Contact Us</a></p>
+      <p><a href="/pages/ordernow.html">Order Now</a> | <a href="/pages/contact.html">Contact Us</a></p>
     </div>
   </main>
 
   <!-- Footer -->
   <div id="footer"></div>
 
-  <!-- Inline JavaScript for interactive card behavior -->
+  <!-- Inline JavaScript for interactive behavior and cart functionality -->
   <script>
-    // Simple slide down/up toggle for card details
+    // Toggle card details on click (simple display toggle)
     function toggleCard(header) {
       var body = header.nextElementSibling;
-      if (body.style.maxHeight) {
-        body.style.maxHeight = null;
-        body.classList.remove("active");
+      var icon = header.querySelector('i');
+      if (body.style.display === "block") {
+        body.style.display = "none";
+        icon.style.transform = "rotate(0deg)";
       } else {
-        body.style.maxHeight = body.scrollHeight + "px";
-        body.classList.add("active");
+        body.style.display = "block";
+        icon.style.transform = "rotate(180deg)";
       }
     }
-    
+
+    // CART FUNCTIONS
+    const CART_KEY = "baguetteMaisonCart";
+    const CART_EXPIRY_KEY = "baguetteMaisonCartExpiry";
+    const CART_EXPIRY_TIME = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
+
+    // Load cart from localStorage
+    function loadCart() {
+      const now = new Date().getTime();
+      const expiry = localStorage.getItem(CART_EXPIRY_KEY);
+      if (expiry && now > expiry) {
+        clearCart();
+        return [];
+      }
+      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    }
+
+    // Save cart to localStorage with new expiry
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      localStorage.setItem(CART_EXPIRY_KEY, new Date().getTime() + CART_EXPIRY_TIME);
+      renderCart();
+    }
+
+    // Render the cart items in the cart container
+    function renderCart() {
+      const cart = loadCart();
+      const cartContainer = document.getElementById("cart-items");
+      cartContainer.innerHTML = "";
+      cart.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `<span>${item.name} (x${item.quantity})</span>
+                         <button onclick="removeFromCart(${index})"><i class="fa fa-trash"></i></button>`;
+        cartContainer.appendChild(div);
+      });
+    }
+
+    // Add an item to the cart
+    function addToCart(name) {
+      const cart = loadCart();
+      const existingIndex = cart.findIndex(item => item.name === name);
+      if (existingIndex >= 0) {
+        cart[existingIndex].quantity++;
+      } else {
+        cart.push({ name: name, quantity: 1 });
+      }
+      saveCart(cart);
+      alert(`Added "${name}" to your cart.`);
+    }
+
+    // Remove an item from the cart by index
+    function removeFromCart(index) {
+      const cart = loadCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+    }
+
+    // Clear the cart
+    function clearCart() {
+      localStorage.removeItem(CART_KEY);
+      localStorage.removeItem(CART_EXPIRY_KEY);
+      renderCart();
+    }
+
+    // Initialize cart on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      renderCart();
+    });
+
     // Load header and footer via external script
     (function(){
       var script = document.createElement('script');
       script.src = '/js/header-footer.js';
       document.body.appendChild(script);
     })();
-    
-    // Optional: Log errors to console for troubleshooting (user sees generic message)
+
+    // Log errors to console for troubleshooting (user sees generic message)
     window.onerror = function(message, source, lineno, colno, error) {
       console.error("Error:", message, "in", source, "at line", lineno);
       return true; // Prevent default error handling
