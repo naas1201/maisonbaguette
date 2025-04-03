@@ -1,308 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Baguette Maison – Your Health Prescription</title>
-  <!-- Import fonts for modern clarity and a handwritten signature style -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Baguette Maison FOOD OPC - Prescription Menu</title>
+  <!-- Inline CSS -->
   <style>
-    /* Root variables for a clinical, trustworthy palette */
     :root {
-      --primary-color: #2a9d8f;       /* Teal – a healthy, calming color */
-      --secondary-color: #264653;     /* Dark slate for authority */
-      --accent-color: #e76f51;        /* Warm accent reminiscent of a prescription stamp */
-      --background-color: #fefefe;    /* Crisp, clean white for a prescription pad feel */
+      --brand-primary: #002147; /* deep navy: evokes French luxury */
+      --brand-accent: #D4AF37; /* gold accent for premium feel */
       --text-color: #333;
-      --prescription-bg: #f9f9f9;
-      --prescription-border: #ccc;
-      --signature-color: #2a9d8f;
-    }
-    
-    /* Global reset and base styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --background-color: #f8f8f8;
     }
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--background-color);
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
+    }
+    /* Header and Footer containers */
+    #header, #footer {
+      background-color: var(--brand-primary);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
       padding: 20px;
     }
-    header, footer {
+    .menu-title {
       text-align: center;
-      padding: 20px;
-      background: var(--secondary-color);
-      color: #fff;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    /* Hero Section: Introducing the “Prescription” */
-    .hero {
-      background: var(--accent-color);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 10px;
       margin-bottom: 30px;
-      position: relative;
+      font-size: 2rem;
+      color: var(--brand-primary);
     }
-    .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.2em;
-    }
-    
-    /* Prescription-style Menu Items */
-    .prescription {
-      background: var(--prescription-bg);
-      border: 2px dashed var(--prescription-border);
-      padding: 30px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      position: relative;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-left: 4px solid var(--brand-accent);
+      margin-bottom: 15px;
+      border-radius: 4px;
       overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .prescription::before {
-      content: "Prescription";
-      position: absolute;
-      top: -20px;
-      left: 20px;
-      background: var(--accent-color);
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9em;
-      letter-spacing: 1px;
-    }
-    .prescription h2 {
-      margin-bottom: 10px;
-      font-size: 1.8em;
-      color: var(--primary-color);
-    }
-    .prescription p, 
-    .prescription ul {
-      margin-bottom: 10px;
-      font-size: 1em;
-    }
-    .prescription ul {
-      margin-left: 20px;
-      list-style-type: square;
-    }
-    .prescription ul li {
-      margin-bottom: 5px;
-    }
-    
-    /* Prescription Image Card: a small, discreet card to the side */
-    .prescription-card {
-      float: right;
-      margin: 0 0 15px 15px;
-      width: 150px; /* Adjust size as needed */
-      border: 1px solid var(--prescription-border);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .prescription-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .prescription-card .image-label {
-      background: var(--accent-color);
-      color: #fff;
-      font-size: 0.75em;
-      text-align: center;
-      padding: 5px;
-    }
-    
-    /* Doctor's Note at the bottom of each prescription */
-    .doctors-note {
-      border-top: 1px solid var(--prescription-border);
-      margin-top: 20px;
-      padding-top: 10px;
-      font-style: italic;
-      font-size: 0.9em;
-      text-align: right;
-      color: var(--primary-color);
-    }
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.8em;
-      color: var(--signature-color);
-    }
-    
-    /* Call To Action Section */
-    .cta {
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-    .cta h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .cta p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-    .cta-buttons {
+    .card-header {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
     }
-    .cta-buttons a {
-      background: #fff;
-      color: var(--primary-color);
-      padding: 15px 30px;
-      border-radius: 50px;
+    .card-header:hover {
+      background-color: #f0f0f0;
+    }
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      padding: 0 15px;
+    }
+    .card-body.active {
+      padding: 15px;
+    }
+    .card-body p {
+      margin: 10px 0;
+    }
+    .did-you-know {
+      font-style: italic;
+      color: var(--brand-accent);
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: var(--brand-primary);
+      color: #fff;
       text-decoration: none;
-      font-weight: 700;
-      transition: background 0.3s, transform 0.3s;
-      min-width: 200px;
+      border-radius: 4px;
+    }
+    .cta:hover {
+      background-color: var(--brand-accent);
+    }
+    .compliance {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 30px;
       text-align: center;
     }
-    .cta-buttons a:hover {
-      background: var(--secondary-color);
-      color: #fff;
-      transform: scale(1.05);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-      .cta h2 {
-        font-size: 1.8em;
-      }
-      .prescription-card {
-        float: none;
-        margin: 0 auto 15px;
-        display: block;
-      }
+    .compliance a {
+      color: var(--brand-primary);
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <!-- Header Section (Loaded Dynamically) -->
-  <header id="header">
-    <!-- Header content here -->
-    <h1>The Baguette Maison</h1>
-  </header>
-  
-  <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Your Health Prescription</h1>
-      <p>Experience a revolutionary approach to gourmet wellness—handcrafted by culinary experts and endorsed by medical professionals.</p>
-    </section>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main>
+    <h1 class="menu-title">Baguette Maison Prescription Menu</h1>
     
-    <!-- Prescription Menu Item 1 -->
-    <section class="prescription">
-      <div class="prescription-card">
-        <picture>
-          <source srcset="/images/menu1.webp" type="image/webp">
-          <img src="/images/menu1.jpg" alt="French Sushi™ preview">
-        </picture>
-        <div class="image-label">French Sushi™</div>
+    <!-- French Sushi Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>French Sushi – 50 PHP (min. 3 pcs, TVA 12% incl.)</span>
+        <span>&#9660;</span>
       </div>
-      <h2>French Sushi™</h2>
-      <p><strong>Dosage:</strong> 1 piece per serving (approx. 29g)</p>
-      <p><strong>Nutritional Benefits:</strong></p>
-      <ul>
-        <li>Only 60 kcal per serving</li>
-        <li>Low in fat and balanced in nutrients</li>
-        <li>Supports metabolism and a vibrant lifestyle</li>
-      </ul>
-      <p><strong>Instructions:</strong> Consume as a nutrient-dense snack between meals to sustain energy and promote wellness.</p>
-      <div class="doctors-note">
-        <p>— PHP 50.00 <span class="signature">Only!</span></p>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Our signature French Sushi is a gourmet toast crafted with artisanal bread, President butter, cooked ham, pickle, and mayonnaise – perfectly portioned to emphasize the health benefits of quality proteins and controlled fats.</p>
+        <p><strong>Health Note:</strong> Enjoy a balanced energy intake with each bite and a fun twist: <span class="did-you-know">Did you know that French innovation turned simple toast into a work of culinary art?</span></p>
+        <p><strong>Drink Pairing:</strong> We recommend our <a href="#coffee" class="cta">Cafe Allonge</a> for a refined, healthy kick.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
       </div>
-      <div style="clear: both;"></div>
-    </section>
-    
-    <!-- Prescription Menu Item 2 -->
-    <section class="prescription">
-      <div class="prescription-card">
-        <picture>
-          <source srcset="/images/coffee2.png" type="image/webp">
-          <img src="/images/coffee2.png" alt="French Press Brewed Americano Coffee preview">
-        </picture>
-        <div class="image-label">French Coffee</div>
+    </div>
+
+    <!-- Pizza Package Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Pizza Package – Special Collection (TVA 12% incl.)</span>
+        <span>&#9660;</span>
       </div>
-      <h2>French Press Brewed Americano Coffee</h2>
-      <p><strong>Dosage:</strong> 1 cup per serving</p>
-      <p><strong>Nutritional Benefits:</strong></p>
-      <ul>
-        <li>Pure, robust flavor for enhanced alertness</li>
-        <li>Allergen-free formulation</li>
-        <li>Boosts mental clarity and focus</li>
-      </ul>
-      <p><strong>Instructions:</strong> Enjoy daily for a refreshing burst of energy and improved concentration.</p>
-      <div class="doctors-note">
-        <p>— PHP 120.00 <span class="signature">Only!</span></p>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> A grand ensemble of our French Sushi pieces artfully arranged to form a pizza-like masterpiece – perfect for sharing and indulgence with a healthy twist.</p>
+        <p><strong>Health Note:</strong> Satisfy your cravings while knowing every ingredient is carefully portioned to maintain nutritional balance.</p>
+        <p><strong>Drink Pairing:</strong> Complement with a glass of our exclusive <a href="#wine" class="cta">Wine of the Day</a> for an exquisite dining experience.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
       </div>
-      <div style="clear: both;"></div>
-    </section>
-    
-    <!-- Call To Action Section -->
-    <section class="cta">
-      <h2>Secure Your Health Prescription</h2>
-      <p>Embrace the fusion of gourmet excellence and medical endorsement. Order directly to experience full benefits and exclusive perks.</p>
-      <div class="cta-buttons">
-        <a href="https://wa.me/639260488976" target="_blank">Order via WhatsApp</a>
-        <a href="https://instagram.com/thebaguettemaison" target="_blank">Order via Instagram</a>
+    </div>
+
+    <!-- Coffee Cards -->
+    <div class="card" id="coffee">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Cafe Allonge – 150 PHP (TVA 12% incl.)</span>
+        <span>&#9660;</span>
       </div>
-    </section>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Brewed via French press using premium French beans for a pure, invigorating experience. Ideal for boosting your alertness and promoting a healthy metabolic rate.</p>
+        <p><strong>Health Note:</strong> Rich in antioxidants and low in calories – a perfect partner to a balanced lifestyle.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Cafe Au Lait – 150 PHP (TVA 12% incl.)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Our signature French press coffee with milk – delivering a harmonious blend of creamy texture and robust flavor. The milk enhances nutritional value with quality proteins and calcium.</p>
+        <p><strong>Health Note:</strong> Experience the luxury of health in every sip.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Tea Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>French Press Tea – 200 PHP (TVA 12% incl.; +50 PHP for sharing)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Infused with a blend of premium Lipton tea leaves, our French Press Tea is a rejuvenating beverage that promotes relaxation and health. Perfect for sharing with friends.</p>
+        <p><strong>Health Note:</strong> Rich in antioxidants and designed to support a balanced lifestyle. <span class="did-you-know">Did you know? The historic conflict between France and England was partly ignited by tea trade disputes!</span></p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Beverages Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Beverages (Coke Zero, Cola, Perrier, San Pellegrino) – Prices Vary (TVA 12% incl.)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Choose from a selection of premium soft drinks and mineral waters to refresh and complement your dining experience.</p>
+        <p><strong>Health Note:</strong> All beverages are served with the assurance of quality and balance, ensuring you enjoy both taste and wellness.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Wine & Beer Card -->
+    <div class="card" id="wine">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Red Wine & French Beer – Glass/Serving Prices Vary (TVA 12% incl.)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Enjoy our “Wine of the Day” – a refined Bordeaux selection – paired with an exquisite French beer that elevates your dining ritual.</p>
+        <p><strong>Health Note:</strong> Served in moderation, these beverages complement your meal with an air of luxury and tasteful indulgence.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Savory Crepes Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Savory Crepes – 3 Varieties (Mid-Priced, TVA 12% incl.)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Indulge in our health-oriented savory crepes crafted with eggs, ham, butter, and English sliced cheese (in one variety) to deliver a balanced mix of proteins and essential nutrients.</p>
+        <p><strong>Health Note:</strong> Designed for a refined palate, our crepes offer both nourishment and taste without compromising on luxury.</p>
+        <p><strong>Drink Pairing:</strong> Best enjoyed with a refreshing <a href="#coffee" class="cta">Cafe Allonge</a> or <a href="#wine" class="cta">Red Wine</a>.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Sweet Crepes Card -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span>Sweet Crepes – 3 Varieties (Mid-Priced, TVA 12% incl.)</span>
+        <span>&#9660;</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Prescription:</strong> Our sweet crepes are a delightful prescription for indulgence – featuring sugar, cream chantilly, vanilla ice cream, and butter to create a light, yet luxurious dessert.</p>
+        <p><strong>Health Note:</strong> Enjoy a well-balanced treat that elevates your mood and provides that extra touch of French savoir-faire.</p>
+        <p><strong>Drink Pairing:</strong> We recommend complementing with our signature <a href="#coffee" class="cta">Cafe Au Lait</a> for a harmonious aftertaste.</p>
+        <a href="/pages/ordernow.html" class="cta">Order Now</a>
+      </div>
+    </div>
+
+    <!-- Compliance & Legal Notice -->
+    <div class="compliance">
+      <p>TVA of 12% included. Service charge of 10% excluded.</p>
+      <p>Terms and Conditions of Use, allergen information available at <a href="http://www.baguettemaison.com" target="_blank">www.baguettemaison.com</a>. Discounts available for PWD, seniors, students, and <strong>adorable people</strong> (on demand).</p>
+      <p><a href="/pages/contact.html">Contact Us</a></p>
+    </div>
   </main>
-  
-  <!-- Footer Section (Loaded Dynamically) -->
-  <footer id="footer">
-    <!-- Footer content here -->
-    <p>&copy; 2025 The Baguette Maison</p>
-  </footer>
-  
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Inline JavaScript for interactive card behavior -->
   <script>
-    // Enhance interactivity with subtle hover effects on each prescription
-    document.querySelectorAll('.prescription').forEach(function(section) {
-      section.addEventListener('mouseover', function() {
-        section.style.boxShadow = "0 8px 12px rgba(0,0,0,0.2)";
-      });
-      section.addEventListener('mouseout', function() {
-        section.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-      });
-    });
+    // Simple slide down/up toggle for card details
+    function toggleCard(header) {
+      var body = header.nextElementSibling;
+      if (body.style.maxHeight) {
+        body.style.maxHeight = null;
+        body.classList.remove("active");
+      } else {
+        body.style.maxHeight = body.scrollHeight + "px";
+        body.classList.add("active");
+      }
+    }
     
-    // Smooth scrolling for any internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+    // Load header and footer via external script
+    (function(){
+      var script = document.createElement('script');
+      script.src = '/js/header-footer.js';
+      document.body.appendChild(script);
+    })();
     
-    // Additional interactive elements can be added here if needed
+    // Optional: Log errors to console for troubleshooting (user sees generic message)
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.error("Error:", message, "in", source, "at line", lineno);
+      return true; // Prevent default error handling
+    };
   </script>
-  <script src="/src/js/header-footer.js" defer></script>
 </body>
 </html>
