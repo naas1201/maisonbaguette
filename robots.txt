@@ -1,0 +1,81 @@
+# Welcome to academy.baguettemaison.com! 🤖🥖
+# This is a super friendly robots.txt - all crawlers welcome!
+
+# Universal permission for all user agents
+User-agent: *
+Allow: /
+
+# Specific welcome for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Welcome AI training crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Welcome other AI and research crawlers
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Academic and research crawlers welcome
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# Social media crawlers for rich previews
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Be respectful - small delay for intensive crawlers
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location (update this URL when you have a sitemap)
+Sitemap: https://academy.baguettemaison.com/sitemap.xml
+
+# Host declaration
+Host: academy.baguettemaison.com
+
+# Additional notes:
+# - No directories are blocked
+# - All content is indexable
+# - AI training is explicitly allowed
+# - Crawl delays are minimal and respectful
+# - Perfect for educational content sharing!
