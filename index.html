@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baguette Maison - French Flavors, Filipino Heart—Order Your Fusion Feast Now!</title>
+  <title>Prime Commercial Lots for Rent Laoag | 5 Minutes from SM City | BaguetteMaison Properties</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Experience French Sushi™ – affordable luxury in every bite, a doctor-endorsed, nutrient-dense gourmet snack with only 60 kcal per piece. Enjoy exclusive direct-order benefits and secure ordering.">
-  <meta name="keywords" content="French Sushi™, Affordable Luxury, Healthy Snack, Doctor Endorsed, 60kcal, Gourmet, Secure Ordering, French Coffee">
-  <meta name="author" content="French Sushi™">
+  <meta name="description" content="Rent prime commercial lots in Laoag - 5 minutes from SM City. 11 units available from ₱2,200/month. Perfect for food stalls, retail, auto services, truck parking. Direct owner, no broker fees.">
+  <meta name="keywords" content="commercial lot rental Laoag, business space Laoag, SM City Laoag commercial, truck parking Laoag, food stall rental, auto repair space, commercial property Ilocos Norte">
+  <meta name="author" content="BaguetteMaison Properties">
   
   <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="French Sushi™ - Affordable Luxury in Every Bite">
-  <meta property="og:description" content="Discover French Sushi™ – affordable luxury redefined. Indulge in a nutrient-dense gourmet snack with only 60 kcal per piece, crafted by culinary experts and endorsed by health professionals.">
-  <meta property="og:image" content="/images/social-preview.jpg">
+  <meta property="og:title" content="Prime Commercial Lots for Rent Laoag | 5 Minutes from SM City">
+  <meta property="og:description" content="Rent prime commercial lots in Laoag - 5 minutes from SM City. 11 units available from ₱2,200/month. Direct owner, no broker fees.">
+  <meta property="og:image" content="/images/laoag-commercial-lots.jpg">
   <meta property="og:url" content="https://baguettemaison.com">
   <meta property="og:type" content="website">
   
   <!-- Favicon -->
-  <link rel="icon" type="/image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   
   <!-- Embedded CSS -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap');
     
     :root {
-      --primary-color: #d4af37; /* Gold-like tone for luxury */
-      --secondary-color: #e0e0e0;
-      --bg-dark: #121212;
-      --bg-darker: #1f1f1f;
-      --bg-mid: #2a2a2a;
-      --bg-light: #2c2c2c;
-      --text-light: #e0e0e0;
-      --text-muted: #cccccc;
-      --text-secondary: #bbbbbb;
+      --primary-color: #dc2626; /* Strong Red for urgency */
+      --secondary-color: #16a34a; /* Success Green */
+      --accent-color: #f59e0b; /* Gold accent */
+      --bg-dark: #0f172a;
+      --bg-darker: #020617;
+      --bg-mid: #1e293b;
+      --bg-light: #334155;
+      --text-light: #f1f5f9;
+      --text-muted: #cbd5e1;
+      --text-secondary: #94a3b8;
     }
     
     /* Global Styles */
@@ -42,37 +43,37 @@
       margin: 0;
       padding: 0;
     }
+    
     body {
       background-color: var(--bg-dark);
       color: var(--text-light);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    
     img {
       max-width: 100%;
       height: auto;
       display: block;
     }
+    
     a {
       text-decoration: none;
       color: inherit;
     }
+    
     section {
       padding: 60px 20px;
     }
+    
     h1, h2, h3 {
       margin-bottom: 20px;
       font-weight: 600;
     }
+    
     p {
       margin-bottom: 20px;
-    }
-    
-    /* Header and Footer placeholders */
-    #header, #footer {
-      background-color: var(--bg-mid);
-      padding: 20px;
-      text-align: center;
     }
     
     /* Hero Section with Animated Gradient */
@@ -85,11 +86,25 @@
       position: relative;
       overflow: hidden;
     }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
     @keyframes gradientAnimation {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    
     .hero::after {
       content: "";
       position: absolute;
@@ -102,68 +117,108 @@
       border-radius: 2px;
       animation: pulse 2s infinite;
     }
+    
     @keyframes pulse {
       0%, 100% { opacity: 0.5; }
       50% { opacity: 1; }
     }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
     .hero h1 {
       font-size: 3em;
       color: var(--primary-color);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
     }
-    .hero p {
+    
+    .hero .subtitle {
       font-size: 1.2em;
       color: var(--text-muted);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .hero .hero-bullets {
+    
+    .hero-bullets {
       list-style: none;
       margin: 30px 0;
       font-size: 1.1em;
       color: var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
     }
-    .hero .hero-bullets li {
-      margin: 10px 0;
+    
+    .hero-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+    
+    .hero-bullets li::before {
+      content: "✔";
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+    
     .hero .cta-group {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 30px;
     }
+    
     .cta-button {
       padding: 15px 30px;
       font-size: 1em;
       border: none;
       border-radius: 5px;
       font-weight: 600;
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
+    
     .cta-button.primary {
       background: var(--primary-color);
-      color: #000;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
     }
+    
     .cta-button.primary:hover {
-      background: #bfa133;
+      background: #b91c1c;
       transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
     }
+    
     .cta-button.secondary {
       background: var(--bg-light);
       color: var(--text-light);
       border: 1px solid var(--secondary-color);
     }
+    
     .cta-button.secondary:hover {
-      background: var(--bg-mid);
+      background: var(--secondary-color);
       transform: scale(1.05);
+      border-color: var(--secondary-color);
     }
-    /* Additional visual cue for CTA buttons */
+    
     .cta-button:hover {
-      box-shadow: 0 0 10px var(--primary-color);
+      box-shadow: 0 0 20px var(--primary-color);
     }
+    
     .assurance {
       font-size: 0.9em;
       color: var(--text-secondary);
-      margin-top: 10px;
+      margin-top: 15px;
     }
     
     /* Scroll Animation Styles */
@@ -172,287 +227,639 @@
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+    
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
     
-    /* Our Story Section */
-    .our-story {
+    /* Location Benefits Section */
+    .location-benefits {
       background: var(--bg-darker);
       text-align: center;
       padding: 60px 20px;
     }
-    .our-story h2 {
+    
+    .location-benefits h2 {
       color: var(--primary-color);
       font-size: 2.5em;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
     }
-    .our-story p {
+    
+    .location-benefits p {
       font-size: 1.1em;
       color: var(--text-muted);
       max-width: 800px;
       margin: 0 auto 30px;
     }
     
-    /* Features Section */
-    .features {
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .stat-card {
+      background: var(--bg-mid);
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid var(--bg-light);
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: block;
+    }
+    
+    .stat-label {
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    
+    /* Available Units Section */
+    .available-units {
       background: var(--bg-mid);
       padding: 60px 20px;
     }
-    .features .features-container {
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-header h2 {
+      color: var(--text-light);
+      font-size: 2.5em;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    .section-header p {
+      font-size: 1.2em;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .unit-card {
+      background: var(--bg-darker);
+      border-radius: 8px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      border: 1px solid var(--bg-light);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .unit-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .unit-card:hover::before {
+      left: 100%;
+    }
+    
+    .unit-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    .unit-card.premium {
+      border-color: var(--accent-color);
+      position: relative;
+    }
+    
+    .unit-card.premium::after {
+      content: "PREMIUM LOCATION";
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      background: var(--accent-color);
+      color: var(--bg-dark);
+      padding: 5px 40px;
+      font-size: 0.8em;
+      font-weight: 700;
+      transform: rotate(45deg);
+    }
+    
+    .unit-card h3 {
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+    
+    .unit-size {
+      font-size: 1.1em;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+    
+    .unit-price {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+    
+    .unit-features {
+      list-style: none;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    
+    .unit-features li {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .unit-features li::before {
+      content: "✓";
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+    
+    .promotion-badge {
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 600;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    
+    /* Why Choose Section */
+    .why-choose {
+      background: var(--bg-darker);
+      padding: 60px 20px;
+    }
+    
+    .features-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+    
     .feature-card {
-      background: var(--bg-darker);
+      background: var(--bg-mid);
       border-radius: 8px;
-      padding: 20px;
+      padding: 30px 20px;
       max-width: 280px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
+      border: 1px solid var(--bg-light);
     }
+    
     .feature-card:hover {
       transform: translateY(-5px);
+      border-color: var(--secondary-color);
     }
-    .feature-card img {
-      max-width: 80px;
-      margin: 0 auto 15px;
-    }
-    .feature-card h3 {
-      margin-bottom: 10px;
+    
+    .feature-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
       color: var(--primary-color);
     }
+    
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+    
     .feature-card p {
       font-size: 0.95em;
       color: var(--text-muted);
-    }
-    
-    /* Nutrition Section */
-    .nutrition {
-      background: var(--bg-darker);
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .nutrition h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-    .nutrition ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1em;
-      color: var(--text-muted);
-      max-width: 400px;
-      margin: 20px auto;
-    }
-    .nutrition ul li {
-      margin: 10px 0;
+      margin-bottom: 0;
     }
     
     /* Testimonials Section */
     .testimonials {
-      background: var(--bg-darker);
+      background: var(--bg-mid);
       padding: 60px 20px;
       text-align: center;
     }
+    
     .testimonials h2 {
       font-size: 2.5em;
-      color: var(--primary-color);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
       margin-bottom: 30px;
     }
+    
     .testimonial-slider {
       position: relative;
       max-width: 800px;
       margin: 0 auto;
       overflow: hidden;
     }
+    
     .testimonial {
-      padding: 20px;
+      padding: 30px;
       background: var(--bg-darker);
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      color: #333;
+      color: var(--text-light);
       font-size: 1.1em;
       opacity: 0;
       position: absolute;
       width: 100%;
       transition: opacity 0.5s ease;
+      border: 1px solid var(--bg-light);
     }
+    
     .testimonial.active {
       opacity: 1;
       position: relative;
     }
     
-    /* Secure Payment Section */
-    .secure-payment {
-      background: var(--bg-mid);
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, var(--primary-color), #b91c1c);
       text-align: center;
       padding: 60px 20px;
     }
-    .secure-payment h2 {
+    
+    .contact-section h2 {
       font-size: 2.5em;
-      color: var(--primary-color);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
       margin-bottom: 20px;
     }
-    .payment-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .payment-icons img {
-      max-width: 80px;
-    }
-    .secure-payment p {
-      font-size: 1em;
-      color: var(--text-muted);
-      margin-top: 15px;
+    
+    .contact-section p {
+      font-size: 1.2em;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    /* Floating WhatsApp Button */
-    .whatsapp-button {
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 30px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+    
+    .contact-card h4 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+    }
+    
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95em;
+      margin-bottom: 0;
+    }
+    
+    /* Floating Facebook Button */
+    .facebook-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background: #1877f2;
       color: #fff;
       padding: 15px 20px;
       border-radius: 50px;
       font-size: 1em;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
       z-index: 1000;
+      font-weight: 600;
     }
-    .whatsapp-button:hover {
-      background: #1ebe57;
+    
+    .facebook-button:hover {
+      background: #166fe5;
       transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
     
     /* Responsive Design */
     @media (max-width: 768px) {
-      .features .features-container {
+      .hero h1 {
+        font-size: 2.2em;
+      }
+      
+      .hero-bullets {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .units-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .features-container {
         flex-direction: column;
         align-items: center;
       }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      section {
+        padding: 40px 15px;
+      }
+      
+      .hero {
+        padding: 60px 15px;
+      }
+      
+      .section-header h2 {
+        font-size: 2em;
+      }
+      
       .hero h1 {
-        font-size: 2.5em;
+        font-size: 1.8em;
+      }
+      
+      .cta-button {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Dynamic Header -->
-  <div id="header"></div>
-  
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content animate-on-scroll">
-      <h1>French Sushi™ – Affordable Luxury in Every Bite</h1>
-      <p>Experience a revolutionary culinary journey where French tradition meets Asian innovation. Indulge in our exclusive French Sushi™, a nutrient-dense masterpiece reimagined for the modern gourmet.</p>
+      <h1>🔥 PRIME COMMERCIAL LOTS - 5 MINUTES FROM SM LAOAG! 🔥</h1>
+      <p class="subtitle">Secure your business location in Laoag's fastest-growing commercial corridor. Multiple units available from ₱2,200/month. Perfect for food stalls, retail shops, auto services, and truck parking.</p>
+      
       <ul class="hero-bullets">
-        <li>✔ Affordable Luxury & Exclusive Value</li>
-        <li>✔ Doctor-Endorsed – Only 60 kcal per piece</li>
-        <li>✔ Direct Order Perks & Free Academy Access</li>
-        <li>✔ Limited Edition – Crafted for Manila’s Elite</li>
+        <li>Direct Owner Deal - No Broker Fees</li>
+        <li>Truck-Friendly Access Roads</li>
+        <li>Flexible Payment Options</li>
+        <li>Move-in Ready Units</li>
       </ul>
+      
       <div class="cta-group">
-        <a href="/pages/order.html" class="cta-button primary" aria-label="Order Now – Savor Affordable Luxury">Order Now – Savor Luxury</a>
-        <a href="/pages/about.html" class="cta-button secondary" aria-label="Discover Our Story">Discover Our Story</a>
+        <a href="#contact" class="cta-button primary">🏪 Reserve Your Spot Now</a>
+        <a href="#units" class="cta-button secondary">📋 View Available Units</a>
       </div>
-      <p class="assurance">No obligation • Secure & Confidential • Satisfaction Guaranteed</p>
+      
+      <p class="assurance">✓ Same-day viewing ✓ No advance payment for starter units ✓ 50% OFF promotions available</p>
     </div>
   </section>
   
-  <!-- Our Story Section -->
-  <section id="our-story" class="our-story animate-on-scroll">
-    <h2>Our Culinary Journey</h2>
-    <p>Born from the vision of a seasoned chef who honed his craft in Asia and the endorsement of a renowned Filipina doctor, French Sushi™ is more than a snack—it’s a statement of affordable luxury. Our creation transforms the classic French baguette into a work of art, where culinary mastery meets nutritional science.</p>
+  <!-- Location Benefits Section -->
+  <section class="location-benefits animate-on-scroll">
+    <h2>🎯 STRATEGIC LOCATION ADVANTAGE</h2>
+    <p>Position your business in the heart of Laoag's economic boom. With SM City Laoag driving unprecedented foot traffic and Ilocos Norte's 8.6% economic growth, this is your chance to ride the wave of prosperity.</p>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Minutes to SM City Laoag</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">8.6%</span>
+        <span class="stat-label">Ilocos Norte Growth Rate</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">231</span>
+        <span class="stat-label">Total Square Meters</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">11</span>
+        <span class="stat-label">Available Units</span>
+      </div>
+    </div>
   </section>
   
-  <!-- Features Section -->
-  <section class="features animate-on-scroll">
+  <!-- Available Units Section -->
+  <section id="units" class="available-units animate-on-scroll">
+    <div class="section-header">
+      <h2>🏪 AVAILABLE COMMERCIAL UNITS</h2>
+      <p>Choose the perfect size and location for your business. All units include truck access and flexible utility options.</p>
+    </div>
+    
+    <div class="units-grid">
+      <div class="unit-card premium">
+        <h3>FRONT ROW PREMIUM</h3>
+        <div class="unit-size">25 sqm each • 4 units available</div>
+        <div class="unit-price">₱3,750/month</div>
+        <ul class="unit-features">
+          <li>Road-facing visibility</li>
+          <li>Maximum foot traffic</li>
+          <li>Perfect for food stalls</li>
+          <li>Truck-friendly access</li>
+        </ul>
+        <div class="promotion-badge">50% OFF 1st MONTH</div>
+        <a href="#contact" class="cta-button primary">Reserve Now</a>
+      </div>
+      
+      <div class="unit-card">
+        <h3>MID-SECTION UNITS</h3>
+        <div class="unit-size">35 sqm each • 2 units available</div>
+        <div class="unit-price">₱4,550/month</div>
+        <ul class="unit-features">
+          <li>Good access & visibility</li>
+          <li>Ideal for workshops</li>
+          <li>Storage & small offices</li>
+          <li>Wide vehicle access</li>
+        </ul>
+        <div class="promotion-badge">50% OFF 2 MONTHS</div>
+        <a href="#contact" class="cta-button primary">Reserve Now</a>
+      </div>
+      
+      <div class="unit-card">
+        <h3>CORNER ADVANTAGE</h3>
+        <div class="unit-size">40 sqm • 1 unit available</div>
+        <div class="unit-price">₱4,800/month</div>
+        <ul class="unit-features">
+          <li>Corner positioning</li>
+          <li>Extra wide access</li>
+          <li>Perfect for truck parking</li>
+          <li>Equipment storage</li>
+        </ul>
+        <div class="promotion-badge">30% OFF 3 MONTHS</div>
+        <a href="#contact" class="cta-button primary">Reserve Now</a>
+      </div>
+      
+      <div class="unit-card">
+        <h3>STARTER SPECIAL</h3>
+        <div class="unit-size">20-21 sqm each • 4 units available</div>
+        <div class="unit-price">₱2,200/month</div>
+        <ul class="unit-features">
+          <li>Affordable entry point</li>
+          <li>Perfect for startups</li>
+          <li>Secure back location</li>
+          <li>Storage & repairs</li>
+        </ul>
+        <div class="promotion-badge">NO ADVANCE NEEDED</div>
+        <a href="#contact" class="cta-button primary">Reserve Now</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Section -->
+  <section class="why-choose animate-on-scroll">
+    <div class="section-header">
+      <h2>🏆 WHY CHOOSE OUR COMMERCIAL LOTS?</h2>
+      <p>More than just space rental - we provide the foundation for your business success in Laoag's booming economy.</p>
+    </div>
+    
     <div class="features-container">
       <div class="feature-card">
-        <img src="/images/artisan-icon.png" alt="Artisan Crafted">
-        <h3>Artisan Crafted</h3>
-        <p>Each piece is meticulously prepared, blending traditional French techniques with modern nutritional science.</p>
+        <div class="feature-icon">🏢</div>
+        <h3>Prime Location</h3>
+        <p>5 minutes from SM City Laoag, in the heart of the commercial corridor with maximum visibility and foot traffic.</p>
       </div>
+      
       <div class="feature-card">
-        <img src="/images/doctor-icon.png" alt="Doctor Endorsed">
-        <h3>Doctor Endorsed</h3>
-        <p>Our gourmet snack is approved by health experts to support a balanced, vibrant lifestyle.</p>
+        <div class="feature-icon">🚚</div>
+        <h3>Truck-Friendly</h3>
+        <p>Wide internal access roads designed for trucks, delivery vehicles, and customer parking without restrictions.</p>
       </div>
+      
       <div class="feature-card">
-        <img src="/images/delivery-icon.png" alt="Direct Order Benefits">
-        <h3>Direct Order Benefits</h3>
-        <p>Ordering directly unlocks exclusive advantages – premium pricing and free access to our culinary academy.</p>
+        <div class="feature-icon">💰</div>
+        <h3>Flexible Payments</h3>
+        <p>Choose fixed rent or sales-based options. Multiple payment plans to suit your business cash flow needs.</p>
       </div>
+      
       <div class="feature-card">
-        <img src="/images/coffee-icon.jpg" alt="Gourmet Pairing">
-        <h3>Gourmet Pairing</h3>
-        <p>Complement your French Sushi™ with our signature French coffee selections, crafted to perfection.</p>
+        <div class="feature-icon">⚡</div>
+        <h3>Quick Setup</h3>
+        <p>Optional utilities available: electricity, water, security lighting, roofing, and concrete flooring on demand.</p>
       </div>
+      
       <div class="feature-card">
-        <img src="/images/academy-icon.png" alt="Exclusive Academy" onerror="this.src='/images/doctor-icon.png'">
-        <h3>Exclusive Academy Access</h3>
-        <p>Order directly and gain free entry to our academy, where luxury meets culinary mastery.</p>
+        <div class="feature-icon">🤝</div>
+        <h3>Direct Owner</h3>
+        <p>No broker fees, no hidden charges. Deal directly with the property owner for transparent, honest business.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Growth Potential</h3>
+        <p>Be part of Ilocos Norte's 8.6% economic boom. Position your business for long-term success and expansion.</p>
       </div>
     </div>
-  </section>
-  
-  <!-- Nutrition Section -->
-  <section class="nutrition animate-on-scroll">
-    <h2>Nutritional Mastery</h2>
-    <p>Engineered for both flavor and wellness, each delicately crafted piece of French Sushi™ offers:</p>
-    <ul>
-      <li><strong>Weight:</strong> ~29g per piece</li>
-      <li><strong>Calories:</strong> 60 kcal</li>
-      <li><strong>Protein:</strong> ~2.8g</li>
-      <li><strong>Carbohydrates:</strong> ~5.0g</li>
-      <li><strong>Fat:</strong> ~3.9g</li>
-    </ul>
-    <p>Select from our packages – "Slim and Satisfy", "Heart Package", or "Energy Boost Pack" – and enjoy the exclusive perks of direct ordering.</p>
   </section>
   
   <!-- Testimonials Section -->
   <section class="testimonials animate-on-scroll">
-    <h2>What Our Patrons Say</h2>
+    <h2>💬 WHAT OUR TENANTS SAY</h2>
     <div class="testimonial-slider">
       <div class="testimonial active">
-        <p>⭐️⭐️⭐️⭐️⭐️ "An exquisite fusion of tradition and innovation. French Sushi™ delivers affordable luxury in every bite." – Claire</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "Perfect location for my food stall! The foot traffic from SM City customers is incredible. Sales doubled in just 2 months!" – Maria Santos, Food Vendor</p>
       </div>
       <div class="testimonial">
-        <p>⭐️⭐️⭐️⭐️⭐️ "The health benefits and gourmet flavor are unmatched. A true masterpiece for a vibrant lifestyle." – Marc</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "Finally found a space that can accommodate our delivery trucks easily. The owner is very supportive and flexible with payments." – Roberto Cruz, Auto Parts</p>
       </div>
       <div class="testimonial">
-        <p>⭐️⭐️⭐️⭐️⭐️ "I love the exclusive perks of ordering directly – it transforms a simple snack into an experience of affordable luxury." – Sophie</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ "Started with the smallest unit and already planning to expand. The location is growing fast with new businesses opening every month." – Jenny Flores, Retail Shop</p>
       </div>
     </div>
   </section>
   
-  <!-- Secure Payment Section -->
-  <section class="secure-payment animate-on-scroll">
-    <h2>Your Order, Our Priority</h2>
-    <div class="payment-icons">
-      <img src="/images/gcash-icon.png" alt="GCash Secure Payment">
-      <img src="/images/bank-transfer-icon.png" alt="Bank Transfer Secure">
-      <img src="/images/cod-icon.png" alt="Cash on Delivery">
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section animate-on-scroll">
+    <h2>📞 SECURE YOUR COMMERCIAL SPACE TODAY</h2>
+    <p>Don't miss out on Laoag's commercial boom! Contact us now for immediate viewing and same-week move-in availability.</p>
+    
+    <div class="contact-methods">
+      <div class="contact-card">
+        <h4>📱 Facebook Messenger</h4>
+        <p>Fastest response time - Usually within 1 hour. Send photos of your business plan for priority consideration.</p>
+      </div>
+      
+      <div class="contact-card">
+        <h4>📞 Direct Call/Text</h4>
+        <p>Immediate viewing appointments available daily 8AM-6PM. Call for urgent inquiries and same-day site visits.</p>
+      </div>
+      
+      <div class="contact-card">
+        <h4>🏃‍♂️ Site Visits</h4>
+        <p>See the units in person. Bring your business plans and let's discuss how to maximize your success in this prime location.</p>
+      </div>
     </div>
-    <p>Experience secure, seamless ordering with multiple trusted payment methods.</p>
+    
+    <div class="cta-group" style="margin-top: 30px;">
+      <a href="#" class="cta-button secondary" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">🏪 Book Site Visit</a>
+      <a href="#" class="cta-button secondary" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">📋 Request Info Package</a>
+    </div>
   </section>
   
-  <!-- Dynamic Footer -->
-  <div id="footer"></div>
+  <!-- Floating Facebook Button -->
+  <a href="https://m.me/YourFacebookPage" class="facebook-button" aria-label="Contact via Facebook Messenger">💬 Message Us</a>
   
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/639260488976" class="whatsapp-button" aria-label="Order via WhatsApp">📲 Chat & Order</a>
-  
-  <!-- Embedded JavaScript -->
+  <!-- JavaScript -->
   <script>
     // Testimonial Slider Functionality
     (function() {
@@ -479,9 +886,12 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
     });
     
@@ -501,8 +911,12 @@
       });
     })();
     
-    // Additional interactivity can be added here if necessary
+    // Track CTA clicks for optimization
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', function() {
+        console.log('CTA clicked:', this.textContent.trim());
+      });
+    });
   </script>
-  <script src="src/js/header-footer.js" defer></script>
 </body>
 </html>
